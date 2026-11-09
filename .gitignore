@@ -1,0 +1,93 @@
+
+# ==========================================
+# GODOT ENGINE
+# ==========================================
+
+# Godot 4 editor cache, imported resources and temporary files
+.godot/
+
+# Godot 3 generated import directory (if migrating an older project)
+.import/
+
+# Exported builds
+/export/
+/builds/
+
+# Export configuration can contain signing credentials
+/export_presets.cfg
+
+# ==========================================
+# ENVIRONMENT VARIABLES
+# ==========================================
+
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# ==========================================
+# BLENDER
+# ==========================================
+
+# Blender automatic backup files
+*.blend1
+*.blend2
+*.blend@
+*.blend~
+
+# Blender temporary files
+*.tmp
+*.temp
+
+# ==========================================
+# PYTHON
+# ==========================================
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# ==========================================
+# EDITORS AND IDEs
+# ==========================================
+
+.vs/
+.idea/
+
+# VS Code: ignore personal workspace settings,
+# but allow shared extension recommendations
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ==========================================
+# OPERATING SYSTEM
+# ==========================================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# ==========================================
+# LOGS AND TEMPORARY FILES
+# ==========================================
+
+*.log
+*.bak
+*.old
+*.orig
+*.swp
+*.swo
+*~
