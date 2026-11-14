@@ -1,4 +1,4 @@
-﻿# Project Status — Potosi's Shadow Veins
+﻿# Project Status
 
 > Last updated: 2026-11-12
 > Project owner: Saul
