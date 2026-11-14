@@ -720,7 +720,17 @@ The agent MUST NOT:
 - Approve or merge its own pull request.
 - Mark its own work as approved.
 
-## 21. Final Report Format
+## 21. Required Documentation
+
+Before implementing a feature, consult:
+
+- [Branching Strategy](../00_studio_standards/BRANCHING_STRATEGY.md)
+- [Definition of Done](../00_studio_standards/DEFINITION_OF_DONE.md)
+- [GDScript Standards](../02_technical_standards/GDSCRIPT_STANDARDS.md)
+- [Architecture Guidelines](../02_technical_standards/ARCHITECTURE_GUIDELINES.md)
+- [Testing Strategy](../02_technical_standards/TESTING_STRATEGY.md)
+
+## 22. Final Report Format
 
 After completing the workflow, provide the following report:
 

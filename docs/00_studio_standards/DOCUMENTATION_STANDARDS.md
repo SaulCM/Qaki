@@ -1,5 +1,4 @@
-﻿
-# Documentation Standards
+﻿# Documentation Standards
 
 ## 1. Purpose
 
@@ -513,7 +512,7 @@ Before approving a document, verify the following.
 
 ## 11. AI-Assisted Documentation
 
-AI agents must follow these additional requirements when creating or modifying documentation.
+AI agents must follow these additional requirements when creating or modifying documentation and when executing tasks that depend on studio or project documentation.
 
 ### 11.1 Inspect Before Writing
 
@@ -561,6 +560,86 @@ Before reporting a documentation task as complete, agents must:
 - Report assumptions, unresolved questions, and incomplete work.
 
 Agents must not claim that documentation has been approved unless the project owner has approved it.
+
+### 11.5 Documentation Loading and Discovery
+
+AI agents must discover and read the documentation relevant to their assigned task before taking action.
+
+#### Documentation Discovery
+
+Agents must:
+
+- Read `docs/DOCUMENTATION_INVENTORY.md` when it is available to understand the documentation structure and locate relevant documents.
+- Inspect the actual repository structure before accessing referenced documents.
+- Use the inventory as a discovery aid, not as proof that a listed file currently exists.
+- Verify that a document exists before relying on its contents.
+- Follow references to authoritative documents when additional context is required.
+
+Agents must not assume that a document exists merely because it is listed in the inventory or referenced by another document.
+
+#### Documentation Selection
+
+Agents must load documentation according to the task's scope and requirements.
+
+The following rules apply:
+
+| Documentation type | Expected agent behavior |
+|---|---|
+| Studio standards | Read all applicable mandatory standards. |
+| Game design guidelines | Read guidelines relevant to the design task. |
+| Technical standards | Read standards relevant to the proposed or existing implementation. |
+| Art and audio standards | Read standards relevant to affected art, audio, or content assets. |
+| Production standards | Read standards relevant to planning, scheduling, tracking, or production activities. |
+| QA standards | Read standards relevant to testing, validation, and quality assurance. |
+| Templates | Read the applicable template when creating a document based on it. |
+| Agent workflows | Read and follow the applicable workflow when executing it. |
+| Project documentation | Read approved specifications and existing project records relevant to the task. |
+
+Agents SHOULD avoid loading unrelated documents that do not contribute to the task.
+
+Agents MUST NOT skip applicable mandatory standards merely to reduce the amount of documentation they inspect.
+
+#### Reference Resolution
+
+When a document references another document, agents must:
+
+- Follow the reference when its contents are relevant to the task.
+- Prefer Markdown links with descriptive link text and valid relative paths.
+- Resolve relative links from the directory containing the document with the reference.
+- Preserve exact repository-relative paths and filenames.
+- Treat paths and filenames as case-sensitive.
+- Verify that referenced files exist before reading or relying on them.
+- Follow relevant references recursively when additional authoritative context is necessary.
+
+Agents must not silently substitute a similarly named document when a reference is broken or ambiguous.
+
+If a reference cannot be resolved, agents must report the issue and continue only when doing so does not require an unsupported assumption or compromise an important requirement.
+
+#### Authority and Conflict Handling
+
+When loading multiple documents, agents must:
+
+- Apply the authority and conflict-resolution principles defined in Section 4.7.
+- Distinguish mandatory standards from recommendations and optional guidance.
+- Give approved project-specific requirements authority over general guidelines for project-specific behavior.
+- Preserve the authority of applicable studio-wide standards.
+- Identify missing, outdated, contradictory, or ambiguous requirements.
+- Request clarification when a conflict cannot be resolved confidently.
+
+Agents must not silently ignore a relevant requirement because another document is easier to access or more convenient to follow.
+
+#### Before Execution
+
+Before performing substantial work, agents must identify the documentation relevant to the task and inspect the applicable sources.
+
+When appropriate, agents should report:
+
+- The key documents consulted.
+- Important requirements or constraints identified.
+- Missing or inaccessible documents.
+- Unresolved conflicts or ambiguities.
+
+Agents must not claim to have read, consulted, or followed documents that they did not actually inspect.
 
 ## 12. Documentation Security
 
