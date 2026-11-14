@@ -609,13 +609,13 @@ Update only the documents affected by the status changes.
 
 Possible project records include:
 
-- `docs/production/project_status.md`
-- `docs/production/roadmap.md`
-- `docs/production/backlog.md`
-- `docs/production/risk_register.md`
-- `docs/production/milestones/`
-- `docs/production/sprints/`
-- `docs/production/releases/`
+- `game_project/docs/production/project_status.md`
+- `game_project/docs/production/roadmap.md`
+- `game_project/docs/production/backlog.md`
+- `game_project/docs/production/risk_register.md`
+- `game_project/docs/production/milestones/`
+- `game_project/docs/production/sprints/`
+- `game_project/docs/production/releases/`
 
 These are suggested locations. Verify the actual project structure and existing filenames before modifying anything.
 

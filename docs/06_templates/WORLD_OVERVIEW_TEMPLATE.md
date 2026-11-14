@@ -1066,16 +1066,16 @@ Use applicable documents from the shared studio knowledge base and project repos
 
 **Project documents:**
 
-- Game Vision: `docs/game_design/game_vision.md`
-- Game Design Document: `docs/game_design/game_design_document.md`
-- Core Pillars: `docs/game_design/core_pillars.md`
-- Narrative Overview: `docs/game_design/narrative/narrative_overview.md`
-- Art Direction: `docs/art/art_direction.md`
-- Audio Direction: `docs/audio/audio_direction.md`
-- Character Specifications: `docs/game_design/characters/`
-- Faction Specifications: `docs/game_design/factions/`
-- Location Specifications: `docs/game_design/locations/`
-- Quest Specifications: `docs/game_design/quests/`
+- Game Vision: `game_project/docs/game_design/game_vision.md`
+- Game Design Document: `game_project/docs/game_design/game_design_document.md`
+- Core Pillars: `game_project/docs/game_design/core_pillars.md`
+- Narrative Overview: `game_project/docs/game_design/narrative/narrative_overview.md`
+- Art Direction: `game_project/docs/art/art_direction.md`
+- Audio Direction: `game_project/docs/audio/audio_direction.md`
+- Character Specifications: `game_project/docs/game_design/characters/`
+- Faction Specifications: `game_project/docs/game_design/factions/`
+- Location Specifications: `game_project/docs/game_design/locations/`
+- Quest Specifications: `game_project/docs/game_design/quests/`
 
 Only retain references to documents that exist in the applicable repository.
 

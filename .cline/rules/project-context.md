@@ -1,170 +1,89 @@
-﻿
 # Project Context
 
-## 1. Project Overview
+## 1. Repository Identity
 
-This repository contains a solo-developed video game project built with the Godot Engine.
+This repository is the solo-developed **Qaki** studio workspace and Godot game repository.
 
-The project is developed with assistance from AI coding agents, including Cline.
+It has two distinct roots:
 
-The development approach prioritizes:
+| Root | Purpose |
+|---|---|
+| Repository root | Studio infrastructure, reusable studio documentation, references, and repository-level configuration. |
+| `game_project/` | The Godot game project, including all game implementation and game-specific documentation. |
 
-- Clear and maintainable architecture.
-- Modular and reusable systems.
-- Professional development practices adapted to a solo developer.
-- Controlled scope and manageable complexity.
-- Reliable version control.
-- Documented technical and design decisions.
-- Incremental implementation and validation.
+Repository root responsibilities:
 
-## 2. Project Identity
+- Cline configuration and execution workflows.
+- GitHub configuration.
+- Reusable studio documentation.
+- Repository-level reference material.
+- Version-control and repository configuration.
 
-The project's actual identity, genre, setting, player experience, mechanics, and scope must be established by approved project-specific documentation.
+The Godot project root is `game_project/`. It contains `project.godot` and is the only directory treated as a Godot project.
 
-Do not assume that previous concepts, brainstorming discussions, or unapproved proposals are final design decisions.
+The repository root MUST NOT be treated as the Godot project root.
 
-Treat approved project documentation as the source of truth.
+## 2. Directory Responsibilities
 
-When project identity or requirements are missing:
+| Path | Responsibility |
+|---|---|
+| `.cline/` | Cline configuration. `.cline/rules/` contains always-loaded agent rules. |
+| `.clinerules/` | Cline execution workflows in `.clinerules/workflows/`. |
+| `.github/` | GitHub configuration: CI workflows, issue templates, and pull request template. |
+| `docs/` | Reusable studio documentation only: standards, guidelines, templates, and agent workflows. |
+| `references/` | Repository-level reference material used for research and production support. |
+| `game_project/` | Godot project root: `project.godot`, `addons/`, `assets/`, `features/`, `shared/`, `infrastructure/`, `tests/`. |
+| `game_project/docs/` | Game-specific documentation created from studio templates. |
 
-1. Inspect the existing project documentation.
-2. Identify what is known and unknown.
-3. Ask for clarification when the missing information materially affects implementation.
-4. Do not invent major design decisions.
+Repository-level configuration files (`.clineignore`, `.gitattributes`, `.gitignore`, `README.md`) remain at the repository root.
 
-## 3. Development Environment
+`game_project/docs/` is part of the approved architecture. Create its subdirectories only when an actual game-specific document requires them.
 
-The project uses:
+## 3. Documentation Boundaries
 
-- Game engine: Godot.
-- Primary scripting language: GDScript.
-- Version control: Git.
-- Remote repository: GitHub.
-- Development environment: Visual Studio Code.
-- AI development assistance: Cline.
+- Never create game-specific documentation under repository-root `docs/`.
+- Never create studio-wide documentation under `game_project/docs/`.
+- Resolve project-specific documentation paths from the Godot project root (`game_project/`).
+- Resolve studio documentation paths from the repository root.
+- Read `docs/DOCUMENTATION_INVENTORY.md` before selecting studio documentation.
+- Follow `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md` for documentation structure, authority, and maintenance.
+- Follow `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md` for repository and Godot project organization.
+- Studio templates live in `docs/06_templates/`. Instantiating a template produces a game-specific document under `game_project/docs/`.
+- Studio agent workflows live in `docs/07_agent_workflows/`. Cline execution workflows live in `.clinerules/workflows/`.
+- Do not duplicate studio documentation inside `game_project/docs/`. Reference studio documents instead.
 
-Always inspect the actual project configuration before assuming specific versions, plugins, dependencies, or technical capabilities.
+## 4. Godot Development Boundaries
 
-Do not upgrade the engine or introduce major dependencies without approval.
+- Treat `game_project/` as the Godot project root.
+- Game scripts, scenes, resources, and assets belong inside `game_project/`.
+- Use GDScript as the implementation language.
+- Do not introduce C# without explicit owner approval.
+- Third-party plugins and addons belong in `game_project/addons/`.
+- Feature-specific implementation belongs in `game_project/features/`.
+- Shared game code belongs in `game_project/shared/`.
+- Project-wide infrastructure belongs in `game_project/infrastructure/`.
+- Game implementation must not depend on repository documentation directories at runtime.
+- Do not create unnecessary empty directories.
 
-## 4. Development Approach
+## 5. Agent Behavior
 
-The project follows incremental development.
+- Inspect existing files before creating new ones.
+- Preserve established architecture and conventions.
+- Do not invent game design decisions.
+- Request approval for significant architectural changes.
+- Never modify files outside the task scope.
+- Report conflicts between authoritative documents instead of silently choosing one.
 
-General workflow:
-
-1. Understand the requirement.
-2. Inspect the existing implementation.
-3. Identify dependencies and applicable documentation.
-4. Plan the implementation.
-5. Implement a focused change.
-6. Validate the change.
-7. Update relevant documentation.
-8. Report results.
-
-Avoid implementing large, unrelated features in a single task.
-
-Prefer small, independently reviewable changes.
-
-## 5. Documentation Sources
-
-The repository may contain:
-
-- Studio standards.
-- Game design documentation.
-- Technical specifications.
-- Architecture Decision Records (ADRs).
-- Art and audio documentation.
-- Production documentation.
-- QA documentation.
-- Agent workflows.
-
-Before implementing a feature, identify which documents are relevant.
-
-Do not assume every document applies to every task.
-
-## 6. Authority and Conflict Resolution
-
-Follow this order of authority:
+## 6. Authority Order
 
 1. Explicit instructions from the human maintainer for the current task.
 2. Approved project-specific requirements and specifications.
 3. Approved Architecture Decision Records.
-4. Applicable studio standards.
+4. Applicable studio standards, including mandatory documentation standards.
 5. Applicable domain guidelines.
 6. General engineering and game-development practices.
 
-If two authoritative sources conflict:
-
-- Identify the conflict.
-- Explain its impact.
-- Do not silently choose one.
-- Request clarification when necessary.
-
-Do not treat brainstorming notes, generated drafts, or unapproved proposals as approved requirements.
-
-## 7. Scope Control
-
-- Work only on the requested task.
-- Avoid unrelated refactoring.
-- Avoid introducing features that were not requested.
-- Do not modify unrelated systems.
-- Do not create unnecessary documentation.
-- Do not replace existing functionality without justification.
-- Identify scope expansion before implementing it.
-
-If a task reveals a necessary dependency or architectural issue, explain it before expanding the implementation scope.
-
-## 8. AI Agent Responsibilities
-
-The AI agent is responsible for:
-
-- Understanding the task and existing implementation.
-- Following repository rules and applicable standards.
-- Producing maintainable code and documentation.
-- Identifying risks and missing requirements.
-- Validating its changes.
-- Reporting limitations and incomplete work honestly.
-
-The AI agent does not have independent authority to:
-
-- Redefine the game's vision.
-- Change approved design pillars.
-- Replace established architecture.
-- Change protected Git branches or security policies.
-- Approve its own pull requests.
-- Make irreversible project decisions without authorization.
-
-## 9. Project Status
-
-Before starting substantial work:
-
-- Inspect the current project status documentation if present.
-- Review relevant backlog items.
-- Check existing work and active branches.
-- Identify blockers and dependencies.
-
-After completing authorized work:
-
-- Update status documentation when relevant.
-- Report verified progress.
-- Identify unfinished work.
-- Do not mark tasks complete without validating their acceptance criteria.
-
-## 10. Definition of Completion
-
-A task is complete only when:
-
-- The requested functionality or documentation has been implemented.
-- The change follows applicable standards.
-- Relevant validation has been performed.
-- No known critical regression has been ignored.
-- Related documentation has been updated when necessary.
-- The agent has reported results and remaining limitations.
-
-Generating files or writing code alone does not constitute completion.
-
-## 11. AI Tool Configuration Protection
+## 7. AI Tool Configuration Protection
 
 - Never modify Cline settings, API provider selection, API keys, model selection, API endpoints, authentication credentials, or other AI tool configuration.
 - Never change the configured AI provider from its current selection.

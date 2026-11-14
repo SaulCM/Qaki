@@ -79,19 +79,32 @@ Not every feature requires a comprehensive specification. Significant systems an
 
 Documentation is organized according to its scope and authority.
 
-### 3.1 Studio-Level Documentation
+### 3.1 Repository Root and Project Root
+
+Documentation is organized around two distinct roots.
+
+| Root | Location | Responsibility |
+|---|---|---|
+| Repository root | Repository top-level directory | Studio infrastructure, reusable studio documentation, references, and repository configuration. |
+| Godot project root | `game_project/` | The Godot project, game implementation, and game-specific documentation. |
+
+The repository root is not the Godot project root.
+
+`game_project/` contains `project.godot` and is the only directory treated as a Godot project.
+
+### 3.2 Studio-Level Documentation
 
 Studio-level documentation defines reusable principles, standards, guidelines, templates, and workflows shared across projects.
 
 Location:
 
-`docs/`
+`docs/` at the repository root.
 
 The shared documentation structure is:
 
 ```text
 docs/
-├── README.md
+├── DOCUMENTATION_INVENTORY.md
 ├── 00_studio_standards/
 ├── 01_game_design_guidelines/
 ├── 02_technical_standards/
@@ -115,11 +128,28 @@ Responsibilities:
 | `06_templates/` | Reusable document templates |
 | `07_agent_workflows/` | Procedures for AI-assisted development |
 
-### 3.2 Project-Level Documentation
+Studio documentation MUST NOT contain game-specific specifications, production records, or implementation details for a particular game.
+
+### 3.3 Project-Level Documentation
 
 Project-level documentation describes a specific game's vision, requirements, systems, implementation, and production status.
 
-It must be maintained within the relevant game project or repository.
+Location:
+
+`game_project/docs/`
+
+Recommended structure:
+
+```text
+game_project/
+└── docs/
+    ├── game_design/
+    ├── technical/
+    ├── production/
+    ├── qa/
+    ├── art/
+    └── audio/
+```
 
 Typical categories include:
 
@@ -132,14 +162,46 @@ Typical categories include:
 - QA plans and test cases.
 - Release and project status records.
 
+Requirements:
+
+- Game-specific documentation MUST be created under `game_project/docs/`.
+- Documents instantiated from templates in `docs/06_templates/` MUST be stored under `game_project/docs/`.
+- Reusable studio standards MUST NOT be copied into `game_project/docs/`.
+- Subdirectories SHOULD be created only when an actual document requires them.
+
 Project-specific requirements must not be placed in shared studio standards unless they are intentionally generalized and reusable.
 
-### 3.3 Agent Configuration and Instructions
+### 3.4 Templates and Their Instantiated Documents
+
+- Reusable studio templates are stored in repository-root `docs/06_templates/`.
+- A template is not a project document. Instantiating a template produces a game-specific document under `game_project/docs/`.
+- Templates SHOULD state their recommended destination relative to `game_project/`.
+- Studio agent workflows are stored in repository-root `docs/07_agent_workflows/`.
+- Cline execution workflows are stored in `.clinerules/workflows/`.
+
+### 3.5 Documentation Path Resolution
+
+- Repository-relative documentation paths resolve from the repository root, for example `docs/06_templates/`.
+- Project-relative documentation paths resolve from the Godot project root (`game_project/`), for example `docs/game_design/` inside the project.
+- Because both roots contain a `docs/` directory, documentation MUST use full repository-relative paths when identifying a document: repository-root `docs/...` for studio documentation and `game_project/docs/...` for game-specific documentation.
+- Relative Markdown links resolve from the directory containing the referencing document.
+- When a path is ambiguous, do not guess. Qualify the path or report the ambiguity.
+
+### 3.6 Authority Across Documentation Roots
+
+- Studio documentation establishes reusable standards and processes.
+- Game-specific documentation establishes approved requirements for the current game.
+- Approved project-specific requirements take precedence over studio guidelines for that project.
+- Mandatory studio standards that govern repository-wide practice, such as documentation management and project structure, continue to apply to the game project.
+- Conflicts are resolved using the authority order in Section 4.7.
+- A conflict MUST NOT be resolved by copying documents between the two roots or by creating a second authoritative copy.
+
+### 3.7 Agent Configuration and Instructions
 
 Agent-specific instructions belong in the appropriate agent configuration directories, such as:
 
 - `.cline/rules/`
-- `.cline/workflows/`
+- `.clinerules/workflows/`
 - `.github/`
 
 These files govern agent behavior and repository-specific automation.

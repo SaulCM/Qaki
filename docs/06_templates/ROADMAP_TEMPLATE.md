@@ -726,10 +726,10 @@ Approval does not make every future roadmap item an unconditional commitment. Pl
 
 Use the following documents when applicable:
 
-- Game Vision: `docs/game_design/game_vision.md`
-- Game Design Document: `docs/game_design/game_design_document.md`
-- Core Pillars: `docs/game_design/core_pillars.md`
-- Project Lifecycle: `docs/production/project_lifecycle.md`
+- Game Vision: `game_project/docs/game_design/game_vision.md`
+- Game Design Document: `game_project/docs/game_design/game_design_document.md`
+- Core Pillars: `game_project/docs/game_design/core_pillars.md`
+- Project Lifecycle: `game_project/docs/production/project_lifecycle.md`
 - Milestone Guidelines: `docs/04_production_standards/milestone_guidelines.md`
 - Milestone Template: `docs/06_templates/milestone_template.md`
 - Backlog Management: `docs/04_production_standards/backlog_management.md`

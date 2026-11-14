@@ -33,7 +33,7 @@ The generated document must:
 | Property | Requirement |
 |---|---|
 | Output Filename | `[YYYY-MM-DD]-[subject].md` |
-| Recommended Location | `docs/production/postmortems/` |
+| Recommended Location | `game_project/docs/production/postmortems/` |
 | Document Type | Project-specific postmortem record |
 | Primary Audience | Project owner, developers, designers, AI agents |
 | Source of Truth | Actual project records and verified evidence |

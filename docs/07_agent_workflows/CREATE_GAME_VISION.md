@@ -33,7 +33,7 @@ This workflow does not cover detailed gameplay mechanics, complete narrative dev
 
 | Property | Value |
 |---|---|
-| Output Document | `docs/game_design/game_vision.md` |
+| Output Document | `game_project/docs/game_design/game_vision.md` |
 | Source Template | `docs/06_templates/game_vision_template.md` |
 | Document Type | Game Design |
 | Primary Owner | Project Owner / Game Director |
@@ -382,7 +382,7 @@ The agent MAY recommend scope adjustments but MUST NOT silently weaken or redefi
 6. Document unresolved questions.
 7. Reference relevant project documents.
 8. Set the document status to `Draft`.
-9. Save the document at `docs/game_design/game_vision.md`.
+9. Save the document at `game_project/docs/game_design/game_vision.md`.
 
 The generated document MUST:
 
@@ -559,7 +559,7 @@ After execution, provide a report using the following structure:
 
 **Status:** [Completed / Partially Completed / Blocked]
 
-**Output Document:** `docs/game_design/game_vision.md`
+**Output Document:** `game_project/docs/game_design/game_vision.md`
 
 **Vision Statement:**
 

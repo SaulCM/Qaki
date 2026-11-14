@@ -48,11 +48,11 @@ Read only the references relevant to the proposed mechanic when the full set is 
 
 Inspect available project documents, prioritizing:
 
-- `docs/game_design/game_concept.md`
-- `docs/game_design/game_vision.md`
-- `docs/game_design/core_pillars.md`
-- `docs/game_design/game_design_document.md`
-- `docs/game_design/core_game_loop.md`
+- `game_project/docs/game_design/game_concept.md`
+- `game_project/docs/game_design/game_vision.md`
+- `game_project/docs/game_design/core_pillars.md`
+- `game_project/docs/game_design/game_design_document.md`
+- `game_project/docs/game_design/core_game_loop.md`
 - Relevant gameplay system specifications.
 - Relevant mechanic specifications.
 - Relevant character, world, quest, progression, economy, and UI/UX documents.
@@ -348,7 +348,7 @@ Use:
 
 Generate the project-specific document at:
 
-`docs/game_design/mechanics/[mechanic_name].md`
+`game_project/docs/game_design/mechanics/[mechanic_name].md`
 
 Replace `[mechanic_name]` with an appropriate lowercase `snake_case` filename, following project naming conventions.
 
@@ -526,7 +526,7 @@ After completing the workflow, provide a concise report:
 
 **Status:** Draft / In Review / Approved
 
-**Document:** `docs/game_design/mechanics/[mechanic_name].md`
+**Document:** `game_project/docs/game_design/mechanics/[mechanic_name].md`
 
 **Purpose:** [Brief description]
 

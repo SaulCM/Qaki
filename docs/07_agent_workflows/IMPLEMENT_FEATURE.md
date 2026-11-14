@@ -66,10 +66,10 @@ Read the standards relevant to the feature rather than loading every document un
 
 Inspect available project documents, prioritizing:
 
-- `docs/game_design/game_concept.md`
-- `docs/game_design/game_vision.md`
-- `docs/game_design/core_pillars.md`
-- `docs/game_design/game_design_document.md`
+- `game_project/docs/game_design/game_concept.md`
+- `game_project/docs/game_design/game_vision.md`
+- `game_project/docs/game_design/core_pillars.md`
+- `game_project/docs/game_design/game_design_document.md`
 - Relevant gameplay system specifications.
 - Relevant mechanic specifications.
 - Technical design documents.

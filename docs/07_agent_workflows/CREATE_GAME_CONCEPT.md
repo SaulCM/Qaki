@@ -32,7 +32,7 @@ This workflow does not cover detailed gameplay specifications, complete narrativ
 
 | Property | Value |
 |---|---|
-| Output Document | `docs/game_design/game_concept.md` |
+| Output Document | `game_project/docs/game_design/game_concept.md` |
 | Document Type | Game Design |
 | Primary Owner | Project Owner / Game Director |
 | Approval Authority | Project Owner |
@@ -379,7 +379,7 @@ For each important risk, identify a possible validation approach.
 
 Create or update:
 
-`docs/game_design/game_concept.md`
+`game_project/docs/game_design/game_concept.md`
 
 The document SHOULD contain:
 
@@ -572,7 +572,7 @@ After execution, provide a report using the following structure:
 
 **Status:** [Completed / Partially Completed / Blocked]
 
-**Output Document:** `docs/game_design/game_concept.md`
+**Output Document:** `game_project/docs/game_design/game_concept.md`
 
 **Concept Summary:**
 

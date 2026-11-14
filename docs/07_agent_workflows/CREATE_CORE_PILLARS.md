@@ -30,7 +30,7 @@ This workflow does not authorize agents to independently redefine the game's vis
 
 | Property | Value |
 |---|---|
-| Output Document | `docs/game_design/core_pillars.md` |
+| Output Document | `game_project/docs/game_design/core_pillars.md` |
 | Source Template | `docs/06_templates/core_pillars_template.md` |
 | Document Type | Game Design |
 | Primary Owner | Project Owner / Game Director |
@@ -277,7 +277,7 @@ Do not invent numerical targets or claim that validation has occurred when no ev
 5. Reference supporting project documents where appropriate.
 6. Record unresolved questions.
 7. Set the document status to `Draft`.
-8. Save the document at `docs/game_design/core_pillars.md`.
+8. Save the document at `game_project/docs/game_design/core_pillars.md`.
 
 The generated document MUST:
 
@@ -406,7 +406,7 @@ After execution, provide a report using the following structure:
 
 **Status:** [Completed / Partially Completed / Blocked]
 
-**Output Document:** `docs/game_design/core_pillars.md`
+**Output Document:** `game_project/docs/game_design/core_pillars.md`
 
 **Project Context Reviewed:**
 - [Document]
@@ -450,10 +450,10 @@ After execution, provide a report using the following structure:
 
 ### Project Documentation
 
-- Game Vision: `docs/game_design/game_vision.md`
-- Game Design Document: `docs/game_design/game_design_document.md`
-- Core Game Loop: `docs/game_design/core_game_loop.md`
-- Narrative Overview: `docs/game_design/narrative/narrative_overview.md`
+- Game Vision: `game_project/docs/game_design/game_vision.md`
+- Game Design Document: `game_project/docs/game_design/game_design_document.md`
+- Core Game Loop: `game_project/docs/game_design/core_game_loop.md`
+- Narrative Overview: `game_project/docs/game_design/narrative/narrative_overview.md`
 
 Only use references that exist in the applicable repository.
 

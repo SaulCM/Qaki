@@ -2,7 +2,7 @@
 
 **Document Type:** Studio Standard  
 **Status:** Draft  
-**Applies To:** All studio game projects using Godot Engine and GDScript
+**Applies To:** Repository-level structure and all studio game projects using Godot Engine and GDScript
 
 ---
 
@@ -26,6 +26,7 @@ The objective is to organize project elements around meaningful game features an
 
 This standard applies to:
 
+- Repository-level structure and configuration.
 - Godot project repositories.
 - Game features and systems.
 - GDScript source files.
@@ -36,9 +37,10 @@ This standard applies to:
 - Configuration and project settings.
 - Automated tests and testing resources.
 - Project-specific technical documentation.
+- The boundary between reusable studio documentation and game-specific documentation.
 - Development and build tooling.
 
-This document defines where project elements belong and how they should be organized. Detailed naming rules, coding practices, and architectural principles are defined in their respective standards.
+This document defines where project elements belong and how they should be organized, and it establishes the boundary between the repository root and the Godot project root. Detailed naming rules, coding practices, and architectural principles are defined in their respective standards.
 
 ## 3. Mandatory Organizational Principles
 
@@ -86,26 +88,79 @@ Do not create empty feature directories, unnecessary abstractions, or elaborate 
 
 Start with the simplest structure that adequately supports the current project.
 
+### 3.8 Two-Root Separation
+
+The repository root and the Godot project root MUST remain distinct.
+
+- The repository root MUST NOT be treated as the Godot project root.
+- `game_project/` MUST be the Godot project root and MUST contain `project.godot`.
+- Reusable studio documentation MUST remain in repository-root `docs/`.
+- Game-specific documentation MUST remain in `game_project/docs/`.
+- Game implementation MUST remain inside `game_project/`.
+
+Studio infrastructure, studio documentation, and game implementation MUST NOT be mixed within the same organizational layer.
+
 ## 4. Standard Repository Structure
 
-Godot projects MUST follow the feature-oriented organizational model illustrated below.
+The repository uses a two-root architecture. The repository root holds studio infrastructure and reusable studio documentation. The Godot project root holds the game.
+
+### 4.1 Repository Structure
+
+Repository-level content MUST follow this organization.
 
 ```text
-project-root/
+repository-root/
+│
+├── .cline/
+│   └── rules/
+│
+├── .clinerules/
+│   └── workflows/
 │
 ├── .github/
 │   ├── workflows/
 │   ├── ISSUE_TEMPLATE/
 │   └── PULL_REQUEST_TEMPLATE.md
 │
-├── .cline/
-│   └── rules/
+├── docs/                              # Studio documentation only
+│   ├── DOCUMENTATION_INVENTORY.md
+│   ├── 00_studio_standards/
+│   ├── 01_game_design_guidelines/
+│   ├── 02_technical_standards/
+│   ├── 03_art_audio_standards/
+│   ├── 04_production_standards/
+│   ├── 05_qa_standards/
+│   ├── 06_templates/
+│   └── 07_agent_workflows/
 │
-├── docs/
-│   ├── game_design/
-│   ├── technical/
-│   ├── production/
-│   └── qa/
+├── references/
+│
+├── game_project/                      # Godot project root
+│
+├── .clineignore
+├── .gitattributes
+├── .gitignore
+└── README.md
+```
+
+The repository root MUST NOT contain `project.godot`.
+
+Repository-level documentation in `docs/` MUST contain reusable studio material only. Game-specific specifications, production records, and implementation documents MUST NOT be placed there.
+
+### 4.2 Godot Project Structure
+
+`game_project/` is the Godot project root. It contains the game implementation and game-specific documentation.
+
+Godot projects MUST follow the feature-oriented organizational model illustrated below.
+
+```text
+game_project/
+│
+├── project.godot
+│
+├── addons/
+│
+├── assets/
 │
 ├── features/
 │   ├── player/
@@ -115,21 +170,7 @@ project-root/
 │   │   ├── assets/
 │   │   └── tests/
 │   │
-│   ├── inventory/
-│   │   ├── scenes/
-│   │   ├── scripts/
-│   │   ├── resources/
-│   │   ├── assets/
-│   │   └── tests/
-│   │
-│   ├── combat/
-│   │   ├── scenes/
-│   │   ├── scripts/
-│   │   ├── resources/
-│   │   ├── assets/
-│   │   └── tests/
-│   │
-│   └── dialogue/
+│   └── inventory/
 │       ├── scenes/
 │       ├── scripts/
 │       ├── resources/
@@ -148,22 +189,26 @@ project-root/
 │   ├── configuration/
 │   └── integrations/
 │
-├── tools/
+├── tests/
 │
-├── .editorconfig
-├── .gitattributes
-├── .gitignore
-├── project.godot
-└── README.md
+└── docs/                              # Game-specific documentation
+    ├── game_design/
+    ├── technical/
+    ├── production/
+    └── qa/
 ```
 
-This is a reference structure, not a requirement to create every illustrated directory.
+### 4.3 Reference Structure Boundaries
+
+Both illustrated structures are reference structures, not a requirement to create every directory.
 
 Only create directories when they contain actual project content.
 
-The project MUST preserve the feature-oriented organizational strategy even when its exact feature names and internal subdivisions differ.
+The repository MUST preserve the two-root separation and the feature-oriented organizational strategy even when the exact feature names and internal subdivisions differ.
 
 ## 5. Directory Responsibilities
+
+Sections 5.1 to 5.7 describe directories inside the Godot project root (`game_project/`). Sections 5.8 to 5.14 identify the remaining project and repository-level directories.
 
 ### 5.1 `features/`
 
@@ -262,9 +307,33 @@ Infrastructure MUST NOT become a general-purpose location for unrelated gameplay
 
 Gameplay systems SHOULD remain inside their respective feature directories unless they genuinely provide project-wide infrastructure.
 
-### 5.5 `docs/`
+### 5.5 `addons/`
 
-Contains project-specific documentation.
+Contains third-party Godot plugins and addons installed into the Godot project.
+
+- Third-party plugins MUST remain inside `game_project/addons/`.
+- Do not modify third-party addon code without a documented reason.
+- Project code MUST NOT depend on studio documentation or repository tooling through an addon.
+
+### 5.6 `assets/`
+
+Contains game assets that are not owned by a single feature.
+
+- Feature-specific assets SHOULD remain inside the owning feature.
+- Assets used by multiple features MAY be stored in `game_project/assets/` or `game_project/shared/assets/` according to their use.
+- Avoid maintaining duplicate copies of the same asset.
+
+### 5.7 `tests/`
+
+Contains project-level integration tests that validate interactions across multiple features.
+
+Unit tests SHOULD remain inside the feature or shared module they validate.
+
+Test organization is defined further in Section 8.
+
+### 5.8 `docs/`
+
+Contains game-specific documentation for the current game. The location is `game_project/docs/`.
 
 Typical categories:
 
@@ -274,12 +343,28 @@ Typical categories:
 | `technical/` | Architecture, technical specifications, and implementation decisions. |
 | `production/` | Roadmaps, milestones, sprint plans, and production tracking. |
 | `qa/` | Test plans, test reports, and quality-related project documentation. |
+| `art/` | Project-specific art direction and visual specifications. |
+| `audio/` | Project-specific audio direction and sound specifications. |
 
-Reusable studio standards MUST remain in the designated shared studio documentation location.
+Requirements:
 
-Project documentation SHOULD reference shared standards rather than copy their contents.
+- Game-specific documentation MUST be created under `game_project/docs/`.
+- Documents instantiated from templates in repository-root `docs/06_templates/` MUST be stored under `game_project/docs/`.
+- Reusable studio standards MUST remain in repository-root `docs/` and MUST NOT be copied into `game_project/docs/`.
+- Game-specific documentation SHOULD reference studio standards rather than copy their contents.
+- Subdirectories SHOULD be created only when an actual document requires them.
 
-### 5.6 `.github/`
+### 5.9 `project.godot`
+
+Contains the Godot project definition and project-wide configuration.
+
+- `game_project/project.godot` MUST be the single Godot project definition in the repository.
+- The repository root MUST NOT contain `project.godot`.
+- All Godot `res://` paths resolve relative to `game_project/`.
+- Project settings SHOULD be edited through the Godot editor where practical.
+- AI agents MUST NOT change project configuration without explicit instruction.
+
+### 5.10 `.github/`
 
 Contains GitHub-specific repository configuration.
 
@@ -292,7 +377,7 @@ Typical contents:
 
 It MUST NOT contain game source code or runtime assets.
 
-### 5.7 `.cline/`
+### 5.11 `.cline/`
 
 Contains Cline-specific configuration and agent instructions.
 
@@ -304,7 +389,32 @@ Typical contents:
 
 Agent instructions SHOULD reference authoritative documentation instead of duplicating studio standards.
 
-### 5.8 `tools/`
+### 5.12 `.clinerules/`
+
+Contains Cline execution workflows in `.clinerules/workflows/`.
+
+These workflows define how agents perform repository tasks. They MUST reference authoritative studio and project documentation instead of duplicating its requirements.
+
+Studio agent procedures remain in repository-root `docs/07_agent_workflows/`. Cline execution workflows MUST NOT contain studio standards.
+
+### 5.13 `references/`
+
+Contains repository-level reference material used for research and production support.
+
+Typical categories include:
+
+- `architectural/`
+- `audio/`
+- `historical/`
+- `visual/`
+
+Requirements:
+
+- Reference material is not authoritative documentation. Studio standards and approved project documentation take precedence.
+- Game implementation MUST NOT depend on `references/` at runtime.
+- Material that the game imports or ships MUST be stored inside `game_project/`.
+
+### 5.14 `tools/`
 
 Contains development utilities that support the project but are not part of the game's runtime.
 
@@ -320,13 +430,37 @@ Runtime game functionality MUST NOT depend on development-only tools unless expl
 
 ## 6. Feature Boundaries and Dependencies
 
-### 6.1 Feature Independence
+### 6.1 Repository and Project Ownership Boundaries
+
+| Element | Location |
+|---|---|
+| Studio standards, guidelines, templates, and agent workflows | Repository-root `docs/` |
+| Game-specific documentation | `game_project/docs/` |
+| Shared game code | `game_project/shared/` |
+| Feature-specific implementation | `game_project/features/` |
+| Project-wide technical infrastructure | `game_project/infrastructure/` |
+| Third-party plugins and addons | `game_project/addons/` |
+| Repository-level reference material | `references/` |
+| Cline configuration and execution workflows | `.cline/` and `.clinerules/` |
+| GitHub configuration | `.github/` |
+
+Requirements:
+
+- Studio documentation MUST describe reusable standards and processes. It MUST NOT contain game-specific specifications, production records, or implementation details.
+- Game-specific documentation belongs to the game project and MUST be maintained under `game_project/docs/`.
+- Game implementation MUST NOT depend on repository documentation directories at runtime.
+- Feature code MUST NOT depend on studio documentation or repository-level reference material.
+- Shared code belongs in `game_project/shared/` and MUST NOT depend on individual gameplay features.
+- Project-wide infrastructure belongs in `game_project/infrastructure/` and MUST NOT become a container for gameplay logic.
+- Third-party plugins belong in `game_project/addons/` and MUST remain isolated from studio documentation.
+
+### 6.2 Feature Independence
 
 Features SHOULD encapsulate their own implementation details.
 
 A feature MUST NOT directly manipulate another feature's internal state when an established public interface, signal, or shared component provides an appropriate interaction mechanism.
 
-### 6.2 Cross-Feature Communication
+### 6.3 Cross-Feature Communication
 
 Features SHOULD communicate through clearly defined interfaces.
 
@@ -340,7 +474,7 @@ Appropriate mechanisms MAY include:
 
 Avoid unnecessary direct references between unrelated features.
 
-### 6.3 Dependency Direction
+### 6.4 Dependency Direction
 
 Dependencies SHOULD follow the architecture established for the project.
 
@@ -349,7 +483,7 @@ Dependencies SHOULD follow the architecture established for the project.
 - Infrastructure SHOULD provide technical support without becoming a container for gameplay logic.
 - Circular dependencies between features MUST be avoided.
 
-### 6.4 Feature Extraction
+### 6.5 Feature Extraction
 
 Functionality MAY be moved into a separate feature or shared module when its responsibility and reuse justify the separation.
 
@@ -359,7 +493,13 @@ Do not split cohesive functionality into multiple features simply to create smal
 
 ### 7.1 Project Root
 
+The Godot project root is `game_project/`.
+
 The `project.godot` file MUST remain at the Godot project root.
+
+The repository root MUST NOT contain `project.godot`.
+
+All Godot `res://` paths resolve relative to `game_project/`.
 
 The root SHOULD contain only essential project-level files and organizational directories.
 
@@ -449,7 +589,7 @@ Node organization MUST NOT be used as a substitute for proper feature boundaries
 
 ### 7.8 Generated Files
 
-The `.godot/` directory contains generated editor and import data.
+The `.godot/` directory inside the Godot project root contains generated editor and import data.
 
 It MUST NOT be treated as source-controlled project content.
 
@@ -551,17 +691,21 @@ AI agents MUST follow this standard when creating or modifying project structure
 Before making structural changes, agents MUST:
 
 1. Inspect the existing repository structure.
-2. Read relevant project and studio documentation.
-3. Identify the owning feature of each new file.
-4. Check whether an appropriate feature or shared module already exists.
-5. Follow the established feature-oriented organization.
-6. Preserve clear feature boundaries.
-7. Avoid introducing unnecessary directories or duplicate structures.
-8. Preserve Godot resource paths and dependencies.
-9. Update documentation when structural changes affect documented organization.
+2. Treat `game_project/` as the Godot project root.
+3. Read relevant project and studio documentation.
+4. Identify the owning feature of each new file.
+5. Check whether an appropriate feature or shared module already exists.
+6. Follow the established feature-oriented organization.
+7. Preserve clear feature boundaries.
+8. Avoid introducing unnecessary directories or duplicate structures.
+9. Preserve Godot resource paths and dependencies.
+10. Update documentation when structural changes affect documented organization.
 
 AI agents MUST NOT:
 
+- Treat the repository root as the Godot project root.
+- Create game-specific documentation under repository-root `docs/`.
+- Create studio-wide documentation under `game_project/docs/`.
 - Introduce a type-oriented root hierarchy for game functionality.
 - Move feature-specific files into unrelated features.
 - Place shared functionality inside a feature without considering its ownership.
@@ -577,6 +721,10 @@ Significant structural changes MUST be proposed for human approval before implem
 
 Before completing a task, verify that:
 
+- [ ] The repository root was not treated as the Godot project root.
+- [ ] Game-specific files and documentation are located inside `game_project/`.
+- [ ] Game-specific documentation is located under `game_project/docs/`.
+- [ ] Studio documentation was not duplicated inside `game_project/docs/`.
 - [ ] New functionality belongs to an appropriate feature.
 - [ ] Related scenes, scripts, resources, assets, and tests are grouped by ownership.
 - [ ] The feature-oriented organizational strategy is consistently followed.
@@ -605,14 +753,14 @@ Exceptions MUST:
 
 ## 14. Related Documents
 
-- `development_philosophy.md`
-- `documentation_standards.md`
-- `naming_conventions.md`
-- `architecture_guidelines.md`
-- `gdscript_standards.md`
-- `asset_management_standards.md`
-- `definition_of_done.md`
-- `code_review_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
 
 Only maintain references to documents that actually exist in the repository.
 

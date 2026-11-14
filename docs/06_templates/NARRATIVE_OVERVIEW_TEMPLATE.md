@@ -32,7 +32,7 @@ The generated document must:
 | Property | Requirement |
 |---|---|
 | Output Filename | `narrative_overview.md` |
-| Recommended Location | `docs/game_design/narrative/narrative_overview.md` |
+| Recommended Location | `game_project/docs/game_design/narrative/narrative_overview.md` |
 | Document Type | Project-specific narrative specification |
 | Primary Audience | Project owner, narrative designers, game designers, developers, AI agents |
 | Source of Truth | Approved project documents |

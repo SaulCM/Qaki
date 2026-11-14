@@ -42,7 +42,7 @@ The agent MUST use judgment and avoid creating documentation overhead for trivia
 
 | Property | Value |
 |---|---|
-| Output Document | `docs/technical/designs/[system_name]_technical_design.md` |
+| Output Document | `game_project/docs/technical/designs/[system_name]_technical_design.md` |
 | Source Template | `docs/06_templates/technical_design_template.md` |
 | Document Type | Technical Design |
 | Primary Owner | Project Owner / Technical Lead |
@@ -627,7 +627,7 @@ If an ADR is required:
 
 1. Follow `docs/02_technical_standards/adr/README.md`.
 2. Use the ADR Template.
-3. Create the project-specific ADR in `docs/technical/adr/`.
+3. Create the project-specific ADR in `game_project/docs/technical/adr/`.
 4. Reference the ADR from the Technical Design Document.
 5. Keep the ADR status `Proposed` until approved.
 
@@ -647,7 +647,7 @@ Not every technical implementation requires an ADR.
 8. Identify risks and unresolved questions.
 9. Define testing and validation requirements.
 10. Set the document status to `Draft`.
-11. Save the document at `docs/technical/designs/[system_name]_technical_design.md`.
+11. Save the document at `game_project/docs/technical/designs/[system_name]_technical_design.md`.
 
 The generated document MUST:
 
@@ -834,7 +834,7 @@ After execution, provide a report using the following structure:
 
 **Status:** [Completed / Partially Completed / Blocked]
 
-**Output Document:** `docs/technical/designs/[system_name]_technical_design.md`
+**Output Document:** `game_project/docs/technical/designs/[system_name]_technical_design.md`
 
 **System or Feature:** [Name]
 
@@ -912,11 +912,11 @@ After execution, provide a report using the following structure:
 
 ### Project Documentation
 
-- Game Design Document: `docs/game_design/game_design_document.md`
-- Gameplay System Specifications: `docs/game_design/systems/`
-- Technical Design Documents: `docs/technical/designs/`
-- Architecture Decision Records: `docs/technical/adr/`
-- Test Plans: `docs/qa/test_plans/`
+- Game Design Document: `game_project/docs/game_design/game_design_document.md`
+- Gameplay System Specifications: `game_project/docs/game_design/systems/`
+- Technical Design Documents: `game_project/docs/technical/designs/`
+- Architecture Decision Records: `game_project/docs/technical/adr/`
+- Test Plans: `game_project/docs/qa/test_plans/`
 
 Only use references that exist in the applicable repository.
 

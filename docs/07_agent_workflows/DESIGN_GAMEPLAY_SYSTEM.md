@@ -66,11 +66,11 @@ Read only the references relevant to the system being designed.
 
 Inspect available project documentation, prioritizing:
 
-- `docs/game_design/game_concept.md`
-- `docs/game_design/game_vision.md`
-- `docs/game_design/core_pillars.md`
-- `docs/game_design/game_design_document.md`
-- `docs/game_design/core_game_loop.md`
+- `game_project/docs/game_design/game_concept.md`
+- `game_project/docs/game_design/game_vision.md`
+- `game_project/docs/game_design/core_pillars.md`
+- `game_project/docs/game_design/game_design_document.md`
+- `game_project/docs/game_design/core_game_loop.md`
 - Existing gameplay system specifications.
 - Relevant mechanic specifications.
 - Relevant character, quest, world, progression, economy, and UI/UX documents.
@@ -503,7 +503,7 @@ Use:
 
 Generate the project-specific document at:
 
-`docs/game_design/systems/[system_name]_system.md`
+`game_project/docs/game_design/systems/[system_name]_system.md`
 
 Replace `[system_name]` with an appropriate lowercase `snake_case` filename.
 
@@ -702,7 +702,7 @@ After completing the workflow, provide a concise report:
 
 **Status:** Draft / In Review / Approved
 
-**Document:** `docs/game_design/systems/[system_name]_system.md`
+**Document:** `game_project/docs/game_design/systems/[system_name]_system.md`
 
 **Purpose:** [Brief description]
 

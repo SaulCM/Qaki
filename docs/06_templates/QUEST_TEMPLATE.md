@@ -915,15 +915,15 @@ The project owner must review and approve significant decisions involving:
 
 ### 20.3 Related Documents
 
-- Game Design Document: `docs/game_design/game_design_document.md`
-- Game Vision: `docs/game_design/game_vision.md`
-- Core Pillars: `docs/game_design/core_pillars.md`
-- Narrative Overview: `docs/game_design/narrative/narrative_overview.md`
+- Game Design Document: `game_project/docs/game_design/game_design_document.md`
+- Game Vision: `game_project/docs/game_design/game_vision.md`
+- Core Pillars: `game_project/docs/game_design/core_pillars.md`
+- Narrative Overview: `game_project/docs/game_design/narrative/narrative_overview.md`
 - Narrative Design Guidelines: `docs/01_game_design_guidelines/narrative_design_guidelines.md`
 - Quest Design Guidelines: [Add the actual project or studio reference if one exists]
-- Character Specifications: `docs/game_design/characters/`
-- Level Design Specifications: `docs/game_design/levels/`
-- Gameplay System Specifications: `docs/game_design/systems/`
+- Character Specifications: `game_project/docs/game_design/characters/`
+- Level Design Specifications: `game_project/docs/game_design/levels/`
+- Gameplay System Specifications: `game_project/docs/game_design/systems/`
 - Acceptance Criteria Guidelines: `docs/05_qa_standards/acceptance_criteria_guidelines.md`
 
 Only retain references that exist in the applicable repository.

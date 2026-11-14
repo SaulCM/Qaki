@@ -135,17 +135,22 @@ This directory defines how ADRs are managed. It does not contain the actual arch
 
 Each game repository MUST store its own ADRs.
 
-Recommended structure:
+Recommended structure, relative to the Godot project root (`game_project/`):
 
 ```text
-docs/
-└── technical/
-    └── adr/
-        ├── README.md
-        ├── 0001-use-feature-oriented-architecture.md
-        ├── 0002-use-godot-signals-for-event-notifications.md
-        └── 0003-define-save-data-versioning-strategy.md
+game_project/
+└── docs/
+    └── technical/
+        └── adr/
+            ├── README.md
+            ├── 0001-use-feature-oriented-architecture.md
+            ├── 0002-use-godot-signals-for-event-notifications.md
+            └── 0003-define-save-data-versioning-strategy.md
 ```
+
+Project-level ADRs MUST be stored under `game_project/docs/technical/adr/`.
+
+They MUST NOT be stored under repository-root `docs/`, which contains only the studio-level ADR process and template.
 
 The project-level `README.md` SHOULD serve as an index of the project's ADRs.
 
