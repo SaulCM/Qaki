@@ -76,6 +76,21 @@ Do not state, assume, or rely on a planned directory as if it already exists. Ve
 - Never modify files outside the task scope.
 - Report conflicts between authoritative documents instead of silently choosing one.
 
+### 5.1 Greenfield Project Authorship
+
+Where the game project has not yet defined and approved its game vision, game pillars, game design, technical design, or other project-specific requirements — the current state of this repository — the gap MUST NOT be closed by inventing content.
+
+- The project owner is responsible for providing and approving the following, consistent with `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md` (section 12.1) and `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md` (section 8.2):
+  - the game vision;
+  - the game pillars;
+  - game design decisions;
+  - technical architecture decisions;
+  - project-specific requirements.
+- The agent MAY ask the project owner questions, analyse alternatives, present recommendations with their trade-offs, record decisions the project owner has approved, and identify missing requirements and contradictions between documents.
+- The agent MUST NOT invent, infer, or silently extend game requirements, design decisions, or architectural constraints, and MUST NOT present a recommendation, draft, or assumption as an approved decision.
+- When required information is missing, the agent MUST ask the project owner for it, or explicitly mark it as undecided in the task report or the project document concerned. It MUST NOT proceed as though the gap had been settled.
+- A decision supplied by the project owner is recorded as a project document under `game_project/docs/` at the location required by `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md` (section 3.3), and counts as approved only when the project owner explicitly approved it. Creating or updating that document follows `.cline/rules/documentation-management.md`.
+
 ## 6. Authority Order
 
 1. Explicit instructions from the human maintainer for the current task.
