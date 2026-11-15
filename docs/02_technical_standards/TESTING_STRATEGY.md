@@ -723,6 +723,36 @@ A typical execution order SHOULD prioritize fast feedback:
 
 The actual order MAY be adapted to project architecture and tooling.
 
+### 13.6 Minimum Verification Contract
+
+A project MUST establish a minimum verification contract before gameplay implementation begins. The contract is the smallest set of checks that can actually be executed in the project's current state, and it does not require a testing framework, a test runner, or a CI pipeline.
+
+The contract MUST include, as a minimum:
+
+- A headless project validation command that opens the project, imports its resources, and exits: `godot --headless --path <project-root> --import`. A successful run exits with status `0`.
+- A parse check for changed GDScript files: `godot --headless --path <project-root> --check-only --script <script>`.
+- A headless smoke run, once the project defines a main scene: `godot --headless --path <project-root> --quit-after <frames>`.
+- A manual smoke checklist for behavior that headless execution cannot observe.
+
+The manual smoke checklist MUST cover at least:
+
+- The project opens successfully.
+- The main project configuration loads without errors.
+- The scenes affected by the change can be opened.
+- The implemented functionality works as intended.
+- No unexpected runtime errors appear.
+
+The project MUST record the verified executable and the commands actually executed for its own environment. The command forms above are portable; the recorded project commands take precedence and MUST be the ones that were executed.
+
+Reports MUST distinguish the two verification modes:
+
+- Automated verification is a command whose exit status and output were observed. The command, its exit status, and its relevant output MUST be reported.
+- Manual verification is an observation made in the editor or in a running project. The steps performed and what they did not cover MUST be reported.
+
+The absence of a testing framework, a test runner, or a CI job MUST be stated explicitly and MUST NOT be presented as evidence that a change was verified.
+
+A minimum verification contract does not authorize adopting a testing framework or CI pipeline; those remain separate project decisions (section 11).
+
 ## 14. Test Results and Reporting
 
 ### 14.1 Test Results

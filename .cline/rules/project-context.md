@@ -108,3 +108,17 @@ Where the game project has not yet defined and approved its game vision, game pi
 - Treat all AI tool configuration as user-managed and outside repository task scope.
 - If a task appears to require changing AI tool configuration, stop and request explicit owner approval.
 - These restrictions apply even when a configuration change appears necessary to complete a task.
+
+## 8. Minimum Verification Contract
+
+`docs/02_technical_standards/TESTING_STRATEGY.md` (section 13.6) requires a minimum verification contract. No testing framework, test runner, or CI job exists in this repository, and no game script, scene, or main scene exists yet, so this section records the checks that can actually be executed today. `TESTING_STRATEGY.md` (section 11.3) requires project-specific execution commands to be documented in the game repository; the long-term record belongs in `game_project/docs/technical/overview.md`, which does not exist yet, so these values are recorded here until it is created.
+
+- **Engine executable (verified 2026-11-15):** `C:\Program Files\Godot\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-stable_win64_console.exe`, reporting `4.7.2.stable.official.ed1daf0bf` for `--version`. If that path does not exist, report it; do not substitute a different engine version without owner approval.
+- **Automated project validation:** `& '<engine executable>' --headless --path game_project --import` — verified with exit status `0`. It opens the project headlessly, imports resources, loads the enabled `godot_mcp` editor plugin, and quits. The plugin reports `ObjectDB instances were leaked at exit` and `resources still in use at exit` on stderr; these originate from the plugin's shutdown, and the exit status remains `0`.
+- **Script parse check** (not yet applicable; no game scripts exist): `& '<engine executable>' --headless --path game_project --check-only --script <script path>`.
+- **Headless smoke run** (not yet applicable; no main scene is defined, and the command currently exits with status `1` and `Can't run project: no main scene defined`): `& '<engine executable>' --headless --path game_project --quit-after <frames>`.
+- **Manual smoke checklist:** the five checks in `docs/02_technical_standards/TESTING_STRATEGY.md` (section 13.6) apply to every change, together with the scenes and behavior that the change affects.
+
+Completion reports MUST state which automated commands were executed, their exit status and relevant output, which manual checks were performed, and that no test framework, runner, or CI job exists. A change MUST NOT be described as tested, passing, or CI-verified on the strength of these checks alone.
+
+These commands write only to `game_project/.godot/`, which `.gitignore` excludes (`.gitignore`, line 7). That directory MUST NOT be committed.
