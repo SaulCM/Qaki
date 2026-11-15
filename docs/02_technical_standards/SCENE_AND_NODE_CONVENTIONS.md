@@ -746,6 +746,32 @@ UI design and interaction behavior MUST follow the applicable guidelines in:
 
 `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
 
+UI visual, usability, and accessibility requirements MUST follow:
+
+`docs/03_art_audio_standards/UI_UX_STANDARDS.md`
+
+This section owns the Godot-specific implementation requirements for UI. The design guideline defines intended interface design and interaction behavior; it does not define engine-level implementation policy.
+
+### 15.6 UI Implementation Principles
+
+The following principles SHOULD guide implementation:
+
+- Keep UI functionality within the feature that owns the relevant interface.
+- Use reusable interface components when they provide genuine value.
+- Keep presentation logic separate from gameplay rules where appropriate.
+- Use Godot Control nodes and containers according to their intended responsibilities.
+- Prefer container-based layouts over unnecessary fixed positioning.
+- Use theme resources and shared style definitions to maintain visual consistency.
+- Avoid duplicating common interaction behavior across unrelated interfaces.
+- Handle focus and input navigation explicitly.
+- Ensure UI state reflects authoritative gameplay state.
+- Avoid tightly coupling UI elements to unrelated gameplay internals.
+- Use signals or established interfaces for communication between UI and gameplay features.
+- Validate interface behavior when scenes are opened, closed, or reloaded.
+- Avoid unnecessary processing or repeated updates when interface data has not changed.
+
+UI implementation SHOULD remain modular, testable, and maintainable without introducing unnecessary abstraction.
+
 ## 16. Scene Performance
 
 ### 16.1 Node Count
@@ -963,6 +989,7 @@ These conventions SHOULD be used alongside:
 - `docs/02_technical_standards/ASSET_PIPELINE.md`
 - `docs/02_technical_standards/adr/README.md`
 - `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
+- `docs/03_art_audio_standards/UI_UX_STANDARDS.md`
 - Applicable documents in `docs/05_qa_standards/`
 
 Only documents that physically exist in the repository SHOULD be registered as active references in the documentation inventory.

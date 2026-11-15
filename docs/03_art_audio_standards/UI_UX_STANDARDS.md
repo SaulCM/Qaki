@@ -312,6 +312,8 @@ Interface layouts MUST account for potential text expansion and different word l
 
 Do not assume that translated text will occupy the same space as the original.
 
+Player-facing interface text MUST be externalised from implementation code so that it can be reviewed, changed, and translated without editing scripts.
+
 ## 7. Color Standards
 
 Color usage SHOULD support visual hierarchy, readability, and game identity.
@@ -843,6 +845,18 @@ Consider:
 
 Accessibility requirements SHOULD be established at the project level and validated throughout development.
 
+### 19.1. Measurable Minimums
+
+The project MUST define, record, and validate at least the following measurable accessibility minimums before an interface is accepted:
+
+- A minimum contrast ratio for body text and essential interface elements.
+- A minimum supported text scale at which essential text remains readable without clipping or loss of function.
+- A requirement that no essential information is conveyed by color alone.
+
+The defined values are project-specific and MUST be recorded in the game project's documentation under `game_project/docs/`.
+
+Interfaces MUST be validated against the recorded minimums rather than against subjective impressions alone.
+
 ## 20. Visual Asset Requirements
 
 UI visual assets MUST follow the relevant studio art asset standards.
@@ -1017,6 +1031,7 @@ Temporary exceptions SHOULD be reviewed before final release.
 - `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
 - `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
 - `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md`
 - `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
 - `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
 - `docs/03_art_audio_standards/ART_ASSET_STANDARDS.md`

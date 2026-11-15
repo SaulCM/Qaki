@@ -593,6 +593,16 @@ Developers SHOULD avoid uncontrolled creation of audio players or unnecessary du
 
 Audio behavior SHOULD be tested during scene transitions, pause states, and other relevant gameplay conditions.
 
+### 13.4 Audio Bus Layout and Volume Categories
+
+Before a player-facing audio options menu or any player-facing audio settings interface is implemented, the project MUST define and document:
+
+- The audio bus layout and bus routing.
+- The player-facing volume categories and the buses they control.
+- The default volume values and the supported volume range.
+
+These project-specific values MUST be recorded in the game project's documentation under `game_project/docs/` and MUST NOT be hardcoded into interface scripts.
+
 ## 14. Engine Debugging and Diagnostics
 
 ### 14.1 Debugging Tools

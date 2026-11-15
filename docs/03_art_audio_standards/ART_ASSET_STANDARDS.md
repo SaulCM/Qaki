@@ -575,7 +575,7 @@ Maintain relevant licensing information, including:
 - Usage restrictions.
 - Relevant purchase or acquisition records, when applicable.
 
-Keep licensing records in an appropriate project-level location.
+Keep licensing records in a single register in the game project's documentation under `game_project/docs/`, as required by `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md` §3.3.
 
 Do not remove attribution or licensing information required by the applicable license.
 
@@ -809,6 +809,7 @@ Temporary exceptions SHOULD be reviewed before final release.
 - `docs/00_studio_standards/NAMING_CONVENTIONS.md`
 - `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
 - `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
 - `docs/02_technical_standards/ASSET_PIPELINE.md`
 - `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
 - `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`

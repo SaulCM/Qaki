@@ -907,23 +907,9 @@ Significant interface changes MUST be evaluated for their impact on related scre
 
 UI implementation MUST follow the project's approved technical and architectural standards.
 
-The following principles SHOULD guide implementation:
+Godot-specific scene structure, node composition, input handling, and UI implementation requirements are owned by `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md` §15.
 
-- Keep UI functionality within the feature that owns the relevant interface.
-- Use reusable interface components when they provide genuine value.
-- Keep presentation logic separate from gameplay rules where appropriate.
-- Use Godot Control nodes and containers according to their intended responsibilities.
-- Prefer container-based layouts over unnecessary fixed positioning.
-- Use theme resources and shared style definitions to maintain visual consistency.
-- Avoid duplicating common interaction behavior across unrelated interfaces.
-- Handle focus and input navigation explicitly.
-- Ensure UI state reflects authoritative gameplay state.
-- Avoid tightly coupling UI elements to unrelated gameplay internals.
-- Use signals or established interfaces for communication between UI and gameplay features.
-- Validate interface behavior when scenes are opened, closed, or reloaded.
-- Avoid unnecessary processing or repeated updates when interface data has not changed.
-
-UI implementation SHOULD remain modular, testable, and maintainable without introducing unnecessary abstraction.
+This document defines intended interface design and interaction behavior. It MUST NOT be treated as the authority for engine-level implementation details.
 
 ## 21. AI-Assisted UI/UX Design Requirements
 
@@ -997,6 +983,8 @@ Consult the following documents when relevant:
 - `PROGRESSION_DESIGN_GUIDELINES.md`
 - `REWARD_DESIGN_GUIDELINES.md`
 - `NARRATIVE_DESIGN_GUIDELINES.md`
+
+Godot-specific UI implementation requirements are defined in `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md` §15.
 
 Technical implementation MUST also follow the applicable studio technical standards and project-specific architecture documentation.
 

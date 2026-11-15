@@ -377,6 +377,12 @@ Possible states include:
 
 State transitions SHOULD be understandable and consistent with gameplay rules.
 
+A single animation state model MUST own animation state transitions for a given character or system.
+
+Using both an `AnimationTree` state graph and a separate scripted state machine to control the same animation transitions MUST be avoided unless an approved exception documents why the split is required.
+
+The animation state model represents gameplay state. It MUST NOT replace the gameplay state authority defined in Section 7.1.
+
 ### 7.3 Animation Transitions
 
 Transitions SHOULD avoid unintended visual discontinuities.
@@ -585,6 +591,8 @@ Appropriate uses include:
 `AnimationTree` MAY be used when a project requires complex animation state management, blending, or layered animation behavior.
 
 It SHOULD NOT be introduced for simple animation requirements that `AnimationPlayer` or `AnimatedSprite2D` can handle adequately.
+
+When `AnimationTree` is used, it MUST be the single owner of animation state transitions for the animation it controls, as required by Section 7.2.
 
 ### 10.3 AnimatedSprite2D
 

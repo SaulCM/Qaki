@@ -870,6 +870,12 @@ Developers SHOULD avoid scattering duplicated tuning values across unrelated scr
 
 Project-specific balancing decisions SHOULD remain in the relevant game design documentation or configuration assets.
 
+### 12.5 Player-Facing Text
+
+Player-facing text SHOULD be stored in configurable data or localisation Resources rather than embedded in gameplay logic, so that wording can be reviewed, corrected, and translated without modifying scripts.
+
+Hardcoded player-facing strings MAY be used for temporary development, debugging, or placeholder output, but MUST be externalised before the interface is accepted.
+
 ## 13. Dependencies and Architecture
 
 ### 13.1 Dependency Direction

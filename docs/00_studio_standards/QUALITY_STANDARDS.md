@@ -223,6 +223,8 @@ Appropriate considerations include:
 
 Accessibility requirements MUST be proportionate to the project scope and target audience.
 
+For player-facing interfaces, accessibility requirements MUST include the measurable minimums defined in `docs/03_art_audio_standards/UI_UX_STANDARDS.md` §19.1.
+
 Known accessibility limitations SHOULD be documented when they materially affect the intended experience.
 
 ## 10. Security and Privacy
@@ -470,6 +472,7 @@ Not every checklist item applies to every task. Non-applicable requirements SHOU
 - `GDSCRIPT_STANDARDS.md`
 - `ASSET_PIPELINE.md`
 - `ART_ASSET_STANDARDS.md`
+- `docs/03_art_audio_standards/UI_UX_STANDARDS.md`
 
 Only maintain references to documents that actually exist in the repository.
 
