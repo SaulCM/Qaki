@@ -14,12 +14,14 @@ It exists to protect the owner's work. Cline never assumes it owns the working t
 | Concern | Authoritative document | Status |
 |---|---|---|
 | Branch naming, commit message format, commit rules, branch and PR rules, agent Git requirements | `docs/00_studio_standards/GIT_CONVENTIONS.md` | Approved |
-| Branching model, integration practices, branch protection expectations | `docs/00_studio_standards/BRANCHING_STRATEGY.md` | Draft — currently contains only TODO placeholders |
+| Branching model, integration practices, branch protection expectations | `docs/00_studio_standards/BRANCHING_STRATEGY.md` | Draft (pending owner review) — defines the branching model in sections 4 to 17; open decisions in section 19 |
 | Pull request description expectations | `.github/PULL_REQUEST_TEMPLATE.md` | Present |
 
-`docs/00_studio_standards/BRANCHING_STRATEGY.md` exists but does not yet define any policy. Until the owner completes it, the binding branch and pull-request rules are `docs/00_studio_standards/GIT_CONVENTIONS.md` sections 1 and 5, plus this rule.
+`docs/00_studio_standards/BRANCHING_STRATEGY.md` is not an empty placeholder. It is a 22-section document that defines the branching model and integration workflow: branch hierarchy and lifecycle, protected branches, task-branch prefixes and naming, branch creation and synchronization, pull-request requirements, review and approval, merge policy, branch cleanup and deletion, and AI agent responsibilities and restrictions.
 
-Do not invent a branching model, protection policy, or integration workflow to fill that gap. Report the gap and ask for direction when a task actually depends on it.
+Follow that document for branching and integration work. It defers branch-name prefixes, commit message format and types, and commit rules to `docs/00_studio_standards/GIT_CONVENTIONS.md` (its sections 2 and 3.1), which takes precedence where the two disagree, and it does not weaken the protections in this rule.
+
+The document is still `Draft (pending owner review)`, and its section 19 records ten open decisions (R-1 to R-10) that remain recommendations until the owner approves them — including release and hotfix branches, the source branch for `main`, the merge strategy, the pull-request template, and continuous integration. Do not treat those recommendations as established policy, and do not invent a branching model, protection policy, or integration workflow to fill a gap. When a task depends on an open decision, report which one is missing and ask for direction.
 
 ## 3. Protected Branches
 

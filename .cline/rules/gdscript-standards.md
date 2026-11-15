@@ -17,7 +17,7 @@ Follow the authority order defined in `.cline/rules/project-context.md` (section
 
 1. Explicit instructions from the human maintainer for the current task.
 2. Approved project-specific requirements and specifications in `game_project/docs/`.
-3. Approved Architecture Decision Records in `docs/02_technical_standards/adr/`.
+3. Approved Architecture Decision Records (ADRs). `docs/02_technical_standards/adr/` holds the studio ADR process and template only; project-level ADRs for this game must be stored under `game_project/docs/technical/adr/` and must not be stored under repository-root `docs/`.
 4. Applicable studio standards.
 5. Applicable guidelines.
 6. This rule and general engineering practice.

@@ -32,12 +32,14 @@ The repository root MUST NOT be treated as the Godot project root.
 | `.github/` | GitHub configuration: CI workflows, issue templates, and pull request template. |
 | `docs/` | Reusable studio documentation only: standards, guidelines, templates, and agent workflows. |
 | `references/` | Repository-level reference material used for research and production support. |
-| `game_project/` | Godot project root: `project.godot`, `addons/`, `assets/`, `features/`, `shared/`, `infrastructure/`, `tests/`. |
-| `game_project/docs/` | Game-specific documentation created from studio templates. |
+| `game_project/` | Godot project root. It currently contains `project.godot`, `icon.svg`, `icon.svg.import`, `PROJECT_STATUS.md`, and `addons/`. |
+| `game_project/docs/` | Game-specific documentation created from studio templates. Planned; it does not exist yet. |
 
 Repository-level configuration files (`.clineignore`, `.gitattributes`, `.gitignore`, `README.md`) remain at the repository root.
 
-`game_project/docs/` is part of the approved architecture. Create its subdirectories only when an actual game-specific document requires them.
+**Planned, not yet created.** `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md` (sections 4.2, 4.3, and 5) defines the intended layout of the Godot project — `assets/`, `features/`, `shared/`, `infrastructure/`, `tests/`, and `docs/` under `game_project/`. Those structures are reference structures, not a requirement to create every directory, and none of them exists at present. `game_project/docs/` is part of the approved architecture: create it and its subdirectories only when an actual game-specific document requires them, and create any other directory only when an actual file requires it.
+
+Do not state, assume, or rely on a planned directory as if it already exists. Verify the current structure before depending on a path.
 
 ## 3. Documentation Boundaries
 
