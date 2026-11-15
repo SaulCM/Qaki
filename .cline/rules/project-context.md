@@ -109,7 +109,40 @@ Where the game project has not yet defined and approved its game vision, game pi
 - If a task appears to require changing AI tool configuration, stop and request explicit owner approval.
 - These restrictions apply even when a configuration change appears necessary to complete a task.
 
-## 8. Minimum Verification Contract
+## 8. Engine and Project Configuration
+
+`docs/02_technical_standards/ENGINE_STANDARDS.md` (section 4.2) requires the selected engine version to be documented in the project repository. `game_project/docs/technical/overview.md`, the intended long-term home for project technology records, does not exist yet, so the verified values are recorded here until it is created. `game_project/project.godot` remains the authoritative source for project settings: the values below were read from it on 2026-11-15 and MUST be re-verified against that file before being relied on.
+
+### 8.1 Required Engine Version
+
+- **Declared project feature level:** Godot `4.7` — `game_project/project.godot`, `application/config/features=PackedStringArray("4.7", "Forward Plus")`.
+- **Verified engine executable:** reports `4.7.2.stable.official.ed1daf0bf` for `--version` (recorded in section 9), which is consistent with the declared `4.7` feature level.
+- The project does not pin a patch release. No exact patch version is declared in `game_project/project.godot`, and none is recorded here as required.
+- Changing the engine version is a controlled technical change that requires project owner approval (`ENGINE_STANDARDS.md`, sections 3.1 and 4.3). This record does not authorise an upgrade, a downgrade, or the substitution of a different engine version.
+- **Version consistency check (2026-11-15):** the only project-level engine declaration is `4.7` in `game_project/project.godot`; the only other recorded engine value is the `4.7.2.stable` executable in section 9; studio documents refer to `Godot 4.x` generically. No conflicting engine-version declaration was found, as `ENGINE_STANDARDS.md` section 4.2 expects.
+
+### 8.2 Current Project Configuration
+
+Verified from `game_project/project.godot` on 2026-11-15:
+
+| Setting | Value | Source key |
+|---|---|---|
+| Rendering method | `Forward Plus` | `application/config/features` |
+| Rendering device driver (Windows) | `d3d12` | `rendering/rendering_device/driver.windows` |
+| 3D physics engine | `Jolt Physics` | `physics/3d/physics_engine` |
+| Stretch mode | `canvas_items` | `display/window/stretch/mode` |
+| Stretch aspect | `expand` | `display/window/stretch/aspect` |
+| Configuration format version | `5` | `config_version` |
+| Application name | `Qaki` | `application/config/name` |
+| Project icon | `res://icon.svg` | `application/config/icon` |
+| Enabled editor plugin | `res://addons/godot_mcp/plugin.cfg` | `editor_plugins/enabled` |
+| Implementation language | GDScript | No C# or .NET feature is declared in `game_project/project.godot`, and no C# approval is recorded. Section 4 of this file and `.cline/rules/gdscript-standards.md` remain authoritative for language policy. |
+
+### 8.3 Optional and Future Technology Choices
+
+No optional or future technology choice is recorded in this section. The rendering method, rendering device driver, physics engine, and display behavior above describe the current configuration; they are not approval to change any of them. Any change to them requires project owner approval and, when substantial, an ADR (`ENGINE_STANDARDS.md`, section 5.3). Target platforms, minimum hardware, and performance targets are not recorded here because no approved project decision defines them; do not infer them from this section.
+
+## 9. Minimum Verification Contract
 
 `docs/02_technical_standards/TESTING_STRATEGY.md` (section 13.6) requires a minimum verification contract. No testing framework, test runner, or CI job exists in this repository, and no game script, scene, or main scene exists yet, so this section records the checks that can actually be executed today. `TESTING_STRATEGY.md` (section 11.3) requires project-specific execution commands to be documented in the game repository; the long-term record belongs in `game_project/docs/technical/overview.md`, which does not exist yet, so these values are recorded here until it is created.
 
