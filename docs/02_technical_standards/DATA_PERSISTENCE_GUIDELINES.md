@@ -895,7 +895,7 @@ These guidelines SHOULD be used alongside:
 - `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
 - `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
 - `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
-- `docs/02_technical_standards/adr/README.md`
+- `docs/02_technical_standards/adr/ADR_PROCESS.md`
 
 Only documents that exist in the repository should be registered as active references in the documentation inventory.
 

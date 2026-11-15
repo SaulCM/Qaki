@@ -987,7 +987,7 @@ These conventions SHOULD be used alongside:
 - `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
 - `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
 - `docs/02_technical_standards/ASSET_PIPELINE.md`
-- `docs/02_technical_standards/adr/README.md`
+- `docs/02_technical_standards/adr/ADR_PROCESS.md`
 - `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
 - `docs/03_art_audio_standards/UI_UX_STANDARDS.md`
 - Applicable documents in `docs/05_qa_standards/`

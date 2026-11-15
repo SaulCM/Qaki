@@ -749,7 +749,7 @@ These guidelines SHOULD be used alongside:
 - `docs/00_studio_standards/DEFINITION_OF_DONE.md`
 - `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
 - `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
-- `docs/02_technical_standards/adr/README.md`
+- `docs/02_technical_standards/adr/ADR_PROCESS.md`
 - `docs/03_art_audio_standards/`
 
 Only documents that exist in the repository should be registered as active references in the documentation inventory.

@@ -896,7 +896,7 @@ These guidelines SHOULD be used alongside:
 - `docs/02_technical_standards/ASSET_PIPELINE.md`
 - `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
 - `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
-- `docs/02_technical_standards/adr/README.md`
+- `docs/02_technical_standards/adr/ADR_PROCESS.md`
 - Applicable documents in `docs/05_qa_standards/`
 
 Only documents that physically exist in the repository SHOULD be registered as active references in the documentation inventory.

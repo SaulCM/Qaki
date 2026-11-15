@@ -1,5 +1,4 @@
-﻿
-# Game Development Lifecycle
+﻿# Game Development Lifecycle
 
 ## 1. Purpose
 
@@ -16,6 +15,8 @@ Its objectives are to:
 - Maintain alignment between creative vision, technical implementation, and production goals.
 
 The lifecycle is a reusable framework. Individual projects may adapt its phases, deliverables, and decision gates according to their scope, genre, complexity, risks, and available resources.
+
+This document is the studio's canonical development lifecycle. `docs/04_production_standards/PROJECT_LIFECYCLE.md` provides execution guidance for the phases defined here. Where the two documents differ, this document governs.
 
 ## 2. Lifecycle Principles
 
@@ -673,6 +674,7 @@ This document should be used together with:
 - `docs/01_game_design_guidelines/` — Game design principles.
 - `docs/02_technical_standards/` — Technical implementation requirements.
 - `docs/04_production_standards/` — Detailed production planning and execution.
+- `docs/04_production_standards/PROJECT_LIFECYCLE.md` — Execution guidance for the phases defined in this document.
 - `docs/05_qa_standards/` — Testing and quality assurance practices.
 - `docs/07_agent_workflows/` — AI-assisted development procedures.
 

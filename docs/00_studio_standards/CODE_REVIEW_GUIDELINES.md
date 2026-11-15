@@ -1,5 +1,4 @@
-﻿
-# Code Review Guidelines
+﻿# Code Review Guidelines
 
 ## 1. Purpose
 

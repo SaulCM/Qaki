@@ -230,13 +230,13 @@ Examples:
 
 ```gdscript
 func calculate_damage() -> int:
-    pass
+	pass
 
 func update_movement(delta: float) -> void:
-    pass
+	pass
 
 func apply_status_effect(effect: StatusEffect) -> void:
-    pass
+	pass
 ```
 
 Function names SHOULD describe an action or operation.
@@ -271,16 +271,16 @@ Examples:
 
 ```gdscript
 enum MovementState {
-    IDLE,
-    WALKING,
-    RUNNING,
-    JUMPING
+	IDLE,
+	WALKING,
+	RUNNING,
+	JUMPING
 }
 
 enum DamageType {
-    PHYSICAL,
-    FIRE,
-    POISON
+	PHYSICAL,
+	FIRE,
+	POISON
 }
 ```
 
@@ -316,17 +316,17 @@ Examples:
 var _current_target: Node2D
 
 func _calculate_internal_damage() -> int:
-    pass
+	pass
 ```
 
 Follow Godot conventions for built-in lifecycle methods such as:
 
 ```gdscript
 func _ready() -> void:
-    pass
+	pass
 
 func _process(delta: float) -> void:
-    pass
+	pass
 ```
 
 Do not expose internal implementation details unnecessarily.
@@ -546,10 +546,10 @@ Examples:
 
 ```gdscript
 func test_player_takes_damage_when_hit() -> void:
-    pass
+	pass
 
 func test_inventory_rejects_invalid_item() -> void:
-    pass
+	pass
 ```
 
 Test resources SHOULD identify the scenario or fixture they represent.

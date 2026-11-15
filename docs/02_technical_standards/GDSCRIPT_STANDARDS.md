@@ -512,17 +512,26 @@ Avoid:
 configure_enemy(true, false, true)
 ```
 
-Prefer:
+GDScript has no named-argument call syntax. Prefer a typed configuration object or a configuration Resource when several settings form a meaningful set:
 
 ```gdscript
-configure_enemy(
-	is_aggressive = true,
-	can_patrol = false,
-	can_flee = true
-)
+class_name EnemySettings
+extends Resource
+
+@export var is_aggressive: bool = false
+@export var can_patrol: bool = true
+@export var can_flee: bool = true
 ```
 
-Alternatively, use a configuration Resource or dedicated data structure when the configuration is substantial.
+```gdscript
+var settings := EnemySettings.new()
+settings.is_aggressive = true
+settings.can_patrol = false
+settings.can_flee = true
+configure_enemy(settings)
+```
+
+A single boolean parameter is acceptable when the function name and the call site make its meaning clear.
 
 ## 8. Classes and Responsibilities
 
@@ -1096,7 +1105,7 @@ These standards SHOULD be used alongside:
 - `docs/02_technical_standards/ENGINE_STANDARDS.md`
 - `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
 - `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
-- `docs/02_technical_standards/adr/README.md`
+- `docs/02_technical_standards/adr/ADR_PROCESS.md`
 
 Only documents that physically exist in the repository SHOULD be registered as active references in the documentation inventory.
 

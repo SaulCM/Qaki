@@ -12,7 +12,7 @@ These rules prioritize maintainability, modularity, testability, and controlled 
 - Follow separation of concerns.
 - Prefer composition over inheritance when appropriate.
 - Keep systems loosely coupled and highly cohesive.
-- Apply SOLID principles where they provide practical value.
+- Keep each script and scene responsible for one cohesive concern; prefer composition over inheritance; depend on declared public methods and signals rather than another component's internals.
 - Avoid unnecessary abstractions, frameworks, and design patterns.
 - Prefer explicit dependencies over hidden global dependencies.
 - Keep gameplay logic independent from presentation wherever practical.

@@ -333,7 +333,7 @@ The following classification provides a common reference:
 | High | Significantly breaks important functionality or creates serious instability. | Prioritized resolution. |
 | Medium | Causes noticeable defects or inconsistent behavior with available workarounds. | Resolve according to priority and release impact. |
 | Low | Minor defects with limited impact. | Schedule appropriately. |
-| Informational | Improvement opportunities or non-blocking observations. | Evaluate when beneficial. |
+| Suggestion | Improvement opportunities or non-blocking observations. Informational; never blocks integration. | Evaluate when beneficial. |
 
 Severity MUST be determined by actual impact rather than the effort required to fix an issue.
 

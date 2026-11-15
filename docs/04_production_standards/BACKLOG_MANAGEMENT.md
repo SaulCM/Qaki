@@ -684,6 +684,21 @@ Technical debt items SHOULD describe:
 
 Avoid using technical debt as a generic label for every code improvement.
 
+### 15.1. Technical Debt Entry Format
+
+A technical debt item SHOULD record the following fields:
+
+| Field | Content |
+|---|---|
+| What the debt is | The current implementation or omission, identified precisely enough to locate it. |
+| Why it exists | The constraint, trade-off, or decision that created it. |
+| Risk or impact | What leaving it unresolved costs: correctness, maintainability, performance, security, or delivery risk. |
+| Revisit condition | The event, milestone, measurement, or threshold that triggers reconsideration. |
+
+An entry that cannot state why the debt exists or when it should be revisited SHOULD NOT be registered as technical debt; it is either planned work or an unspecified improvement.
+
+Technical debt entries MUST describe debt that exists. They MUST NOT be created for hypothetical or speculative work.
+
 Refactoring SHOULD have a clear purpose and preserve expected behavior unless the work explicitly changes it.
 
 ## 16. Backlog Hygiene

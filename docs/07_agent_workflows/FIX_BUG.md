@@ -26,7 +26,7 @@ Use this workflow when:
 Do not use this workflow for:
 
 - Implementing new features.
-- Making unrelated refactors.
+- Performing behavior-preserving refactoring unrelated to the defect; use `REFACTOR_CODE.md`.
 - Changing intended gameplay behavior without authorization.
 - Performing general code cleanup.
 - Redesigning a system to address a problem that has not been confirmed.

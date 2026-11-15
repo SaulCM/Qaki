@@ -625,7 +625,7 @@ Consider creating or updating an ADR when the design involves:
 
 If an ADR is required:
 
-1. Follow `docs/02_technical_standards/adr/README.md`.
+1. Follow `docs/02_technical_standards/adr/ADR_PROCESS.md`.
 2. Use the ADR Template.
 3. Create the project-specific ADR in `game_project/docs/technical/adr/`.
 4. Reference the ADR from the Technical Design Document.
@@ -638,7 +638,7 @@ Not every technical implementation requires an ADR.
 ### Step 17: Generate the Technical Design Document
 
 1. Read `docs/06_templates/TECHNICAL_DESIGN_TEMPLATE.md`.
-2. Follow its structure and required sections.
+2. Follow its structure and cover each applicable section. Mark a section that does not apply as `Not applicable` instead of deleting it.
 3. Populate the template using inspected project information.
 4. Reference the relevant requirements and design specifications.
 5. Document the architecture and component responsibilities.
@@ -906,7 +906,7 @@ After execution, provide a report using the following structure:
 - Data Persistence Guidelines: `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
 - Performance Guidelines: `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
 - Testing Strategy: `docs/02_technical_standards/TESTING_STRATEGY.md`
-- ADR Guidelines: `docs/02_technical_standards/adr/README.md`
+- ADR Guidelines: `docs/02_technical_standards/adr/ADR_PROCESS.md`
 - Technical Design Template: `docs/06_templates/TECHNICAL_DESIGN_TEMPLATE.md`
 - ADR Template: `docs/06_templates/ADR_TEMPLATE.md`
 

@@ -30,4 +30,4 @@ If the authoritative workflow cannot be located or read, stop and report it. Do 
 - Branch and integration requirements come from `docs/00_studio_standards/BRANCHING_STRATEGY.md`, `docs/00_studio_standards/GIT_CONVENTIONS.md`, and `.cline/rules/git-workflow.md`. This adapter does not define them.
 - Report validation honestly. A fix is not complete merely because an error disappeared (`docs/00_studio_standards/DEFINITION_OF_DONE.md`, section 6.4).
 - Preserve unrelated user changes in the working tree.
-- Routing: new or changed functionality belongs to `.clinerules/workflows/implement-feature.md`; an independent review belongs to `.clinerules/workflows/code-review.md`.
+- Routing: new or changed functionality belongs to `.clinerules/workflows/implement-feature.md`; behavior-preserving restructuring belongs to `.clinerules/workflows/refactor-code.md`; an independent review belongs to `.clinerules/workflows/code-review.md`.

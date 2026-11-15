@@ -1,5 +1,4 @@
-﻿
-# Development Philosophy
+﻿# Development Philosophy
 
 ## 1. Purpose
 
@@ -252,9 +251,9 @@ Significant changes must be reviewed and approved by the project owner.
 
 ### 9.3 Architectural Decision Records
 
-Significant architectural decisions should be recorded as Architecture Decision Records (ADRs).
+Significant architectural decisions MUST be recorded as Architecture Decision Records (ADRs).
 
-An ADR should capture:
+An ADR MUST capture:
 
 - The context and problem.
 - The decision.

@@ -46,6 +46,7 @@ technical architecture, and production standards.
 
 - Blender and shared development tools setup pending.
 - AI agent workflow validation pending.
+- Release and playtest builds: no export presets, export automation, or documented build process is configured. A release build is blocked until the project owner defines supported platforms and export presets, and until the open release branching decisions in `docs/00_studio_standards/BRANCHING_STRATEGY.md` (section 19: R-1 release branches, R-2 source branch for `main`, R-7 tagging) are resolved.
 
 ## 7. Pending Decisions
 
@@ -55,7 +56,7 @@ technical architecture, and production standards.
 ## 8. Development Rules
 
 - Never commit directly to main.
-- Use feature branches for development.
+- Use the approved branch prefixes from `docs/00_studio_standards/GIT_CONVENTIONS.md`: `feature/`, `fix/`, `refactor/`, `test/`, `docs/`, or `chore/`.
 - Require human approval before merging PRs.
 - Do not implement unapproved design decisions.
 - Update this document when milestone status changes.

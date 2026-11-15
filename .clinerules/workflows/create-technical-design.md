@@ -28,5 +28,5 @@ If the authoritative workflow cannot be located or read, stop and report it. Do 
 
 - The output document path, source template, and initial status are defined in section 3 of the studio workflow. Do not choose a different destination.
 - This task authorizes a design document only. It does not authorize implementation; implementation may proceed only after the required approval (studio workflow, section 9).
-- When the design raises an architecture decision, follow the ADR requirement in the studio workflow (section 6, Step 16) and the ADR process in `docs/02_technical_standards/adr/README.md`.
+- When the design raises an architecture decision, follow the ADR requirement in the studio workflow (section 6, Step 16) and the ADR process in `docs/02_technical_standards/adr/ADR_PROCESS.md`.
 - Routing: implementing an approved design belongs to `.clinerules/workflows/implement-feature.md`.

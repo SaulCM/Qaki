@@ -26,11 +26,11 @@ Do not use this workflow for:
 - Designing the entire game.
 - Creating or approving new gameplay requirements.
 - Fixing isolated defects unrelated to the feature.
-- Performing unrelated refactoring.
+- Performing behavior-preserving refactoring; use `REFACTOR_CODE.md`.
 - Making significant architectural changes without approval.
 - Implementing features that have not been sufficiently specified or authorized.
 
-Use `FIX_BUG.md` for defect correction and `DESIGN_GAME_MECHANIC.md` or `DESIGN_GAMEPLAY_SYSTEM.md` when gameplay behavior still needs to be designed.
+Use `FIX_BUG.md` for defect correction, `REFACTOR_CODE.md` for behavior-preserving restructuring, and `DESIGN_GAME_MECHANIC.md` or `DESIGN_GAMEPLAY_SYSTEM.md` when gameplay behavior still needs to be designed.
 
 ## 3. Authoritative References
 

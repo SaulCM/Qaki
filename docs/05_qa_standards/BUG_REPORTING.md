@@ -276,9 +276,11 @@ Severity SHOULD be based on the consequences of the problem, not the difficulty 
 
 Use the following classification.
 
+This four-level scale is a documented subset of the five-level severity classification in `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md` (section 6) and `docs/00_studio_standards/QUALITY_STANDARDS.md` (section 15). The additional `Suggestion` level describes optional review findings and improvement opportunities, not defect severity. A defect that is only an optional improvement is not a defect and belongs in the backlog.
+
 ### 8.1. Critical
 
-<badge color="danger">Critical</badge>
+**Critical**
 
 A defect that makes the game or a critical part of it unusable, causes severe data loss, or creates a major security or integrity problem.
 
@@ -294,7 +296,7 @@ Critical defects require immediate attention.
 
 ### 8.2. High
 
-<badge color="warning">High</badge>
+**High**
 
 A defect that seriously affects gameplay, progression, or an important system but does not completely prevent the product from functioning.
 
@@ -310,7 +312,7 @@ High-severity defects SHOULD be resolved before release unless explicitly accept
 
 ### 8.3. Medium
 
-<badge color="info">Medium</badge>
+**Medium**
 
 A defect that affects functionality or player experience but has a limited impact or a reasonable workaround.
 
@@ -326,7 +328,7 @@ Medium-severity defects SHOULD be prioritized according to release impact and av
 
 ### 8.4. Low
 
-<badge color="success">Low</badge>
+**Low**
 
 A minor defect with limited functional or player-facing impact.
 

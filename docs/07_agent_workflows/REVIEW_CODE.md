@@ -289,6 +289,7 @@ Verify that:
 - Feature ownership is clear.
 - Dependencies follow the established architecture.
 - Circular dependencies are avoided.
+- Cross-feature references to `res://features/...` target only a `class_name` type or an `_api.gd` facade; scene-path coupling between features is absent or explicitly justified.
 
 ### 10.2 Component responsibilities
 
@@ -323,15 +324,15 @@ Inspect for:
 
 Prefer specific, actionable improvements over subjective style preferences.
 
-### 10.4 SOLID and design principles
+### 10.4 Responsibilities and design contracts
 
-Consider relevant principles when evaluating the implementation:
+Consider the following when evaluating the implementation:
 
-- Single Responsibility Principle.
-- Open/Closed Principle.
-- Liskov Substitution Principle.
-- Interface Segregation Principle.
-- Dependency Inversion Principle.
+- **Single responsibility:** each script, scene, and component has one cohesive reason to change.
+- **Composition over inheritance:** inheritance is used only for a genuine, stable type relationship.
+- **Signal and public-method contracts:** consumers depend on declared signals and public methods, not on another component's internals.
+- **Dependency direction:** dependencies point toward stable, lower-level code and do not form cycles.
+- **Justified abstraction:** an abstraction exists because a requirement justifies it, not to satisfy a pattern.
 
 Do not force every principle into every component.
 

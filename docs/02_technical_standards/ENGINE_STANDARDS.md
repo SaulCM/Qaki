@@ -634,11 +634,17 @@ Developers SHOULD:
 
 ### 14.3 Logging
 
-Logging SHOULD be meaningful and proportional to the importance of the operation.
+Logging and diagnostics SHOULD be meaningful and proportional to the importance of the operation.
+
+Godot does not expose configurable log severity levels. Use the available diagnostics as follows:
+
+- `print()` — temporary development output. It MUST NOT be the mechanism for reporting errors, and unnecessary output MUST be removed before release.
+- `push_warning()` — a recoverable condition that should be noticed but does not prevent the operation from continuing.
+- `push_error()` — an operation that failed or a contract that was violated and that the caller or developer must address.
+- `assert()` — a violated development assumption. Assertions MUST NOT replace validation of external input or recoverable failures.
 
 Developers SHOULD:
 
-- Use appropriate log levels.
 - Avoid excessive per-frame logging.
 - Avoid logging sensitive information.
 - Provide useful context for failures.
@@ -892,7 +898,7 @@ These standards SHOULD be used alongside:
 - `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
 - `docs/02_technical_standards/ASSET_PIPELINE.md`
 - `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
-- `docs/02_technical_standards/adr/README.md`
+- `docs/02_technical_standards/adr/ADR_PROCESS.md`
 
 Only documents that exist in the repository should be registered as active references in the documentation inventory.
 

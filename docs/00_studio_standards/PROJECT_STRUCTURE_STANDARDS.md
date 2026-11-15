@@ -234,6 +234,16 @@ features/
 
 Feature names SHOULD represent meaningful game capabilities or cohesive systems.
 
+A candidate feature is independently identifiable when all of the following are true:
+
+1. It owns at least one scene, resource, or cohesive script set that no other feature owns.
+2. It has a plausible independent lifecycle: it can be added, removed, disabled, or tested without another feature changing its internal implementation.
+3. It describes one capability or cohesive system rather than a collection of unrelated behavior.
+
+A directory that fails the first or second test is part of another feature or belongs in `shared/` or `infrastructure/`. Entity, system, and mechanic features are all acceptable when they satisfy the test; the category alone does not determine the boundary.
+
+A feature directory MUST NOT contain another feature. Feature-internal subdivision is limited to one level, for example `features/<feature>/scenes/`, unless a documented exception is approved.
+
 A feature MAY contain:
 
 | Directory | Responsibility |
@@ -355,6 +365,8 @@ Requirements:
 - Reusable studio standards MUST remain in repository-root `docs/` and MUST NOT be copied into `game_project/docs/`.
 - Game-specific documentation SHOULD reference studio standards rather than copy their contents.
 - Subdirectories SHOULD be created only when an actual document requires them.
+
+**Approved exception:** `game_project/PROJECT_STATUS.md` is maintained at the Godot project root as the project's status front page. It is a permitted exception to the rule that game-specific documentation lives under `game_project/docs/`. It is project documentation, not a studio standard, and it MUST NOT duplicate design or technical requirements stored elsewhere.
 
 ### 5.9 `project.godot`
 

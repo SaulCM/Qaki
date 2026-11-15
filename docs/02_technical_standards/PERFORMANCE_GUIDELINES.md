@@ -121,6 +121,8 @@ Targets SHOULD reflect:
 
 These targets MUST be documented in the relevant project technical documentation.
 
+The documentation MUST identify the supported platforms, the minimum hardware for each platform, the intended frame rate for each platform, and the location of the project's performance baseline: the scene, build, or test scenario used as the reference for comparison.
+
 This studio standard does not prescribe universal frame-rate, memory, loading-time, or rendering budgets because those requirements depend on the game and its target hardware.
 
 ### 4.2 Frame Rate Targets
@@ -1142,7 +1144,7 @@ These guidelines SHOULD be used alongside:
 - `docs/02_technical_standards/ASSET_PIPELINE.md`
 - `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
 - `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
-- `docs/02_technical_standards/adr/README.md`
+- `docs/02_technical_standards/adr/ADR_PROCESS.md`
 - Applicable documents in `docs/05_qa_standards/`
 
 Only documents that physically exist in the repository SHOULD be registered as active references in the documentation inventory.

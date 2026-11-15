@@ -473,6 +473,32 @@ A completion report MUST state the following. Items that do not apply are marked
 - A limitation MUST NOT be softened into a success statement.
 - The report MUST NOT imply review, approval, or integration that did not occur.
 
+### 16.3 Reduced Report for Low-Risk Work
+
+A documentation-only correction or another demonstrably low-risk change MAY use the compact report form below. The compact form does not waive any item in section 16.1: every item is either stated or explicitly marked not applicable. Code, asset, configuration, and behavior changes MUST NOT use it unless the project owner authorizes a reduced report.
+
+Illustrative example for a documentation-only correction:
+
+| Report item | Content |
+|---|---|
+| Task | Correct a template reference in a workflow. Acceptance: the reference resolves and no procedure changes. |
+| Branch and repository state | `feature/studio-documentation`; clean tree before the work; no user-owned changes. |
+| Changes | The workflow file, one reference corrected. No other file belongs to the task. |
+| Completion state | Implemented and locally validated. |
+| Validation performed | Changed section read; all old references searched (none remain); `git diff --check` passed. |
+| Validation not performed | No Markdown renderer or link checker was available. |
+| Tests | No test framework or runner is configured; no automated test applies. |
+| Regression assessment | Documentation only; no runtime behavior. Rendered appearance remains unverified. |
+| Performance | Not applicable. |
+| Documentation | The changed workflow; inventory unchanged because its entry is unchanged. |
+| Assets | Not applicable. |
+| Review and approval | Not reviewed; no approval is claimed. |
+| Git actions | None; changes left unstaged for review. |
+| Known limitations | None beyond the unperformed checks above. |
+| Out-of-scope observations | None. |
+
+The example is illustrative. It does not authorize omitting an item that applies, and it does not change the completion states defined in section 4.
+
 ## 17. Exceptions and Incomplete Work
 
 ### 17.1 Incomplete Work

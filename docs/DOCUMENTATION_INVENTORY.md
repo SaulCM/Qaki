@@ -60,6 +60,7 @@ The shared documentation repository follows this structure:
 ```text
 docs/
 ├── DOCUMENTATION_INVENTORY.md
+├── README.md
 ├── 00_studio_standards/
 ├── 01_game_design_guidelines/
 ├── 02_technical_standards/
@@ -83,6 +84,12 @@ Each directory has a distinct responsibility.
 | `05_qa_standards/` | Quality assurance, testing, acceptance, and defect management guidelines. |
 | `06_templates/` | Reusable templates for creating project-specific documentation. |
 | `07_agent_workflows/` | Standardized procedures for AI-assisted development tasks. |
+
+### 3.1 Documentation Entry Point
+
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `README.md` | Routing entry point for the documentation: directory map, authority summary, and task-based guidance. | Not Specified | `DOCUMENTATION_INVENTORY.md`, `DOCUMENTATION_STANDARDS.md` |
 
 ## 4. Studio Standards
 
@@ -133,15 +140,15 @@ Technical standards define engineering practices and technical expectations for 
 
 | Document | Description | Status | Dependencies |
 |---|---|---|---|
-| `02_technical_standards/ARCHITECTURE_GUIDELINES.md` | Defines architectural principles, feature boundaries, dependencies, modularity, and system organization. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `DEFINITION_OF_DONE.md`, `GDSCRIPT_STANDARDS.md`, `adr/README.md` |
-| `02_technical_standards/ASSET_PIPELINE.md` | Describes the technical asset import, processing, integration, and optimization pipeline. | Not Specified | `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `adr/README.md` |
-| `02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md` | Establishes principles for saving, loading, serialization, data integrity, and persistent game data. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `adr/README.md` |
-| `02_technical_standards/ENGINE_STANDARDS.md` | Defines Godot engine usage, project configuration, engine compatibility, and general engine-related practices. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/README.md` |
-| `02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md` | Defines appropriate event-driven communication, signal usage, event ownership, and communication between components. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `adr/README.md` |
-| `02_technical_standards/GDSCRIPT_STANDARDS.md` | Establishes GDScript coding conventions, structure, typing, formatting, and implementation practices. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/README.md` |
-| `02_technical_standards/PERFORMANCE_GUIDELINES.md` | Provides guidelines for profiling, evaluating, and optimizing CPU, GPU, memory, loading, and runtime performance. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `ASSET_PIPELINE.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/README.md` |
-| `02_technical_standards/RESOURCE_MANAGEMENT.md` | Defines Godot resource ownership, loading, caching, sharing, duplication, and lifecycle management. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `PERFORMANCE_GUIDELINES.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `adr/README.md` |
-| `02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md` | Establishes conventions for scene composition, node hierarchy, naming, ownership, and lifecycle management. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `adr/README.md`, `UI_UX_DESIGN_GUIDELINES.md` |
+| `02_technical_standards/ARCHITECTURE_GUIDELINES.md` | Defines architectural principles, feature boundaries, dependencies, modularity, and system organization. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `DEFINITION_OF_DONE.md`, `GDSCRIPT_STANDARDS.md`, `adr/ADR_PROCESS.md` |
+| `02_technical_standards/ASSET_PIPELINE.md` | Describes the technical asset import, processing, integration, and optimization pipeline. | Not Specified | `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `adr/ADR_PROCESS.md` |
+| `02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md` | Establishes principles for saving, loading, serialization, data integrity, and persistent game data. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `adr/ADR_PROCESS.md` |
+| `02_technical_standards/ENGINE_STANDARDS.md` | Defines Godot engine usage, project configuration, engine compatibility, and general engine-related practices. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/ADR_PROCESS.md` |
+| `02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md` | Defines appropriate event-driven communication, signal usage, event ownership, and communication between components. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `adr/ADR_PROCESS.md` |
+| `02_technical_standards/GDSCRIPT_STANDARDS.md` | Establishes GDScript coding conventions, structure, typing, formatting, and implementation practices. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/ADR_PROCESS.md` |
+| `02_technical_standards/PERFORMANCE_GUIDELINES.md` | Provides guidelines for profiling, evaluating, and optimizing CPU, GPU, memory, loading, and runtime performance. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `ASSET_PIPELINE.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/ADR_PROCESS.md` |
+| `02_technical_standards/RESOURCE_MANAGEMENT.md` | Defines Godot resource ownership, loading, caching, sharing, duplication, and lifecycle management. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `PERFORMANCE_GUIDELINES.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `adr/ADR_PROCESS.md` |
+| `02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md` | Establishes conventions for scene composition, node hierarchy, naming, ownership, and lifecycle management. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `adr/ADR_PROCESS.md`, `UI_UX_DESIGN_GUIDELINES.md` |
 | `02_technical_standards/TESTING_STRATEGY.md` | Defines testing levels, testing approaches, test organization, automation, and validation practices. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `CODE_REVIEW_GUIDELINES.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `EVENT_AND_SIGNAL_GUIDELINES.md` |
 
 ### 6.1 Architecture Decision Records
@@ -150,7 +157,8 @@ Technical standards define engineering practices and technical expectations for 
 
 | Document | Description | Status | Dependencies |
 |---|---|---|---|
-| `02_technical_standards/adr/README.md` | Defines the Architecture Decision Record process, including when ADRs are required, their structure, lifecycle, and approval responsibilities. | Not Specified | — |
+| `02_technical_standards/adr/ADR_PROCESS.md` | Defines the Architecture Decision Record process, including when ADRs are required, their structure, lifecycle, and approval responsibilities. | Not Specified | — |
+| `02_technical_standards/adr/README.md` | Index of the studio ADR directory: points to the process document and template, and states where project-level ADRs are stored. | Not Specified | `adr/ADR_PROCESS.md` |
 
 ## 7. Art and Audio Standards
 
@@ -227,7 +235,7 @@ Templates are not project specifications themselves. Their purpose is to guide t
 | `06_templates/QUEST_TEMPLATE.md` | Template for documenting quest objectives, stages, characters, choices, outcomes, rewards, and completion conditions. | Not Specified | `NARRATIVE_DESIGN_GUIDELINES.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md` |
 | `06_templates/ROADMAP_TEMPLATE.md` | Template for defining project direction, strategic priorities, milestones, and planned development outcomes. | Not Specified | `PROJECT_LIFECYCLE.md`, `MILESTONE_GUIDELINES.md`, `MILESTONE_TEMPLATE.md`, `BACKLOG_MANAGEMENT.md`, `SPRINT_WORKFLOW.md`, `RISK_MANAGEMENT.md`, `DEFINITION_OF_DONE.md`, `QA_STRATEGY.md`, `POSTMORTEM_GUIDELINES.md` |
 | `06_templates/TECHNICAL_DESIGN_TEMPLATE.md` | Template for documenting technical solutions, architecture, components, dependencies, implementation considerations, and validation. | Not Specified | — |
-| `06_templates/TECHNICAL_OVERVIEW_TEMPLATE.md` | Template for describing a project's technical foundation, technology choices, architecture, tools, and major technical constraints. | Not Specified | `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `RESOURCE_MANAGEMENT.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `TESTING_STRATEGY.md`, `adr/README.md` |
+| `06_templates/TECHNICAL_OVERVIEW_TEMPLATE.md` | Template for describing a project's technical foundation, technology choices, architecture, tools, and major technical constraints. | Not Specified | `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `RESOURCE_MANAGEMENT.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `TESTING_STRATEGY.md`, `adr/ADR_PROCESS.md` |
 | `06_templates/TEST_PLAN_TEMPLATE.md` | Template for planning testing activities, scope, environments, scenarios, resources, execution, and exit criteria. | Not Specified | `QA_STRATEGY.md`, `TESTING_STRATEGY.md`, `TEST_CASE_GUIDELINES.md`, `BUG_REPORTING.md`, `REGRESSION_TESTING.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md`, `PLAYTESTING_GUIDELINES.md`, `DEFINITION_OF_DONE.md` |
 | `06_templates/WORLD_OVERVIEW_TEMPLATE.md` | Template for documenting a game's world, setting, geography, history, cultures, factions, locations, and world rules. | Not Specified | `DESIGN_PRINCIPLES.md`, `NARRATIVE_DESIGN_GUIDELINES.md`, `LEVEL_DESIGN_GUIDELINES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `ART_ASSET_STANDARDS.md`, `ART_PIPELINE.md`, `AUDIO_ASSET_STANDARDS.md` |
 
@@ -250,6 +258,7 @@ These workflows complement the studio standards and templates. They do not repla
 | `07_agent_workflows/FIX_BUG.md` | Defines the process for reproducing, investigating, correcting, and validating software defects. | Not Specified | — |
 | `07_agent_workflows/GENERATE_TESTS.md` | Defines the process for analyzing requirements and generating appropriate automated or manual test cases. | Not Specified | — |
 | `07_agent_workflows/IMPLEMENT_FEATURE.md` | Defines the process for analyzing requirements, implementing features, validating changes, and preparing them for review. | Not Specified | — |
+| `07_agent_workflows/REFACTOR_CODE.md` | Defines the process for behavior-preserving restructuring, including the characterization evidence required when automated tests do not exist. | Not Specified | `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `TESTING_STRATEGY.md`, `DEFINITION_OF_DONE.md` |
 | `07_agent_workflows/REVIEW_CODE.md` | Defines the process for reviewing code changes for correctness, architecture, maintainability, testing, and quality. | Not Specified | — |
 | `07_agent_workflows/REVIEW_DESIGN.md` | Defines the process for evaluating game design documents, gameplay systems, mechanics, and player experience. | Not Specified | — |
 | `07_agent_workflows/UPDATE_DOCUMENTATION.md` | Defines the process for creating, updating, synchronizing, validating, and maintaining project documentation. | Not Specified | — |
@@ -347,25 +356,26 @@ The current documentation repository contains the following registered files:
 | Category | Document count |
 |---|---:|
 | Documentation inventory | 1 |
+| Documentation entry point | 1 |
 | Studio standards | 10 |
 | Game design guidelines | 13 |
-| Technical standards | 11 |
+| Technical standards | 12 |
 | Art and audio standards | 7 |
 | Production standards | 8 |
 | QA standards | 6 |
 | Templates | 20 |
-| AI agent workflows | 13 |
-| **Total** | **89** |
+| AI agent workflows | 14 |
+| **Total** | **92** |
 
 The governance files registered in section 16 are not counted in the total above, which covers the Markdown documents under `docs/`.
 
 | Location | File count |
 |---|---:|
 | Agent rules (`.cline/rules/`) | 6 |
-| Execution workflows (`.clinerules/workflows/`) | 4 |
+| Execution workflows (`.clinerules/workflows/`) | 5 |
 | GitHub configuration (`.github/`) | 5 |
 | Reference collections (`references/`) | 4 |
-| **Total** | **19** |
+| **Total** | **20** |
 
 **Inventory status:** Reflects the actual contents of the repository. Status and dependencies are recorded for each registered file; `Not Specified` means that no status has been established.
 
@@ -386,11 +396,12 @@ Paths in this section are relative to the repository root.
 | `.cline/rules/documentation-management.md` | Always-loaded rule defining how AI agents discover, maintain, and verify documentation. | Not Specified | `DOCUMENTATION_STANDARDS.md` |
 | `.cline/rules/gdscript-standards.md` | Always-loaded rule defining how GDScript is written, reviewed, and validated. | Not Specified | `GDSCRIPT_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md`, `CODE_REVIEW_GUIDELINES.md` |
 | `.cline/rules/git-workflow.md` | Always-loaded rule defining mandatory agent Git behavior and repository protections. | Not Specified | `GIT_CONVENTIONS.md`, `BRANCHING_STRATEGY.md` |
-| `.cline/rules/project-context.md` | Always-loaded rule defining repository roots, directory responsibilities, and authority order. | Not Specified | `adr/README.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `DEVELOPMENT_PHILOSOPHY.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md` |
+| `.cline/rules/project-context.md` | Always-loaded rule defining repository roots, directory responsibilities, and authority order. | Not Specified | `adr/ADR_PROCESS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `DEVELOPMENT_PHILOSOPHY.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md` |
 | `.clinerules/workflows/code-review.md` | Cline execution workflow for reviewing a change. | Not Specified | `REVIEW_CODE.md` |
-| `.clinerules/workflows/create-technical-design.md` | Cline execution workflow for producing a technical design. | Not Specified | `CREATE_TECHNICAL_DESIGN.md`, `adr/README.md` |
+| `.clinerules/workflows/create-technical-design.md` | Cline execution workflow for producing a technical design. | Not Specified | `CREATE_TECHNICAL_DESIGN.md`, `adr/ADR_PROCESS.md` |
 | `.clinerules/workflows/fix-bug.md` | Cline execution workflow for investigating and correcting a defect. | Not Specified | `FIX_BUG.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md`, `DEFINITION_OF_DONE.md` |
 | `.clinerules/workflows/implement-feature.md` | Cline execution workflow for implementing a feature. | Not Specified | `IMPLEMENT_FEATURE.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md` |
+| `.clinerules/workflows/refactor-code.md` | Cline execution workflow for behavior-preserving refactoring. | Not Specified | `REFACTOR_CODE.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md` |
 | `.github/ISSUE_TEMPLATE/bug_report.md` | Defect report form aligned with the defect reporting standard. | Not Specified | `BUG_REPORTING.md` |
 | `.github/ISSUE_TEMPLATE/feature_request.md` | Feature request form for proposing new functionality. | Not Specified | — |
 | `.github/PULL_REQUEST_TEMPLATE.md` | Pull request description template aligned with the review and completion standards. | Not Specified | `BRANCHING_STRATEGY.md`, `DEFINITION_OF_DONE.md`, `GIT_CONVENTIONS.md`, `CODE_REVIEW_GUIDELINES.md`, `TESTING_STRATEGY.md` |

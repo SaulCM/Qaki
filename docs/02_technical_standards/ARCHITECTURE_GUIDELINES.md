@@ -151,7 +151,19 @@ Each feature SHOULD own its relevant:
 
 Features SHOULD expose a limited and understandable interface to other parts of the project.
 
-The internal implementation of a feature SHOULD remain private unless another feature has a legitimate reason to interact with it.
+#### Public Surface
+
+A feature's public surface is the set of elements other features are permitted to use. It consists of:
+
+- `class_name` types that the feature declares as available to other features.
+- Signals declared by those types or by the feature's public entry scene.
+- An optional `_api.gd` facade at the feature root that exposes the supported entry points and forwards them to internal implementations.
+
+Everything else in the feature directory is internal, including its internal scenes, scripts, resources, node paths, and assets.
+
+A feature MUST NOT reach into another feature's internal implementation through a scene path, node path, or internal script. A cross-feature reference to `res://features/<other_feature>/...` is permitted only when it targets a `class_name` type or the feature's `_api.gd` facade. Referencing another feature's scene files by path, preloading them directly, or instantiating their internal nodes couples the features to internal structure and MUST NOT be used as the normal integration mechanism.
+
+The internal implementation of a feature SHOULD remain private unless another feature has a legitimate reason to interact with it through the public surface.
 
 ### 4.2 Feature Independence
 
@@ -166,7 +178,7 @@ When features need to interact, developers SHOULD prefer:
 - Shared data contracts or resources.
 - Dedicated coordination systems when justified.
 
-Direct references MAY be used when the dependency is simple, intentional, and appropriate.
+Direct references MAY be used when the dependency is simple, intentional, and appropriate, and only through the public surface defined in section 4.1.
 
 ### 4.3 Shared Functionality
 
@@ -719,7 +731,7 @@ These guidelines SHOULD be used alongside:
 - `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
 - `docs/00_studio_standards/DEFINITION_OF_DONE.md`
 - `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
-- `docs/02_technical_standards/adr/README.md`
+- `docs/02_technical_standards/adr/ADR_PROCESS.md`
 
 Only documents that exist in the repository should be registered as active references in the documentation inventory.
 

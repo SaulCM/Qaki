@@ -16,6 +16,8 @@ It establishes:
 
 The lifecycle provides a structured framework for moving a game project from an initial concept to a released product while maintaining flexibility for experimentation and iteration.
 
+This document provides execution guidance for the phases defined in `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`. It does not replace or redefine that lifecycle. Where the two documents differ, `GAME_DEVELOPMENT_LIFECYCLE.md` governs.
+
 ## 2. Scope
 
 These guidelines apply to game projects developed within the studio.
@@ -105,6 +107,24 @@ The recommended lifecycle consists of the following stages:
 These stages represent the project's overall progression.
 
 They do not require every feature to follow a strictly sequential process. Individual features MAY move through their own design, implementation, testing, and refinement cycles within the broader project lifecycle.
+
+### 4.1. Phase and Stage Mapping
+
+The ten stages above provide execution detail for the nine phases of `GAME_DEVELOPMENT_LIFECYCLE.md`.
+
+| GAME_DEVELOPMENT_LIFECYCLE phase | PROJECT_LIFECYCLE stage |
+|---|---|
+| Phase 1 — Concept | Stage 1: Project Initiation; Stage 2: Concept Development |
+| Phase 2 — Pre-Production | Stage 3: Pre-production |
+| Phase 3 — Prototyping | Stage 4: Prototyping and Validation |
+| Phase 4 — Production | Stage 5: Production |
+| Phase 5 — Alpha | Stage 6: Alpha |
+| Phase 6 — Beta | Stage 7: Beta |
+| Phase 7 — Release Candidate | Stage 8: Release Candidate |
+| Phase 8 — Release | Stage 9: Release |
+| Phase 9 — Post-Release | Stage 10: Post-release |
+
+The mapping is descriptive. The phases remain authoritative, and the stages provide the execution detail used by the production standards.
 
 ## 5. Stage 1: Project Initiation
 

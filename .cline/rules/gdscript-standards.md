@@ -44,7 +44,7 @@ Before writing or significantly changing GDScript, read the documents relevant t
 ## 3. Language and Project Boundaries
 
 - Use GDScript for all game implementation.
-- Do not introduce C#, GDExtension, native modules, or another language. `.cline/rules/project-context.md` permits C# only with explicit owner approval, and no such approval is recorded.
+- Do not introduce C#, GDExtension, native modules, or another language. C# and GDExtension are approval-gated in section 15; no such approval is recorded, so they remain prohibited until the project owner grants one.
 - All game scripts, scenes, resources, and assets live inside `game_project/`. `res://` resolves to `game_project/`.
 - Never treat the repository root as the Godot project root.
 - Target the Godot version configured in `game_project/project.godot`. Verify engine APIs against that version before relying on them; do not assume every Godot 4.x version exposes the same API.
@@ -113,7 +113,7 @@ Static typing is expected throughout production GDScript wherever practical (`do
 - Each script has one clear responsibility. Avoid monolithic scripts that combine unrelated gameplay, UI, persistence, and coordination logic.
 - Separate gameplay rules, input handling, presentation, persistence, and UI responsibilities where practical.
 - Prefer composition over inheritance. Use inheritance only for a genuine, stable type relationship, and avoid deep hierarchies.
-- Apply SOLID principles where they provide practical value. Do not add abstractions, interfaces, frameworks, or design patterns that the requirements do not justify.
+- Keep each script responsible for one cohesive concern. Prefer composition over inheritance. Depend on declared public methods and signals rather than another component's internals. Do not add abstractions, interfaces, frameworks, or design patterns that the requirements do not justify.
 - Do not duplicate gameplay or business logic across scripts. Extract shared code only when it is genuinely reused and has a clear owner.
 - Avoid circular dependencies between features. Prefer explicit dependencies, public interfaces, and signals over hidden coupling.
 - Keep gameplay logic independent from presentation wherever practical.
