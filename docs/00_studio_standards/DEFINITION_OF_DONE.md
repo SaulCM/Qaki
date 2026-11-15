@@ -190,7 +190,7 @@ A bug fix is complete when:
 - The bug record is updated when the project tracks the defect in an issue or backlog item.
 - Documentation is updated only when the fix changes documented behavior or reveals a missing requirement.
 
-A bug fix MUST NOT be reported as fixed and validated when its correction has not been verified (`.clinerules/workflows/fix-bug.md`).
+A bug fix MUST NOT be reported as fixed and validated when its correction has not been verified (`docs/07_agent_workflows/FIX_BUG.md`, section 19).
 
 ### 6.5 Automated Tests
 
@@ -314,8 +314,8 @@ When a work item changes code, the following apply:
 
 This section must be read against the actual state of the repository:
 
-- The Godot project does not currently contain a `tests/` directory, a configured test framework, or a documented test runner command.
-- `.github/workflows/ci.yml` and `.github/workflows/validation.yml` are unconfigured placeholders, so no automated check currently runs on pull requests.
+- The Godot project does not currently contain a `tests/` directory or any test suite, and GdUnit4 is not installed in `game_project/addons/`. The adopted framework, runner, and pinned version are recorded in `TESTING_STRATEGY.md` (section 11.5).
+- `.github/workflows/ci.yml` is configured and runs project import validation, a GDScript parse check, and GdUnit4 test execution only when a test suite exists (`TESTING_STRATEGY.md`, section 11.6). `.github/workflows/validation.yml` remains an unconfigured placeholder. The workflow has not yet been executed, so no automated check has yet produced a result.
 
 Therefore a work item MUST NOT be reported as automatically tested, or as passing continuous integration, unless such a test or check was actually executed and its result observed.
 

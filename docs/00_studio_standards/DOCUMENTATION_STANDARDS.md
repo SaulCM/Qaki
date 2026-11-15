@@ -177,7 +177,7 @@ Project-specific requirements must not be placed in shared studio standards unle
 - A template is not a project document. Instantiating a template produces a game-specific document under `game_project/docs/`.
 - Templates SHOULD state their recommended destination using the full repository-relative path (`game_project/docs/...`).
 - Studio agent workflows are stored in repository-root `docs/07_agent_workflows/`.
-- Cline execution workflows are stored in `.clinerules/workflows/`.
+- Cline execution workflows are stored in `.clinerules/workflows/` and act as execution adapters to the authoritative studio workflows (Section 3.8).
 
 ### 3.5 Documentation Path Resolution
 
@@ -209,6 +209,28 @@ These files govern agent behavior and repository-specific automation.
 They should reference authoritative studio and project documentation instead of duplicating entire standards.
 
 Agent configuration is not a replacement for formal project documentation.
+
+### 3.8 Workflow Layers and Precedence
+
+Workflow knowledge is divided between two layers with different responsibilities.
+
+| Layer | Location | Responsibility |
+|---|---|---|
+| Studio workflow layer | `docs/07_agent_workflows/` | Authoritative procedures. Defines how a task is performed. |
+| Execution workflow layer | `.clinerules/workflows/` | Thin adapters. Select a task type, bind agent rules, and delegate to the authoritative studio workflow. |
+
+Requirements:
+
+- Studio workflows are the single source of procedural truth. A procedure MUST be defined once, in `docs/07_agent_workflows/`.
+- Execution workflows are adapters, not independent procedures. Each adapter MUST identify its authoritative studio workflow by full repository-relative path and MUST instruct the reader to read and follow it.
+- An adapter MUST NOT restate, reorder, extend, or replace the studio procedure, and MUST NOT introduce a procedure of its own.
+- Adapters MAY carry execution-specific routing that is not part of the procedure: when the workflow applies, which agent rules bind the task, which standards govern repository operations, and where related tasks belong.
+- Where an adapter and its authoritative studio workflow conflict, the studio workflow governs. The conflict MUST be reported and corrected in the adapter, not resolved by preferring the adapter.
+- A new workflow MUST follow this architecture: the procedure is added to `docs/07_agent_workflows/` first, and an adapter is added only if the execution layer needs one.
+- When an execution workflow has no authoritative studio workflow, the gap MUST be reported and resolved through owner-approved documentation work. The gap MUST NOT be closed by writing an independent procedure in the execution layer.
+- A change that alters a procedure MUST update the authoritative studio workflow and leave the adapter consistent with it.
+
+A workflow is therefore documented completely only when its procedure exists once in the studio layer and every execution adapter points to it.
 
 ## 4. Document Classification and Authority
 
@@ -278,6 +300,8 @@ When documentation conflicts, use the following authority principles:
 6. General industry practices and assumptions.
 
 The authority order must be interpreted according to the scope of each document. A project-specific gameplay specification, for example, governs that game's approved gameplay behavior, while studio-wide Git standards govern repository practices.
+
+A Cline execution workflow in `.clinerules/workflows/` is never an independent authority. When it and its authoritative studio workflow in `docs/07_agent_workflows/` conflict, the studio workflow governs (Section 3.8).
 
 When a conflict cannot be resolved confidently, identify it and request clarification rather than silently choosing an interpretation.
 
@@ -730,7 +754,7 @@ This document should be used together with:
 - `CODE_REVIEW_GUIDELINES.md` — Review and approval practices.
 - `DEFINITION_OF_DONE.md` — Completion and acceptance criteria.
 - `docs/06_templates/` — Reusable documentation templates.
-- `docs/07_agent_workflows/` — AI-assisted documentation procedures.
+- `docs/07_agent_workflows/` — Authoritative AI-assisted development procedures; `.clinerules/workflows/` holds their execution adapters (Section 3.8).
 
 ## 14. Maintenance
 

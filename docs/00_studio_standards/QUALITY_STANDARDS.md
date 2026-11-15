@@ -377,6 +377,16 @@ Before a release:
 
 Projects MAY define additional gates according to their production lifecycle.
 
+### 16.4 Quality-Gate Authority and Ownership
+
+This subsection is the authoritative rule for quality-gate ownership. `docs/05_qa_standards/QA_STRATEGY.md` (section 8) defines the gate conditions and the gate outcome vocabulary and cross-references this subsection instead of restating the ownership rule.
+
+- The project owner retains final authority over every quality gate, and over final acceptance and release approval.
+- QA evaluates the evidence a gate requires, applies the gate outcome vocabulary in `QA_STRATEGY.md` (section 8.5), and reports the outcome with its supporting evidence. A gate outcome is a record of an evaluation, not an approval.
+- Developers and reviewers supply the evidence a gate requires and identify gaps. A completed review is not a gate approval.
+- An AI agent MAY evaluate evidence and recommend an outcome. It MUST NOT approve its own work, grant final acceptance or release approval, override the project owner, or record an approval the project owner did not give (section 18).
+- A gate outcome of `Passed` records that the required conditions were satisfied at the time of evaluation. It MUST NOT be reported as the completion state `Approved` (`docs/00_studio_standards/DEFINITION_OF_DONE.md`, section 4), which requires an explicit owner approval statement.
+
 ## 17. Quality Exceptions
 
 Exceptions to this standard MAY be approved when project constraints justify them.

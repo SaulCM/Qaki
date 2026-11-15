@@ -707,6 +707,14 @@ This MAY be:
 
 The project MUST avoid maintaining multiple conflicting sources of truth.
 
+The tracking location for this project has been decided (owner decision OD-08):
+
+- **GitHub Issues is the authoritative defect-tracking system.** Every active defect is recorded there, and its lifecycle status (section 10) is kept there.
+- **GitHub Issue templates are the defect-intake mechanism.** `.github/ISSUE_TEMPLATE/bug_report.md` instantiates the form in section 16.
+- **The form in section 16 and the labels in section 17.2 are the source of truth for the template.** The template MUST NOT introduce fields, labels, or vocabulary that contradict them.
+- A defect MUST NOT be duplicated as a second authoritative record in the backlog, in a document, or in another tracker. A record that exists in two places is a conflict to resolve, not a second source of truth.
+- Committed defect notes under `game_project/docs/qa/bug_reports/` (section 17.3) are permitted only for information the issue cannot carry, and MUST reference the issue that owns the defect.
+
 ### 17.1. Identifier Convention
 
 When the tracking system does not provide automatic identifiers, use:
@@ -743,6 +751,12 @@ Suggested labels:
 - `needs-information`
 
 Labels SHOULD remain consistent throughout the project.
+
+For this project, the labels listed above are the defect-label vocabulary in use, applied consistently with the severity classification in section 8 and the priority classification in section 9:
+
+- A label that is not listed above MUST NOT be introduced for defect classification without changing this section.
+- Severity and priority are recorded as fields in the defect report (section 16). Only severity has labels in the list above; priority is not a label.
+- A label MUST exist in the repository's label configuration before a template can apply it. A label that appears only in a template file has no effect in the tracker, and the template MUST NOT be treated as evidence that the label exists.
 
 ### 17.3. Repository Organization
 

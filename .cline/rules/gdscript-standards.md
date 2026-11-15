@@ -158,7 +158,7 @@ Static typing is expected throughout production GDScript wherever practical (`do
 - Use the testing framework and execution method the project has adopted. The project has not yet established a test suite or runner under `game_project/tests/`; when no automated tests exist for the affected area, state that explicitly instead of implying coverage.
 - Validate by parsing the script and, where possible, running the project or the affected scene. Report the errors and warnings actually observed.
 - Distinguish clearly between static inspection and runtime validation. Never claim code was run, tested, or verified when it was not.
-- The GitHub Actions workflows under `.github/workflows/` are currently unconfigured placeholders. Do not assume automated checks will catch a mistake.
+- `.github/workflows/ci.yml` is configured but has never been executed, and `.github/workflows/validation.yml` remains an unconfigured placeholder. Do not assume automated checks will catch a mistake; report what actually ran.
 
 ## 14. Scope Discipline
 

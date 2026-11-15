@@ -327,6 +327,8 @@ Before a session:
 
 Known issues that could influence observations SHOULD be documented before testing.
 
+When the project has no exportable build yet, the game MAY be run from the editor for a playtesting session. The session record MUST state that it was run from the editor rather than from a build (section 15.1).
+
 ### 6.5. Prepare Materials
 
 Depending on the session, prepare:
@@ -387,6 +389,28 @@ Use additional participants when:
 - Supporting decisions that require stronger evidence.
 
 There is no universal participant count suitable for every playtesting activity.
+
+### 7.4. Reduced-Participant and Self-Playtesting
+
+External participants are not always available, and early work may not yet produce a playable build for them. In that situation, the project owner MAY evaluate the game as the sole player (self-playtesting) or with a very small number of internal participants (reduced-participant playtesting).
+
+These modes are legitimate sources of evidence, but they are weaker than external playtesting:
+
+- The developer knows the intended design and is likely to underestimate unclear mechanics, hidden assumptions, and difficulty.
+- One participant cannot reveal disagreement between different play styles or experience levels.
+
+Self-playtesting SHOULD therefore be structured to reduce that bias where practical:
+
+- State the objective and the intended behavior before playing, and record them before the outcome is known.
+- Follow the scenario without using developer knowledge or debug tooling that a player would not have.
+- Record observable evidence — what was attempted, what happened, and how long or how many attempts it took — rather than impressions alone.
+- Identify observations that depend on knowledge a player would not have.
+
+Findings MUST be disclosed as self-playtesting or reduced-participant testing. They MUST NOT be presented as external player feedback, as representative of the target audience, or as validation of player comprehension, difficulty, pacing, or enjoyment.
+
+The playtesting record MUST identify the session as self-playtesting or reduced-participant testing and state how many participants took part (section 15.1).
+
+When external evaluation becomes feasible, findings that depend on player comprehension, difficulty, pacing, or enjoyment SHOULD be re-examined before they are treated as established.
 
 ## 8. Conducting a Playtesting Session
 
@@ -922,6 +946,7 @@ Example:
 - **Build:** BUILD-XXXXX
 - **Platform:** Windows / Linux / macOS / Other
 - **Session Type:** Informal / Structured / Exploratory / Comparative / Remote
+- **Session Mode:** Self-playtest / Reduced-participant / External (state the participant count)
 - **Facilitator:**
 - **Participants:**
 - **Duration:**

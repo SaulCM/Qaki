@@ -485,7 +485,9 @@ For Godot projects:
 - Test persistence through the appropriate user data paths.
 - Consider headless execution for suitable automated tests.
 
-The project MAY use GUT, GdUnit4, or another suitable testing framework. The selected framework MUST be documented in the game project.
+The project has adopted GdUnit4 v6.2.3 as its testing framework, recorded in `docs/02_technical_standards/TESTING_STRATEGY.md` (section 11.5), together with the runner, the return codes, and the CI expectations.
+
+No other testing framework is approved for this project. Changing the framework, the runner, or the pinned version is a documented tool change (`TESTING_STRATEGY.md`, sections 11.4 and 11.5) and MUST NOT be introduced as part of a regression-testing task.
 
 ### 10.4. Test Environment
 

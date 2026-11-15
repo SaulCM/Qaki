@@ -320,6 +320,8 @@ Examples include:
 
 Tests MUST follow the approved feature-oriented project structure.
 
+`docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md` (section 8) is the normative specification for test directory organization, including the location of reusable test fixtures. This section provides testing guidance consistent with that specification and MUST NOT contradict it.
+
 Tests SHOULD be colocated with the feature or shared functionality they verify.
 
 Example:
@@ -638,6 +640,106 @@ Project-specific testing tools, dependencies, configuration, and execution comma
 
 Significant changes to the testing framework or execution environment SHOULD be documented and reviewed.
 
+### 11.5 Adopted Testing Toolchain (Project Decision)
+
+The framework decision that section 11.1 requires has been made for this project. It is recorded here because `game_project/docs/technical/` does not exist yet. When that directory is created, the record MUST move there and this section MUST reference it instead of restating it.
+
+| Element | Adopted value |
+|---|---|
+| Framework | GdUnit4 (`godot-gdunit-labs/gdUnit4`), MIT licensed; the license text ships with the addon at `addons/gdUnit4/LICENSE` |
+| Framework version | `v6.2.3`, released 2026-11-01 |
+| Runner | The GdUnit4 command-line runner: `addons/gdUnit4/runtest.sh` (Linux, macOS) and `addons/gdUnit4/runtest.cmd` (Windows), which execute `res://addons/gdUnit4/bin/GdUnitCmdTool.gd` |
+| Continuous integration | GitHub Actions, `.github/workflows/ci.yml` |
+| Test language | GDScript only |
+| Engine | Godot `4.7.2.stable.official.ed1daf0bf`; project feature level `4.7` |
+
+Constraints that remain in force:
+
+- GDScript remains the only approved project scripting language. Adopting GdUnit4 does not authorize C#, .NET, a Godot .NET build, or a .NET test run.
+- No second testing framework is approved. Introducing one requires an owner decision and a change to this section.
+- No other continuous-integration platform is approved.
+- Changing the framework, the runner, or the pinned version is a tool change under section 11.4 and SHOULD be reviewed as such.
+
+Compatibility evidence, recorded 2026-11-15:
+
+- The compatibility table in the `v6.2.3` release `README.md` lists Godot `v4.7` and `v4.7.1` as compatible with the `v6.2.x` line.
+- The framework's own CI workflow (`.github/workflows/ci-dev.yml`) runs its test suite against Godot `4.7` and `4.7.2`, both `stable`.
+- The framework's issue tracker records the completion of the CI-matrix update whose acceptance criteria are "The CI matrix tests `Godot` `4.7.2-stable` as the latest version of the `4.7` line" and "All CI checks pass".
+- The `v6.2.3` release notes include a fix for a defect reported against Godot `4.7.2` with `v6.2.2`.
+
+Limitation, stated explicitly: the `v6.2.x` compatibility table enumerates `v4.7` and `v4.7.1` but not `v4.7.2`, and no run of GdUnit4 on Godot `4.7.2` has been executed or recorded in this repository. The first CI run that executes GdUnit4 on Godot `4.7.2` provides this project's own evidence and MUST be recorded. A failure in that run is a compatibility defect and MUST NOT be reported as a test result.
+
+Installation status:
+
+- GdUnit4 is not installed in `game_project/addons/`. Adding it changes the Godot project and requires owner authorization that this decision does not grant.
+- `.github/workflows/ci.yml` installs the pinned version into the checkout at run time, so automated execution does not depend on a committed addon copy.
+- No GDScript test suite exists in this repository. A framework, a runner, and a workflow do not create test coverage, and their presence MUST NOT be reported as coverage.
+
+### 11.6 Test Execution and Reporting
+
+Test placement and fixtures follow `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md` (section 8), which is normative. Naming follows section 6 of this document: a GdUnit4 suite is a `test_*.gd` file whose script extends `GdUnitTestSuite`.
+
+Local execution, started from the Godot project root (`game_project/`):
+
+```text
+Windows:
+  set GODOT_BIN=C:\path\to\Godot_v4.7.2-stable_win64.exe
+  addons\gdUnit4\runtest.cmd -a res://tests
+
+Linux and macOS:
+  export GODOT_BIN=/path/to/godot
+  chmod +x addons/gdUnit4/runtest.sh
+  ./addons/gdUnit4/runtest.sh -a res://tests
+```
+
+Both runners pass `--path .` to the engine, so they MUST be started from the Godot project root. The engine is located through the `GODOT_BIN` environment variable or the `--godot_binary <path>` argument.
+
+Runner options used by this project:
+
+| Option | Meaning |
+|---|---|
+| `-a, --add <directory\|path of testsuite>` | Adds a suite or a directory to the run; MAY be repeated |
+| `-i, --ignore <testsuite_name\|testsuite_name:test-name>` | Excludes a suite or a single test |
+| `-c, --continue` | Continues after the first failure; fail-fast is the default |
+| `-conf [file]` | Runs a saved configuration instead of `-a` paths |
+| `-rd <directory>` | Report directory; default `res://reports/` |
+| `-rc <count>` | Number of reports kept; default 20 |
+| `--ignoreHeadlessMode` | Disables the headless-mode check described below |
+
+Headless execution requirements:
+
+- GdUnit4 v6 refuses to run in headless mode by default and terminates with return code `103`. `--ignoreHeadlessMode` disables that check and MUST be supplied to every headless run.
+- Headless execution does not render, and Godot does not deliver `InputEvent`s in headless mode. A test that depends on rendering or simulated input MUST run with a display instead.
+- `--audio-driver Dummy` MUST be supplied where no audio device is available, including CI.
+- Plain project validation is not a GdUnit4 run and uses Godot's own `--headless` flag (section 13.6).
+
+Return codes and their interpretation:
+
+| Return code | Meaning | Interpretation |
+|---|---|---|
+| `0` | All executed tests succeeded | Pass, for the tests that actually executed |
+| `100` | At least one test failed or errored | Fail |
+| `101` | Orphan nodes were detected | Fail; this project treats orphan nodes as a defect |
+| `103` | Headless execution was refused | Fail; the run is configured incorrectly |
+| `104` | The engine version is unsupported by the framework | Fail; this is a compatibility defect |
+
+A run that discovers no test case exits with `0` after reporting that no test cases were found. That return code MUST NOT be reported as tests passing. The existence of tests MUST be determined from the test paths, not from the return code.
+
+Continuous integration expectations for `.github/workflows/ci.yml`:
+
+- The workflow runs on pull requests targeting `develop` or `main` and on pushes to `develop`.
+- It runs project import validation and a parse check of project GDScript on every run.
+- It executes GdUnit4 only when `test_*.gd` suites exist outside `game_project/addons/`. When none exist, the job states in the run summary that no automated test was executed and does not claim coverage.
+- It installs Godot `4.7.2` from the official `godotengine/godot-builds` release after verifying the archive checksum, and installs GdUnit4 `v6.2.3` into the checkout at run time. Neither is committed to the repository.
+- Any non-zero return code from a validation command, including a GdUnit4 run, fails the job. A failure MUST NOT be converted into a pass by ignoring the return code.
+- A configured check that has never executed provides no evidence and MUST NOT be reported as passing (`DEFINITION_OF_DONE.md`, section 4).
+
+Reporting requirements:
+
+- A report MUST state which command was executed, its exact return code, and the tests that ran.
+- When no automated test executed, the report MUST say so and MUST NOT describe the work as `Automatically tested` (`docs/00_studio_standards/DEFINITION_OF_DONE.md`, section 4).
+- When tests exist but were not executed, the report MUST state which suites were skipped and why.
+
 ## 12. Regression and Defect Prevention
 
 ### 12.1 Regression Tests
@@ -704,6 +806,8 @@ Depending on project requirements, CI MAY execute:
 - Integration tests.
 - Smoke tests.
 - Export or build validation.
+
+The workflow configured in `.github/workflows/ci.yml`, and the checks it performs, are described in section 11.6.
 
 ### 13.4 Release Validation
 

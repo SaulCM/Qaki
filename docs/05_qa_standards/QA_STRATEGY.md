@@ -696,6 +696,38 @@ A quality gate MAY produce one of the following outcomes:
 
 A quality gate MUST NOT be marked as passed without supporting evidence.
 
+### 8.6. Work-Item Status Vocabulary Mapping
+
+Quality work uses several status vocabularies. Each describes a different subject. They are not interchangeable, and a value from one vocabulary MUST NOT be used in place of a value from another.
+
+The completion-state vocabulary in `docs/00_studio_standards/DEFINITION_OF_DONE.md` (section 4) is canonical for reporting how far a work item has progressed. A completion report MUST use it and MUST state the highest state actually reached.
+
+| Vocabulary | Defined in | Values | Subject it describes |
+|---|---|---|---|
+| Completion states (canonical) | `DEFINITION_OF_DONE.md`, section 4 | Implemented · Locally validated · Automatically tested · Reviewed · Approved · Integrated | How far a work item has progressed |
+| Acceptance status | `ACCEPTANCE_CRITERIA_GUIDELINES.md`, section 11.1 | Not Evaluated · In Progress · Accepted · Rejected · Blocked · Accepted with Exceptions | Whether a work item's acceptance criteria are satisfied |
+| Quality gate outcome | Section 8.5 of this document | Passed · Passed with Conditions · Failed · Blocked · Not Evaluated | The outcome of one quality-gate evaluation |
+| Validation result | `RELEASE_PROCESS.md`, section 10.8 | Passed · Failed · Not Run · Not Applicable · Blocked | The outcome of one validation activity |
+| Defect lifecycle status | `BUG_REPORTING.md`, section 10 | Reported · Triaged · Confirmed · In Progress · Fixed · In Verification · Reopened · Closed · Deferred · Rejected · Duplicate | The state of one tracked defect |
+
+Mapping rules:
+
+- An acceptance status of `Accepted` records that acceptance criteria are satisfied. It MUST NOT be reported as the completion state `Approved`, which requires an explicit owner approval statement.
+- A quality gate outcome or a validation result of `Passed` applies to that single evaluation. It MUST NOT be reported as `Automatically tested`, `Reviewed`, `Approved`, or `Integrated`.
+- A defect status of `Fixed` records that a correction has been implemented. It MUST NOT be treated as verified (`BUG_REPORTING.md`, section 10.1) or as a completion state.
+- `Blocked` and `Not Evaluated` appear in more than one vocabulary and describe different subjects. The vocabulary in use MUST be identified whenever either value is reported.
+- `Not Applicable` is a validation result. A requirement that does not apply is recorded as not applicable under `DEFINITION_OF_DONE.md` (section 3) and is not a completion state.
+- A status in any vocabulary MUST NOT be recorded without the evidence that vocabulary requires.
+
+### 8.7. Quality-Gate Authority
+
+The project owner holds final authority over every quality gate. QA evaluates the evidence a gate requires and reports the outcome. QA does not grant final acceptance, release approval, or completion approval.
+
+- `docs/00_studio_standards/QUALITY_STANDARDS.md` (section 16.4) is the authoritative ownership rule. This section defines the gate conditions (sections 8.1 to 8.4) and the gate outcome vocabulary (section 8.5) that the evaluation applies; it does not restate the ownership rule.
+- Evaluating a gate against its conditions, recording the outcome, and reporting the supporting evidence (sections 8.5 and 8.6) are QA activities.
+- Declaring a gate passed, accepting residual risk, approving an exception, and approving a release are project-owner decisions. They MUST NOT be inferred from a QA outcome, a passing check, or a recommendation.
+- An AI agent or reviewer that evaluates a gate MAY recommend an outcome. It MUST NOT approve its own work, override the project owner, or record an approval it did not receive (section 11.4).
+
 ## 9. Defect Management and Quality Improvement
 
 Defect information SHOULD be used to improve both the product and development process.

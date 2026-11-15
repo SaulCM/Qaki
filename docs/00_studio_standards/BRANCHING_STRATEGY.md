@@ -74,7 +74,6 @@ This document was previously an empty placeholder. Every mandatory statement bel
 
 - `docs/00_studio_standards/GIT_CONVENTIONS.md` (approved), sections 1, 5, and 6.
 - `.cline/rules/git-workflow.md` (branch protection, destructive-command limits, reporting duties).
-- `.clinerules/workflows/implement-feature.md` and `.clinerules/workflows/fix-bug.md` (task branch creation from `develop`, pull request target).
 - `docs/07_agent_workflows/IMPLEMENT_FEATURE.md` (section 10) and `docs/07_agent_workflows/FIX_BUG.md` (section 15).
 - `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md` (section 8).
 - `docs/04_production_standards/RELEASE_PROCESS.md` (sections 7 and 16).
@@ -279,7 +278,11 @@ These expectations follow `CODE_REVIEW_GUIDELINES.md` (section 4.1) and the repo
 
 ### 13.3 Automated Checks
 
-`.github/workflows/ci.yml` and `.github/workflows/validation.yml` are currently unconfigured placeholders. Until they are configured and documented:
+`.github/workflows/ci.yml` is configured. It runs project import validation, a GDScript parse check, and GdUnit4 test execution when a test suite exists (`docs/02_technical_standards/TESTING_STRATEGY.md`, sections 11.6 and 13).
+
+`.github/workflows/validation.yml` remains an unconfigured placeholder.
+
+The workflow has never been executed, and no required status checks are recorded in this repository. Until both are true:
 
 - A pull request MUST NOT claim automated validation that did not run.
 - Required status checks cannot be relied on as a quality gate.
@@ -289,7 +292,9 @@ See recommendation R-9 in section 19.
 
 ### 13.4 Template
 
-`.github/PULL_REQUEST_TEMPLATE.md` is currently a placeholder. Until it is completed, the description requirements in section 13.2 apply directly. See recommendation R-6 in section 19.
+`.github/PULL_REQUEST_TEMPLATE.md` is implemented. It encodes the description requirements of section 13.2, the completion states of `DEFINITION_OF_DONE.md` (section 4), and the reporting requirements of section 13.3.
+
+The template carries `Status: Draft` and has not been approved by the project owner. Section 13.2 therefore remains the authoritative requirement, and a completed template MUST NOT be treated as evidence of review, approval, or automated validation. See recommendation R-6 in section 19.
 
 ## 14. Code Review and Approval
 
@@ -408,11 +413,11 @@ The following policies are not established by an existing approved standard. The
 | R-3 | Source branch for `main` | Not specified | Promote integrated work from `develop` into `main` through an owner-approved pull request, and tag the released revision on `main` |
 | R-4 | Task-branch synchronization | Not specified | Bring a task branch up to date by merging `develop` into it; prohibit rebase and force-push on any branch shared with the remote |
 | R-5 | Branch protection documentation | The hosting platform configuration is not recorded in the repository | Document the actual `main` and `develop` protection rules in repository documentation and keep the configuration consistent with section 5 |
-| R-6 | Pull request template | `.github/PULL_REQUEST_TEMPLATE.md` is a placeholder | Complete the template so that every pull request carries scope, validation evidence, and known limitations as required by section 13.2 |
+| R-6 | Pull request template | `.github/PULL_REQUEST_TEMPLATE.md` is implemented and covers scope, completion state, validation evidence, known limitations, and the pull request target required by section 13.2. Its content still carries `Status: Draft`, and owner review and approval of that content are outstanding | Review the implemented template and approve or amend it. The item stays open until the project owner approves the template: implementing the file does not approve it, and section 13.2 remains authoritative until this item is closed |
 | R-7 | Merge strategy | Not specified | Squash-merge task branches into `develop` for a linear history, keeping the pull request as the traceable record |
 | R-8 | `bugfix/` examples | `NAMING_CONVENTIONS.md` (section 12.1) and `FIX_BUG.md` (section 15) use a prefix that is not approved | Update those examples to `fix/` so every document lists the same approved prefixes |
-| R-9 | Continuous integration | `.github/workflows/ci.yml` and `.github/workflows/validation.yml` are placeholders | Configure and document required checks, then update section 13.3 and the Definition of Done |
-| R-10 | Workspace rule references | `.cline/rules/git-workflow.md` describes this document as containing only placeholders and instructs agents to ask for direction | Once this document is approved, update the rule's references so it points to the established policy instead of the placeholder notice |
+| R-9 | Continuous integration | `.github/workflows/ci.yml` is configured and documented (section 13.3; `TESTING_STRATEGY.md`, sections 11.5 and 11.6) but has never been executed, and no required status checks are recorded in this repository. `.github/workflows/validation.yml` remains an unconfigured placeholder | Still open and requiring owner action: run and validate the workflow, decide whether `validation.yml` is needed, and configure the required status checks. Configuring the workflow file does not approve it, and this item stays open until the project owner confirms the checks |
+| R-10 | Workspace rule references | Corrected: `.cline/rules/git-workflow.md` no longer describes this document as containing only placeholders. It names this document as the branching authority, instructs agents to follow it, records its `Draft (pending owner review)` status, and asks for direction only when a task depends on one of these open decisions | No further rule change is required until the owner approves this document. On approval, update the rule's status reference so it cites an approved standard rather than a draft, and close this item then |
 
 Approving a recommendation requires a documentation change and, where relevant, a configuration change. It must not be treated as approved merely because it appears here.
 

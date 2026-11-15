@@ -395,9 +395,14 @@ Agent instructions SHOULD reference authoritative documentation instead of dupli
 
 Contains Cline execution workflows in `.clinerules/workflows/`.
 
-These workflows define how agents perform repository tasks. They MUST reference authoritative studio and project documentation instead of duplicating its requirements.
+These workflows are execution adapters. Each adapter selects a task type, binds the applicable agent rules, and delegates to the authoritative studio workflow in `docs/07_agent_workflows/`.
 
-Studio agent procedures remain in repository-root `docs/07_agent_workflows/`. Cline execution workflows MUST NOT contain studio standards.
+The layered architecture, the adapter requirements, and the precedence rule are defined in `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`, Section 3.8.
+
+Requirements specific to this directory:
+
+- Adapters MUST reference authoritative studio and project documentation instead of duplicating its requirements. They MUST NOT contain studio standards, restate a studio procedure, or define an independent procedure.
+- A new procedure MUST be introduced in `docs/07_agent_workflows/` first. It MUST NOT be introduced in `.clinerules/workflows/`.
 
 ### 5.13 `references/`
 
@@ -614,6 +619,10 @@ After structural changes, verify that:
 
 ## 8. Testing Organization
 
+This section is the normative specification for test organization in the Godot project. `docs/02_technical_standards/TESTING_STRATEGY.md` (section 6) provides testing guidance and defers to this section for where tests and fixtures are placed.
+
+Tests MUST follow the organization defined in this section.
+
 Tests SHOULD be located within the feature or shared module they validate.
 
 Examples:
@@ -640,6 +649,8 @@ tests/
     ├── test_player_combat.gd
     └── test_inventory_save_load.gd
 ```
+
+Reusable test fixtures, sample data, and test-only helper scenes or resources MUST be located inside the `tests/` directory of the feature or shared area that owns them (for example `features/inventory/tests/fixtures/`). Fixtures used only by cross-feature integration tests MUST be located in `tests/fixtures/`. Fixture files MUST NOT be placed among production assets or shared game code.
 
 Test organization MUST make the tested feature or system identifiable.
 
@@ -716,6 +727,7 @@ AI agents MUST NOT:
 - Reorganize the repository solely according to personal preferences.
 - Move files without checking references and dependencies.
 - Delete directories or files without verifying their purpose.
+- Duplicate a workflow procedure across `docs/07_agent_workflows/` and `.clinerules/workflows/`.
 
 Significant structural changes MUST be proposed for human approval before implementation.
 

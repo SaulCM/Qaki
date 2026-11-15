@@ -543,18 +543,22 @@ Avoid assertions that merely verify an object exists when the actual behavior ne
 
 ### 12.4 Test framework conventions
 
-Use the testing framework already configured in the project.
+The project has adopted GdUnit4 v6.2.3 as its testing framework and command-line runner (`docs/02_technical_standards/TESTING_STRATEGY.md`, section 11.5). No other testing framework is approved.
 
-If GUT or GdUnit4 is installed, follow its established conventions and version-specific APIs.
+- Write tests in GDScript only. GdUnit4 also supports C#, which this project does not use; do not introduce C#, .NET, or a Godot .NET build.
+- Follow GdUnit4's established conventions and the version-specific APIs of the pinned version.
+- A suite is a `test_*.gd` file whose script extends `GdUnitTestSuite`, placed according to `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md` (section 8).
+- Do not assume that GdUnit4 is installed. It is not yet installed in `game_project/addons/`, and no test suite exists in this repository.
 
-If no testing framework exists:
+Changing the framework, the runner, or the pinned version, and installing or upgrading the addon, require project owner approval and a documented tool change (`TESTING_STRATEGY.md`, sections 11.4 and 11.5).
 
-1. Inspect the project's testing requirements.
-2. Identify suitable options.
-3. Explain the tradeoffs.
-4. Request approval before introducing a dependency or changing project configuration.
+If a task requires automated tests that cannot be executed in the current state:
 
-Do not assume that a testing framework is installed.
+1. State that the tests were not executed and what remains unverified.
+2. Identify what is required to execute them.
+3. Request approval before installing or changing project configuration.
+
+Do not substitute another framework or weaken a test to obtain a passing result.
 
 ### 12.5 Godot-specific testing
 
