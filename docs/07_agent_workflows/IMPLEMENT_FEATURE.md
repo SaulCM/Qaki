@@ -30,7 +30,7 @@ Do not use this workflow for:
 - Making significant architectural changes without approval.
 - Implementing features that have not been sufficiently specified or authorized.
 
-Use `fix_bug.md` for defect correction and `design_game_mechanic.md` or `design_gameplay_system.md` when gameplay behavior still needs to be designed.
+Use `FIX_BUG.md` for defect correction and `DESIGN_GAME_MECHANIC.md` or `DESIGN_GAMEPLAY_SYSTEM.md` when gameplay behavior still needs to be designed.
 
 ## 3. Authoritative References
 

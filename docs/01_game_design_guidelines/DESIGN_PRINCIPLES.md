@@ -368,7 +368,7 @@ Balance decisions SHOULD be evaluated through appropriate calculations, simulati
 
 Numerical equality does not necessarily produce an enjoyable or fair experience.
 
-Refer to `balancing_guidelines.md` for detailed balancing practices.
+Refer to `BALANCING_GUIDELINES.md` for detailed balancing practices.
 
 ## 8. Exploration and Discovery
 

@@ -342,9 +342,8 @@ The report must distinguish between checks that were actually executed and check
 
 This document should be used together with:
 
-- `GIT_CONVENTIONS.md` — General Git practices and repository conventions.
+- `GIT_CONVENTIONS.md` — General Git practices and repository conventions, including the commit message format defined in sections 2 to 4.
 - `BRANCHING_STRATEGY.md` — Branch lifecycle, pull request targets, and integration rules.
-- `COMMIT_CONVENTIONS.md` — Commit message format and commit practices, if maintained separately.
 - `DEFINITION_OF_DONE.md` — Completion and acceptance requirements.
 - `docs/02_technical_standards/` — Technical implementation standards.
 - `docs/06_templates/` — Reusable pull request and review templates, where available.

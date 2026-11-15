@@ -724,7 +724,7 @@ If documentation files are created, renamed, moved, deprecated, or deleted, upda
 
 Register only files that actually exist.
 
-Follow `update_documentation.md` for documentation maintenance requirements.
+Follow `UPDATE_DOCUMENTATION.md` for documentation maintenance requirements.
 
 ## 16. Stage 12: Produce a Project Status Report
 

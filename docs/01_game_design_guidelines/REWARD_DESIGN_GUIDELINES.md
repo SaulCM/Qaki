@@ -136,7 +136,7 @@ Resource rewards MUST have a defined relationship with the game's economy.
 
 Designers SHOULD consider how resource availability affects acquisition, consumption, scarcity, and long-term progression.
 
-Detailed resource generation and consumption MUST follow `economy_design_guidelines.md`.
+Detailed resource generation and consumption MUST follow `ECONOMY_DESIGN_GUIDELINES.md`.
 
 ### 4.3 Progression Rewards
 
@@ -153,7 +153,7 @@ Examples include:
 
 Progression rewards SHOULD reinforce the intended advancement structure.
 
-Their impact on progression pacing MUST be evaluated using `progression_design_guidelines.md`.
+Their impact on progression pacing MUST be evaluated using `PROGRESSION_DESIGN_GUIDELINES.md`.
 
 ### 4.4 Cosmetic Rewards
 
@@ -674,7 +674,7 @@ Designers MUST evaluate whether rewards:
 - Create progression bottlenecks.
 - Make other progression activities irrelevant.
 
-Progression-related reward decisions SHOULD follow `progression_design_guidelines.md`.
+Progression-related reward decisions SHOULD follow `PROGRESSION_DESIGN_GUIDELINES.md`.
 
 ### 13.2 Economy
 
@@ -936,16 +936,16 @@ Before approving a reward system, verify the following:
 
 Consult the following documents when relevant:
 
-- `design_principles.md`
-- `core_loop_design_guidelines.md`
-- `gameplay_design_guidelines.md`
-- `mechanic_design_guidelines.md`
-- `player_experience_guidelines.md`
-- `progression_design_guidelines.md`
-- `balancing_guidelines.md`
-- `difficulty_design_guidelines.md`
-- `economy_design_guidelines.md`
-- `narrative_design_guidelines.md`
+- `DESIGN_PRINCIPLES.md`
+- `CORE_LOOP_DESIGN_GUIDELINES.md`
+- `GAMEPLAY_DESIGN_GUIDELINES.md`
+- `MECHANIC_DESIGN_GUIDELINES.md`
+- `PLAYER_EXPERIENCE_GUIDELINES.md`
+- `PROGRESSION_DESIGN_GUIDELINES.md`
+- `BALANCING_GUIDELINES.md`
+- `DIFFICULTY_DESIGN_GUIDELINES.md`
+- `ECONOMY_DESIGN_GUIDELINES.md`
+- `NARRATIVE_DESIGN_GUIDELINES.md`
 
 Technical implementation MUST also follow the applicable studio technical standards and project-specific architecture documentation.
 

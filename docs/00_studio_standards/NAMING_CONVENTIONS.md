@@ -122,20 +122,25 @@ game_settings.cfg
 
 ### 5.3 Documentation Files
 
-Follow the conventions defined in `documentation_standards.md`.
+Follow the conventions defined in `DOCUMENTATION_STANDARDS.md` (section 5.1).
 
-For formal studio documentation, use lowercase `snake_case.md`.
+Use uppercase `SNAKE_CASE.md` for formal studio standards, reusable templates, major project specifications, and formal technical documents.
+
+Use descriptive lowercase `kebab-case.md` for agent-specific configuration and workflow files when the tool requires it.
 
 Examples:
 
 ```text
-development_philosophy.md
-naming_conventions.md
-code_review_guidelines.md
-definition_of_done.md
+DEVELOPMENT_PHILOSOPHY.md
+NAMING_CONVENTIONS.md
+CODE_REVIEW_GUIDELINES.md
+DEFINITION_OF_DONE.md
+.cline/rules/git-workflow.md
 ```
 
-Use uppercase names only when required by an established external convention or an existing repository standard.
+Filenames are case-sensitive. Reference a document using the exact capitalization of its file name.
+
+Use another convention only when required by an established external convention or an existing repository standard.
 
 ### 5.4 Configuration and Tooling Files
 
@@ -570,13 +575,12 @@ Examples:
 feature/player-movement
 feature/inventory-system
 fix/player-death-animation
-bugfix/inventory-duplication
 docs/naming-conventions
 refactor/damage-calculation
 test/player-combat
 ```
 
-Use the approved branch prefixes defined in `branching_strategy.md`.
+Use the approved branch prefixes defined in `BRANCHING_STRATEGY.md`.
 
 ### 12.2 Commits
 
@@ -591,7 +595,7 @@ docs(standards): add naming conventions
 refactor(combat): simplify damage calculation
 ```
 
-The authoritative commit format belongs in the studio's commit conventions document, not in this naming standard.
+The authoritative commit format belongs in `GIT_CONVENTIONS.md` (sections 2 to 4), not in this naming standard.
 
 ## 13. Abbreviations and Acronyms
 
@@ -678,15 +682,16 @@ Before completing a task, verify that:
 
 ## 18. Related Documents
 
-- `development_philosophy.md`
-- `documentation_standards.md`
-- `git_conventions.md`
-- `branching_strategy.md`
-- `gdscript_standards.md`
-- `architecture_guidelines.md`
-- `asset_management_standards.md`
-- `code_review_guidelines.md`
-- `definition_of_done.md`
+- `DEVELOPMENT_PHILOSOPHY.md`
+- `DOCUMENTATION_STANDARDS.md`
+- `GIT_CONVENTIONS.md`
+- `BRANCHING_STRATEGY.md`
+- `GDSCRIPT_STANDARDS.md`
+- `ARCHITECTURE_GUIDELINES.md`
+- `ART_ASSET_STANDARDS.md`
+- `AUDIO_ASSET_STANDARDS.md`
+- `CODE_REVIEW_GUIDELINES.md`
+- `DEFINITION_OF_DONE.md`
 
 Only maintain references to documents that actually exist in the repository.
 

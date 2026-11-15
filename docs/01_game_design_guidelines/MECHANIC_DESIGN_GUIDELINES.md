@@ -29,12 +29,12 @@ These guidelines focus on individual mechanics and their internal design.
 
 Related documents cover broader or specialized concerns:
 
-- Overall gameplay experience and player interactions: `gameplay_design_guidelines.md`.
-- Core gameplay loop structure: `core_loop_design_guidelines.md`.
-- Level and spatial design: `level_design_guidelines.md`.
-- Difficulty and challenge: `difficulty_design_guidelines.md`.
-- Numerical and systemic balance: `balancing_guidelines.md`.
-- Economy and resource flows: `economy_design_guidelines.md`.
+- Overall gameplay experience and player interactions: `GAMEPLAY_DESIGN_GUIDELINES.md`.
+- Core gameplay loop structure: `CORE_LOOP_DESIGN_GUIDELINES.md`.
+- Level and spatial design: `LEVEL_DESIGN_GUIDELINES.md`.
+- Difficulty and challenge: `DIFFICULTY_DESIGN_GUIDELINES.md`.
+- Numerical and systemic balance: `BALANCING_GUIDELINES.md`.
+- Economy and resource flows: `ECONOMY_DESIGN_GUIDELINES.md`.
 
 ## 3. Fundamental Design Principles
 
@@ -285,7 +285,7 @@ Consequences MAY be immediate, delayed, reversible, or permanent.
 
 Important costs and consequences SHOULD be communicated appropriately to the player.
 
-Numerical tuning SHOULD follow `balancing_guidelines.md` and `economy_design_guidelines.md` where applicable.
+Numerical tuning SHOULD follow `BALANCING_GUIDELINES.md` and `ECONOMY_DESIGN_GUIDELINES.md` where applicable.
 
 ## 7. Mechanic States and Transitions
 
@@ -791,17 +791,17 @@ AI-generated proposals MUST be treated as recommendations until reviewed and app
 
 Refer to the following documents when they exist in the repository:
 
-- `design_principles.md`
-- `gameplay_design_guidelines.md`
-- `core_loop_design_guidelines.md`
-- `level_design_guidelines.md`
-- `balancing_guidelines.md`
-- `difficulty_design_guidelines.md`
-- `economy_design_guidelines.md`
-- `../00_studio_standards/development_philosophy.md`
-- `../00_studio_standards/quality_standards.md`
-- `../00_studio_standards/project_structure_standards.md`
-- `../02_technical_standards/architecture_guidelines.md`
+- `DESIGN_PRINCIPLES.md`
+- `GAMEPLAY_DESIGN_GUIDELINES.md`
+- `CORE_LOOP_DESIGN_GUIDELINES.md`
+- `LEVEL_DESIGN_GUIDELINES.md`
+- `BALANCING_GUIDELINES.md`
+- `DIFFICULTY_DESIGN_GUIDELINES.md`
+- `ECONOMY_DESIGN_GUIDELINES.md`
+- `../00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `../00_studio_standards/QUALITY_STANDARDS.md`
+- `../00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `../02_technical_standards/ARCHITECTURE_GUIDELINES.md`
 
 ## 18. Maintenance
 

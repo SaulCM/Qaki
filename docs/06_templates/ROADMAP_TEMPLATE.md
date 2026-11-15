@@ -265,7 +265,7 @@ Repeat this section for each significant development phase.
 
 List the milestones that represent meaningful development outcomes.
 
-Each milestone should have its own project-specific milestone record using `milestone_template.md`.
+Each milestone should have its own project-specific milestone record using `MILESTONE_TEMPLATE.md`.
 
 | Milestone ID | Name | Objective | Target Date | Status | Priority |
 |---|---|---|---|---|---|

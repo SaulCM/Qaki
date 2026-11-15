@@ -1,1 +1,219 @@
-﻿# TODO: Configure this GitHub Actions workflow.
+# Documentation validation for the Qaki repository.
+#
+# Enforces the reference and repository integrity rules defined in
+# `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md` (sections 5, 9.4 and 10)
+# and in `docs/DOCUMENTATION_INVENTORY.md` (section 14):
+#
+#   1. Every file registered in the documentation inventory exists with exactly
+#      the registered capitalization, and nothing is registered twice.
+#   2. Every Markdown document under `docs/` is registered in the inventory, and
+#      every governance file in `.cline/`, `.clinerules/`, `.github/` and
+#      `references/` is registered as well.
+#   3. Every relative Markdown link resolves to an existing file.
+#   4. Every backticked `*.md` reference matches the capitalization of the file
+#      it names. Placeholders and planned project paths are ignored because no
+#      file matches them case-insensitively.
+#   5. The total in the inventory summary table matches the number of documents
+#      that exist under `docs/`.
+#
+# Paths in the inventory are resolved as follows. A registered path that starts
+# with `docs/` or with `.cline/`, `.clinerules/`, `.github/` or `references/` is
+# treated as repository-relative; every other registered path is relative to
+# `docs/`.
+#
+# This workflow has not been executed yet. Its first run is the project's own
+# evidence that the validation described above passes on the repository state.
+# Validation is read-only; the workflow never writes to the repository.
+
+name: Documentation validation
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  documentation-validation:
+    name: Documentation validation
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Report interpreter version
+        shell: bash
+        run: python3 --version
+
+      - name: Validate references and inventory integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          import re
+          import sys
+          from pathlib import Path
+
+          ROOT = Path(".").resolve()
+          DOCS = ROOT / "docs"
+          INVENTORY = DOCS / "DOCUMENTATION_INVENTORY.md"
+          GOV_DIRS = (".cline/rules", ".clinerules/workflows", ".github", "references")
+          REPO_PREFIXES = ("docs/", ".cline/", ".clinerules/", ".github/", "references/")
+
+          errors = []
+
+
+          def fail(message):
+              errors.append(message)
+
+
+          def exact_exists(path):
+              """Return True when path exists and its name matches exactly."""
+              if not path.parent.is_dir():
+                  return False
+              return path.name in os.listdir(path.parent)
+
+
+          def markdown_files():
+              files = sorted(DOCS.rglob("*.md"))
+              for directory in GOV_DIRS:
+                  base = ROOT / directory
+                  if base.is_dir():
+                      files += sorted(base.rglob("*.md"))
+              return files
+
+
+          if not INVENTORY.is_file():
+              print(f"::error::The documentation inventory is missing: {INVENTORY}")
+              sys.exit(1)
+
+          inventory_text = INVENTORY.read_text(encoding="utf-8")
+
+          registered = {}
+          duplicates = []
+          for lineno, line in enumerate(inventory_text.splitlines(), 1):
+              match = re.match(r"^\|\s*`([^`]+)`\s*\|", line)
+              if not match:
+                  continue
+              token = match.group(1).strip()
+              # Directory rows in the structure table are not file registrations,
+              # and neither are prose labels such as the status vocabulary.
+              if token.endswith("/"):
+                  continue
+              if "/" not in token and not token.endswith((".md", ".yml", ".yaml")):
+                  continue
+              if token.startswith("docs/"):
+                  target = DOCS / token[len("docs/"):]
+              elif token.startswith(REPO_PREFIXES):
+                  target = ROOT / token
+              else:
+                  target = DOCS / token
+              try:
+                  rel = target.relative_to(ROOT).as_posix()
+              except ValueError:
+                  fail(f"inventory line {lineno}: path escapes the repository: {token}")
+                  continue
+              if rel in registered:
+                  duplicates.append((rel, registered[rel], lineno))
+              registered[rel] = lineno
+
+          for rel, first, second in duplicates:
+              fail(f"duplicate registry entry: {rel} (lines {first} and {second})")
+
+          for rel, lineno in sorted(registered.items()):
+              if not exact_exists(ROOT / rel):
+                  fail(
+                      f"inventory line {lineno}: registered file does not exist "
+                      f"with this exact case: {rel}"
+                  )
+
+          known = set(registered)
+          for path in sorted(DOCS.rglob("*.md")):
+              rel = path.relative_to(ROOT).as_posix()
+              if rel != "docs/DOCUMENTATION_INVENTORY.md" and rel not in known:
+                  fail(f"document not registered in the inventory: {rel}")
+          for directory in GOV_DIRS:
+              base = ROOT / directory
+              if not base.is_dir():
+                  continue
+              for path in sorted(base.rglob("*")):
+                  rel = path.relative_to(ROOT).as_posix()
+                  if path.is_file() and rel not in known:
+                      fail(f"governance file not registered in the inventory: {rel}")
+
+          files = markdown_files()
+          names_by_lower = {}
+          for path in files:
+              names_by_lower.setdefault(path.name.lower(), set()).add(path.name)
+
+          link_re = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
+          token_re = re.compile(r"`([^`]*?\.md)`")
+
+          for path in files:
+              rel = path.relative_to(ROOT).as_posix()
+              content = path.read_text(encoding="utf-8")
+              for match in link_re.finditer(content):
+                  raw = match.group(1).strip()
+                  if raw.startswith(("http://", "https://", "mailto:", "#")):
+                      continue
+                  target_part = raw.split("#", 1)[0]
+                  if not target_part:
+                      continue
+                  target = (path.parent / target_part).resolve()
+                  try:
+                      target.relative_to(ROOT)
+                  except ValueError:
+                      fail(f"{rel}: link target escapes the repository: {raw}")
+                      continue
+                  if not exact_exists(target):
+                      fail(f"{rel}: link target does not exist: {raw}")
+              for match in token_re.finditer(content):
+                  base = match.group(1).rsplit("/", 1)[-1]
+                  candidates = names_by_lower.get(base.lower())
+                  if candidates and base not in candidates:
+                      fail(
+                          f"{rel}: reference case does not match the file name: "
+                          f"{base} (expected {sorted(candidates)[0]})"
+                      )
+
+          total = None
+          for line in inventory_text.splitlines():
+              match = re.match(r"^\|\s*\*\*Total\*\*\s*\|\s*\*\*(\d+)\*\*\s*\|", line)
+              if match and total is None:
+                  # The first Total row belongs to the document summary table;
+                  # later tables report governance files and are not documents.
+                  total = int(match.group(1))
+          actual_total = len(list(DOCS.rglob("*.md")))
+          if total is None:
+              fail("the inventory summary table has no Total row")
+          elif total != actual_total:
+              fail(
+                  f"inventory summary total is {total}, but {actual_total} "
+                  f"documents exist under docs/"
+              )
+
+          if errors:
+              for message in errors:
+                  print(f"::error::{message}")
+              print(f"Documentation validation failed with {len(errors)} error(s).")
+              sys.exit(1)
+
+          print(
+              f"Documentation validation passed: {len(registered)} registered files, "
+              f"{len(files)} Markdown files scanned, {actual_total} documents under docs/."
+          )
+          PY

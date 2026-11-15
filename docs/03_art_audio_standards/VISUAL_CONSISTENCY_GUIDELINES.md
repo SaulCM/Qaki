@@ -37,7 +37,7 @@ These guidelines apply to all visual elements, including:
 
 These guidelines focus on visual coherence across the game.
 
-Specific asset quality requirements are defined in `art_asset_standards.md`. Interface-specific requirements are defined in `ui_ux_standards.md`. Animation requirements are defined in `animation_standards.md`.
+Specific asset quality requirements are defined in `ART_ASSET_STANDARDS.md`. Interface-specific requirements are defined in `UI_UX_STANDARDS.md`. Animation requirements are defined in `ANIMATION_STANDARDS.md`.
 
 ## 3. Core Principles
 
@@ -503,7 +503,7 @@ Consider:
 
 Related entities SHOULD have compatible animation characteristics unless their design requires deliberate differences.
 
-Animation-specific production and implementation requirements are defined in `animation_standards.md`.
+Animation-specific production and implementation requirements are defined in `ANIMATION_STANDARDS.md`.
 
 ## 15. UI and World Visual Consistency
 
@@ -526,7 +526,7 @@ Consider:
 
 Gameplay readability and interface usability MUST take priority over decorative stylistic consistency.
 
-Detailed interface requirements are defined in `ui_ux_standards.md`.
+Detailed interface requirements are defined in `UI_UX_STANDARDS.md`.
 
 ## 16. Asset Integration and Visual Validation
 

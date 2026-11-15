@@ -538,7 +538,7 @@ Work item status MUST reflect actual progress.
 
 Do not move an item to `Done` merely because implementation has started or code has been written.
 
-Completion MUST follow the applicable acceptance criteria and `definition_of_done.md`.
+Completion MUST follow the applicable acceptance criteria and `DEFINITION_OF_DONE.md`.
 
 ### 12.2. Status Transitions
 

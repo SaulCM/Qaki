@@ -26,7 +26,7 @@ These standards cover:
 - Asset consistency, quality, and review.
 - Asset ownership, attribution, and licensing.
 
-Animation-specific requirements are defined in `animation_standards.md`.
+Animation-specific requirements are defined in `ANIMATION_STANDARDS.md`.
 
 Technical importing, processing, compression, and engine integration are defined in `docs/02_technical_standards/ASSET_PIPELINE.md`.
 
@@ -215,7 +215,7 @@ Consider:
 - Visual states such as normal, hovered, pressed, disabled, and selected.
 - Accessibility requirements.
 
-UI-specific behavior, layout, interaction, and usability requirements are defined in `ui_ux_design_guidelines.md`.
+UI-specific behavior, layout, interaction, and usability requirements are defined in `UI_UX_DESIGN_GUIDELINES.md`.
 
 ### 5.5. Textures and Materials
 
@@ -518,7 +518,7 @@ Exported assets MUST:
 
 Export settings SHOULD be reproducible.
 
-Technical import and processing requirements are defined in `asset_pipeline.md`.
+Technical import and processing requirements are defined in `ASSET_PIPELINE.md`.
 
 ## 11. External and AI-Generated Assets
 

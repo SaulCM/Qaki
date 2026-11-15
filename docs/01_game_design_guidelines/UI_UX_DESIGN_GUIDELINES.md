@@ -989,14 +989,14 @@ Before approving an interface, verify the following:
 
 Consult the following documents when relevant:
 
-- `design_principles.md`
-- `gameplay_design_guidelines.md`
-- `player_experience_guidelines.md`
-- `core_loop_design_guidelines.md`
-- `mechanic_design_guidelines.md`
-- `progression_design_guidelines.md`
-- `reward_design_guidelines.md`
-- `narrative_design_guidelines.md`
+- `DESIGN_PRINCIPLES.md`
+- `GAMEPLAY_DESIGN_GUIDELINES.md`
+- `PLAYER_EXPERIENCE_GUIDELINES.md`
+- `CORE_LOOP_DESIGN_GUIDELINES.md`
+- `MECHANIC_DESIGN_GUIDELINES.md`
+- `PROGRESSION_DESIGN_GUIDELINES.md`
+- `REWARD_DESIGN_GUIDELINES.md`
+- `NARRATIVE_DESIGN_GUIDELINES.md`
 
 Technical implementation MUST also follow the applicable studio technical standards and project-specific architecture documentation.
 

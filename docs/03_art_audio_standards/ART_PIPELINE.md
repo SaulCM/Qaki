@@ -33,7 +33,7 @@ This pipeline applies to visual asset production, including:
 - Asset variants and revisions.
 - Externally sourced and AI-generated visual assets.
 
-Animation production is covered by `animation_standards.md`. Animation assets MUST still follow the relevant production, review, source management, and integration stages defined in this document.
+Animation production is covered by `ANIMATION_STANDARDS.md`. Animation assets MUST still follow the relevant production, review, source management, and integration stages defined in this document.
 
 Audio production is outside the scope of this document.
 

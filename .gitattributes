@@ -1,9 +1,11 @@
+
 # Normalize EOL for all files that Git considers text files.
 # Default line endings
 * text=auto eol=lf
 
 # Explicit text formats
 *.gd text eol=lf
+*.uid text eol=lf
 *.tscn text eol=lf
 *.tres text eol=lf
 *.godot text eol=lf
@@ -26,3 +28,13 @@
 *.wav binary
 *.ogg binary
 *.mp3 binary
+
+# Binary archives
+*.zip binary
+
+# Binary fonts
+*.ttf binary
+*.otf binary
+
+# High-dynamic-range images
+*.exr binary

@@ -459,16 +459,17 @@ Not every checklist item applies to every task. Non-applicable requirements SHOU
 
 ## 20. Related Documents
 
-- `development_philosophy.md`
-- `game_development_lifecycle.md`
-- `definition_of_done.md`
-- `code_review_guidelines.md`
-- `documentation_standards.md`
-- `project_structure_standards.md`
-- `naming_conventions.md`
-- `architecture_guidelines.md`
-- `gdscript_standards.md`
-- `asset_management_standards.md`
+- `DEVELOPMENT_PHILOSOPHY.md`
+- `GAME_DEVELOPMENT_LIFECYCLE.md`
+- `DEFINITION_OF_DONE.md`
+- `CODE_REVIEW_GUIDELINES.md`
+- `DOCUMENTATION_STANDARDS.md`
+- `PROJECT_STRUCTURE_STANDARDS.md`
+- `NAMING_CONVENTIONS.md`
+- `ARCHITECTURE_GUIDELINES.md`
+- `GDSCRIPT_STANDARDS.md`
+- `ASSET_PIPELINE.md`
+- `ART_ASSET_STANDARDS.md`
 
 Only maintain references to documents that actually exist in the repository.
 

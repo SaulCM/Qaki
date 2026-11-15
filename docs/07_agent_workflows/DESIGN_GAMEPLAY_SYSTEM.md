@@ -40,7 +40,7 @@ Do not use this workflow for:
 - Describing technical implementation in detail.
 - Planning production tasks or sprint activities.
 
-A gameplay system may contain multiple mechanics. Use the `design_game_mechanic.md` workflow when an individual mechanic requires its own detailed specification.
+A gameplay system may contain multiple mechanics. Use the `DESIGN_GAME_MECHANIC.md` workflow when an individual mechanic requires its own detailed specification.
 
 ## 3. Authoritative References
 

@@ -31,11 +31,11 @@ These guidelines are genre-independent and MAY be adapted to linear, branching, 
 
 Related specialized topics are covered by:
 
-- Overall game design principles: `design_principles.md`.
-- Gameplay systems and player interactions: `gameplay_design_guidelines.md`.
-- Core gameplay loops: `core_loop_design_guidelines.md`.
-- Spatial and environmental storytelling: `level_design_guidelines.md`.
-- Mechanic implementation at the design level: `mechanic_design_guidelines.md`.
+- Overall game design principles: `DESIGN_PRINCIPLES.md`.
+- Gameplay systems and player interactions: `GAMEPLAY_DESIGN_GUIDELINES.md`.
+- Core gameplay loops: `CORE_LOOP_DESIGN_GUIDELINES.md`.
+- Spatial and environmental storytelling: `LEVEL_DESIGN_GUIDELINES.md`.
+- Mechanic implementation at the design level: `MECHANIC_DESIGN_GUIDELINES.md`.
 
 ## 3. Narrative Design Principles
 
@@ -569,7 +569,7 @@ Designers SHOULD distinguish between:
 
 Ambiguity SHOULD encourage interpretation rather than result from accidental inconsistency.
 
-Spatial composition and environmental navigation SHOULD follow `level_design_guidelines.md`.
+Spatial composition and environmental navigation SHOULD follow `LEVEL_DESIGN_GUIDELINES.md`.
 
 ## 10. Player Choices and Narrative Consequences
 
@@ -956,16 +956,16 @@ AI-generated narrative content MUST be reviewed before being treated as authorit
 
 Refer to the following documents when they exist in the repository:
 
-- `design_principles.md`
-- `gameplay_design_guidelines.md`
-- `core_loop_design_guidelines.md`
-- `level_design_guidelines.md`
-- `mechanic_design_guidelines.md`
-- `difficulty_design_guidelines.md`
-- `../00_studio_standards/development_philosophy.md`
-- `../00_studio_standards/documentation_standards.md`
-- `../00_studio_standards/quality_standards.md`
-- `../02_technical_standards/architecture_guidelines.md`
+- `DESIGN_PRINCIPLES.md`
+- `GAMEPLAY_DESIGN_GUIDELINES.md`
+- `CORE_LOOP_DESIGN_GUIDELINES.md`
+- `LEVEL_DESIGN_GUIDELINES.md`
+- `MECHANIC_DESIGN_GUIDELINES.md`
+- `DIFFICULTY_DESIGN_GUIDELINES.md`
+- `../00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `../00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `../00_studio_standards/QUALITY_STANDARDS.md`
+- `../02_technical_standards/ARCHITECTURE_GUIDELINES.md`
 
 ## 19. Maintenance
 

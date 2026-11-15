@@ -29,11 +29,11 @@ These guidelines do not prescribe a specific level editor, engine implementation
 
 Related specialized topics are covered by:
 
-- Gameplay mechanics: `gameplay_design_guidelines.md`.
-- Core gameplay loops: `core_loop_design_guidelines.md`.
-- Difficulty and challenge: `difficulty_design_guidelines.md`.
-- Game design principles: `design_principles.md`.
-- Numerical and systemic balance: `balancing_guidelines.md`.
+- Gameplay mechanics: `GAMEPLAY_DESIGN_GUIDELINES.md`.
+- Core gameplay loops: `CORE_LOOP_DESIGN_GUIDELINES.md`.
+- Difficulty and challenge: `DIFFICULTY_DESIGN_GUIDELINES.md`.
+- Game design principles: `DESIGN_PRINCIPLES.md`.
+- Numerical and systemic balance: `BALANCING_GUIDELINES.md`.
 
 ## 3. Level Design Principles
 
@@ -895,15 +895,15 @@ AI agents MUST NOT claim that a level is playable, navigable, balanced, or valid
 
 Refer to the following documents when they exist in the repository:
 
-- `design_principles.md`
-- `gameplay_design_guidelines.md`
-- `core_loop_design_guidelines.md`
-- `difficulty_design_guidelines.md`
-- `balancing_guidelines.md`
-- `../00_studio_standards/development_philosophy.md`
-- `../00_studio_standards/quality_standards.md`
-- `../00_studio_standards/project_structure_standards.md`
-- `../02_technical_standards/architecture_guidelines.md`
+- `DESIGN_PRINCIPLES.md`
+- `GAMEPLAY_DESIGN_GUIDELINES.md`
+- `CORE_LOOP_DESIGN_GUIDELINES.md`
+- `DIFFICULTY_DESIGN_GUIDELINES.md`
+- `BALANCING_GUIDELINES.md`
+- `../00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `../00_studio_standards/QUALITY_STANDARDS.md`
+- `../00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `../02_technical_standards/ARCHITECTURE_GUIDELINES.md`
 
 ## 21. Maintenance
 

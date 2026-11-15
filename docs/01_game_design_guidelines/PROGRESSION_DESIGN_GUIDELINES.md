@@ -487,7 +487,7 @@ Progression costs SHOULD support meaningful decisions.
 
 Designers MUST evaluate whether resource requirements create unintended progression barriers or dominant strategies.
 
-Detailed resource generation, consumption, pricing, and economic balance MUST follow `economy_design_guidelines.md`.
+Detailed resource generation, consumption, pricing, and economic balance MUST follow `ECONOMY_DESIGN_GUIDELINES.md`.
 
 ## 10. Progression and Difficulty
 
@@ -777,15 +777,15 @@ Before approving a progression system, verify the following:
 
 Consult the following documents when relevant:
 
-- `design_principles.md`
-- `core_loop_design_guidelines.md`
-- `gameplay_design_guidelines.md`
-- `mechanic_design_guidelines.md`
-- `player_experience_guidelines.md`
-- `balancing_guidelines.md`
-- `difficulty_design_guidelines.md`
-- `economy_design_guidelines.md`
-- `narrative_design_guidelines.md`
+- `DESIGN_PRINCIPLES.md`
+- `CORE_LOOP_DESIGN_GUIDELINES.md`
+- `GAMEPLAY_DESIGN_GUIDELINES.md`
+- `MECHANIC_DESIGN_GUIDELINES.md`
+- `PLAYER_EXPERIENCE_GUIDELINES.md`
+- `BALANCING_GUIDELINES.md`
+- `DIFFICULTY_DESIGN_GUIDELINES.md`
+- `ECONOMY_DESIGN_GUIDELINES.md`
+- `NARRATIVE_DESIGN_GUIDELINES.md`
 
 Technical implementation MUST also follow the applicable studio technical standards and project-specific architecture documentation.
 

@@ -706,7 +706,7 @@ Each project SHOULD maintain release history and version information.
 
 Recommended locations include:
 
-- `CHANGELOG.md` at the project root.
+- `CHANGELOG.md` at the project root, once the project maintains one.
 - `game_project/docs/production/releases/` for detailed release records.
 - Project configuration for the authoritative game version.
 - Version control tags for source revision identification.

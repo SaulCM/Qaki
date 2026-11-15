@@ -25,10 +25,10 @@ These guidelines apply to:
 
 Specialized topics are covered by their corresponding guidelines:
 
-- Core gameplay loop structure: `core_loop_design_guidelines.md`.
-- Difficulty and challenge: `difficulty_design_guidelines.md`.
-- Numerical and systemic balance: `balancing_guidelines.md`.
-- Economic systems: `economy_design_guidelines.md`.
+- Core gameplay loop structure: `CORE_LOOP_DESIGN_GUIDELINES.md`.
+- Difficulty and challenge: `DIFFICULTY_DESIGN_GUIDELINES.md`.
+- Numerical and systemic balance: `BALANCING_GUIDELINES.md`.
+- Economic systems: `ECONOMY_DESIGN_GUIDELINES.md`.
 
 ## 3. Gameplay Design Principles
 
@@ -532,7 +532,7 @@ Failure SHOULD be consistent with the game's intended experience.
 
 Punishment SHOULD be proportionate to the intended challenge and communicated expectations.
 
-Detailed difficulty and recovery considerations SHOULD follow `difficulty_design_guidelines.md`.
+Detailed difficulty and recovery considerations SHOULD follow `DIFFICULTY_DESIGN_GUIDELINES.md`.
 
 ## 13. Gameplay Prototyping and Validation
 
@@ -667,15 +667,15 @@ Before approving a significant gameplay mechanic, evaluate the following:
 
 Refer to the following documents when they exist in the repository:
 
-- `design_principles.md`
-- `core_loop_design_guidelines.md`
-- `balancing_guidelines.md`
-- `difficulty_design_guidelines.md`
-- `economy_design_guidelines.md`
-- `../00_studio_standards/development_philosophy.md`
-- `../00_studio_standards/quality_standards.md`
-- `../00_studio_standards/project_structure_standards.md`
-- `../02_technical_standards/architecture_guidelines.md`
+- `DESIGN_PRINCIPLES.md`
+- `CORE_LOOP_DESIGN_GUIDELINES.md`
+- `BALANCING_GUIDELINES.md`
+- `DIFFICULTY_DESIGN_GUIDELINES.md`
+- `ECONOMY_DESIGN_GUIDELINES.md`
+- `../00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `../00_studio_standards/QUALITY_STANDARDS.md`
+- `../00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `../02_technical_standards/ARCHITECTURE_GUIDELINES.md`
 
 ## 18. Maintenance
 

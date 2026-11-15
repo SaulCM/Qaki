@@ -38,7 +38,7 @@ Do not use this workflow for:
 - Making final creative decisions on behalf of the user.
 - Approving designs without human authorization.
 
-For technical implementation reviews, use `review_code.md`.
+For technical implementation reviews, use `REVIEW_CODE.md`.
 
 ## 3. Authoritative References
 

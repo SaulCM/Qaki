@@ -4,6 +4,8 @@
 
 This document is the central inventory of documentation maintained in the studio's shared documentation repository.
 
+It also registers the repository's agent instructions (`.cline/rules/` and `.clinerules/workflows/`) and repository governance files (`.github/` and `references/`), because those files govern repository behavior and the documentation must remain consistent with them. Registered governance files are listed in section 16 and are not counted among the Markdown documents under `docs/`.
+
 It provides a structured overview of available documentation, including studio standards, game design guidelines, technical standards, art and audio standards, production standards, QA standards, templates, and AI agent workflows.
 
 The inventory helps developers and AI agents:
@@ -49,6 +51,8 @@ When document statuses are explicitly established, use the following values:
 
 An AI agent MUST NOT mark a document as Approved without explicit human authorization.
 
+The `Status` column in sections 4 to 11 and in section 16 records the status of each registered file. `Not Specified` means that no status has been established for the file yet; it is neither an approval nor a draft classification.
+
 ## 3. Documentation Structure
 
 The shared documentation repository follows this structure:
@@ -86,18 +90,18 @@ Each directory has a distinct responsibility.
 
 Studio standards define shared practices and expectations that apply across game projects.
 
-| Document | Description |
-|---|---|
-| `00_studio_standards/BRANCHING_STRATEGY.md` | Defines Git branching conventions, branch purposes, integration practices, and branch protection expectations. |
-| `00_studio_standards/CODE_REVIEW_GUIDELINES.md` | Defines code review principles, responsibilities, review criteria, finding severity, and approval expectations. |
-| `00_studio_standards/DEFINITION_OF_DONE.md` | Establishes the minimum completion criteria for tasks, features, fixes, and other deliverables. |
-| `00_studio_standards/DEVELOPMENT_PHILOSOPHY.md` | Describes the studio's development principles, engineering mindset, and approach to maintainable game development. |
-| `00_studio_standards/DOCUMENTATION_STANDARDS.md` | Defines documentation structure, writing conventions, naming, status, maintenance, and governance. |
-| `00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md` | Defines the general lifecycle stages and decision points used throughout game development. |
-| `00_studio_standards/GIT_CONVENTIONS.md` | Defines Git usage conventions and repository collaboration practices. |
-| `00_studio_standards/NAMING_CONVENTIONS.md` | Establishes naming conventions for GDScript, scenes, nodes, assets, resources, and project files. |
-| `00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md` | Defines the standard feature-oriented organization of Godot game projects. |
-| `00_studio_standards/QUALITY_STANDARDS.md` | Establishes general quality expectations for game development deliverables. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `00_studio_standards/BRANCHING_STRATEGY.md` | Defines Git branching conventions, branch purposes, integration practices, and branch protection expectations. | Not Specified | `GIT_CONVENTIONS.md`, `CODE_REVIEW_GUIDELINES.md`, `DEFINITION_OF_DONE.md`, `DEVELOPMENT_PHILOSOPHY.md`, `DOCUMENTATION_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `SPRINT_WORKFLOW.md`, `RELEASE_PROCESS.md`, `VERSIONING_STANDARDS.md`, `IMPLEMENT_FEATURE.md`, `FIX_BUG.md`, `REVIEW_CODE.md` |
+| `00_studio_standards/CODE_REVIEW_GUIDELINES.md` | Defines code review principles, responsibilities, review criteria, finding severity, and approval expectations. | Not Specified | `GIT_CONVENTIONS.md`, `BRANCHING_STRATEGY.md`, `DEFINITION_OF_DONE.md` |
+| `00_studio_standards/DEFINITION_OF_DONE.md` | Establishes the minimum completion criteria for tasks, features, fixes, and other deliverables. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `GIT_CONVENTIONS.md`, `BRANCHING_STRATEGY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md`, `ASSET_PIPELINE.md`, `ART_ASSET_STANDARDS.md`, `AUDIO_ASSET_STANDARDS.md`, `ANIMATION_STANDARDS.md`, `UI_UX_STANDARDS.md`, `SPRINT_WORKFLOW.md`, `BACKLOG_MANAGEMENT.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md`, `REGRESSION_TESTING.md` |
+| `00_studio_standards/DEVELOPMENT_PHILOSOPHY.md` | Describes the studio's development principles, engineering mindset, and approach to maintainable game development. | Not Specified | — |
+| `00_studio_standards/DOCUMENTATION_STANDARDS.md` | Defines documentation structure, writing conventions, naming, status, maintenance, and governance. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `GIT_CONVENTIONS.md`, `BRANCHING_STRATEGY.md`, `CODE_REVIEW_GUIDELINES.md`, `DEFINITION_OF_DONE.md` |
+| `00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md` | Defines the general lifecycle stages and decision points used throughout game development. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `DEFINITION_OF_DONE.md`, `BRANCHING_STRATEGY.md`, `CODE_REVIEW_GUIDELINES.md` |
+| `00_studio_standards/GIT_CONVENTIONS.md` | Defines Git usage conventions and repository collaboration practices. | Not Specified | — |
+| `00_studio_standards/NAMING_CONVENTIONS.md` | Establishes naming conventions for GDScript, scenes, nodes, assets, resources, and project files. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `DOCUMENTATION_STANDARDS.md`, `GIT_CONVENTIONS.md`, `BRANCHING_STRATEGY.md`, `GDSCRIPT_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `ART_ASSET_STANDARDS.md`, `AUDIO_ASSET_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `DEFINITION_OF_DONE.md` |
+| `00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md` | Defines the standard feature-oriented organization of Godot game projects. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `DOCUMENTATION_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `DEFINITION_OF_DONE.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `ASSET_PIPELINE.md` |
+| `00_studio_standards/QUALITY_STANDARDS.md` | Establishes general quality expectations for game development deliverables. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `GAME_DEVELOPMENT_LIFECYCLE.md`, `DEFINITION_OF_DONE.md`, `CODE_REVIEW_GUIDELINES.md`, `DOCUMENTATION_STANDARDS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `ASSET_PIPELINE.md`, `ART_ASSET_STANDARDS.md` |
 
 ## 5. Game Design Guidelines
 
@@ -105,21 +109,21 @@ Studio standards define shared practices and expectations that apply across game
 
 Game design guidelines provide reusable principles and methods for designing coherent, engaging, and maintainable gameplay experiences.
 
-| Document | Description |
-|---|---|
-| `01_game_design_guidelines/BALANCING_GUIDELINES.md` | Provides principles and methods for evaluating and balancing gameplay systems, player capabilities, resources, and difficulty. |
-| `01_game_design_guidelines/CORE_LOOP_DESIGN_GUIDELINES.md` | Defines how to design and evaluate core gameplay loops and their supporting progression loops. |
-| `01_game_design_guidelines/DESIGN_PRINCIPLES.md` | Establishes foundational principles for creating coherent, meaningful, and player-centered game experiences. |
-| `01_game_design_guidelines/DIFFICULTY_DESIGN_GUIDELINES.md` | Provides guidelines for designing challenge, difficulty progression, fairness, and player failure. |
-| `01_game_design_guidelines/ECONOMY_DESIGN_GUIDELINES.md` | Defines principles for designing game economies, resources, acquisition, consumption, scarcity, and value. |
-| `01_game_design_guidelines/GAMEPLAY_DESIGN_GUIDELINES.md` | Provides general principles for designing gameplay experiences, interactions, and gameplay structures. |
-| `01_game_design_guidelines/LEVEL_DESIGN_GUIDELINES.md` | Defines principles for designing levels, spaces, navigation, encounters, pacing, and environmental experiences. |
-| `01_game_design_guidelines/MECHANIC_DESIGN_GUIDELINES.md` | Provides guidelines for creating clear, meaningful, and consistent gameplay mechanics. |
-| `01_game_design_guidelines/NARRATIVE_DESIGN_GUIDELINES.md` | Establishes principles for story structure, characters, dialogue, worldbuilding, and narrative integration. |
-| `01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md` | Defines principles for understanding and improving player motivation, engagement, usability, and emotional experience. |
-| `01_game_design_guidelines/PROGRESSION_DESIGN_GUIDELINES.md` | Provides guidelines for designing player progression, unlocks, advancement, mastery, and pacing. |
-| `01_game_design_guidelines/REWARD_DESIGN_GUIDELINES.md` | Defines principles for reward structures, incentives, reward pacing, and their relationship with gameplay and progression. |
-| `01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md` | Establishes principles for designing understandable, accessible, and consistent user interfaces and interactions. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `01_game_design_guidelines/BALANCING_GUIDELINES.md` | Provides principles and methods for evaluating and balancing gameplay systems, player capabilities, resources, and difficulty. | Not Specified | — |
+| `01_game_design_guidelines/CORE_LOOP_DESIGN_GUIDELINES.md` | Defines how to design and evaluate core gameplay loops and their supporting progression loops. | Not Specified | — |
+| `01_game_design_guidelines/DESIGN_PRINCIPLES.md` | Establishes foundational principles for creating coherent, meaningful, and player-centered game experiences. | Not Specified | — |
+| `01_game_design_guidelines/DIFFICULTY_DESIGN_GUIDELINES.md` | Provides guidelines for designing challenge, difficulty progression, fairness, and player failure. | Not Specified | — |
+| `01_game_design_guidelines/ECONOMY_DESIGN_GUIDELINES.md` | Defines principles for designing game economies, resources, acquisition, consumption, scarcity, and value. | Not Specified | — |
+| `01_game_design_guidelines/GAMEPLAY_DESIGN_GUIDELINES.md` | Provides general principles for designing gameplay experiences, interactions, and gameplay structures. | Not Specified | `DESIGN_PRINCIPLES.md`, `CORE_LOOP_DESIGN_GUIDELINES.md`, `BALANCING_GUIDELINES.md`, `DIFFICULTY_DESIGN_GUIDELINES.md`, `ECONOMY_DESIGN_GUIDELINES.md`, `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md` |
+| `01_game_design_guidelines/LEVEL_DESIGN_GUIDELINES.md` | Defines principles for designing levels, spaces, navigation, encounters, pacing, and environmental experiences. | Not Specified | `DESIGN_PRINCIPLES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `CORE_LOOP_DESIGN_GUIDELINES.md`, `DIFFICULTY_DESIGN_GUIDELINES.md`, `BALANCING_GUIDELINES.md`, `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md` |
+| `01_game_design_guidelines/MECHANIC_DESIGN_GUIDELINES.md` | Provides guidelines for creating clear, meaningful, and consistent gameplay mechanics. | Not Specified | `DESIGN_PRINCIPLES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `CORE_LOOP_DESIGN_GUIDELINES.md`, `LEVEL_DESIGN_GUIDELINES.md`, `BALANCING_GUIDELINES.md`, `DIFFICULTY_DESIGN_GUIDELINES.md`, `ECONOMY_DESIGN_GUIDELINES.md`, `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md` |
+| `01_game_design_guidelines/NARRATIVE_DESIGN_GUIDELINES.md` | Establishes principles for story structure, characters, dialogue, worldbuilding, and narrative integration. | Not Specified | `DESIGN_PRINCIPLES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `CORE_LOOP_DESIGN_GUIDELINES.md`, `LEVEL_DESIGN_GUIDELINES.md`, `MECHANIC_DESIGN_GUIDELINES.md`, `DIFFICULTY_DESIGN_GUIDELINES.md`, `DEVELOPMENT_PHILOSOPHY.md`, `DOCUMENTATION_STANDARDS.md`, `QUALITY_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md` |
+| `01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md` | Defines principles for understanding and improving player motivation, engagement, usability, and emotional experience. | Not Specified | — |
+| `01_game_design_guidelines/PROGRESSION_DESIGN_GUIDELINES.md` | Provides guidelines for designing player progression, unlocks, advancement, mastery, and pacing. | Not Specified | `DESIGN_PRINCIPLES.md`, `CORE_LOOP_DESIGN_GUIDELINES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `MECHANIC_DESIGN_GUIDELINES.md`, `PLAYER_EXPERIENCE_GUIDELINES.md`, `BALANCING_GUIDELINES.md`, `DIFFICULTY_DESIGN_GUIDELINES.md`, `ECONOMY_DESIGN_GUIDELINES.md`, `NARRATIVE_DESIGN_GUIDELINES.md` |
+| `01_game_design_guidelines/REWARD_DESIGN_GUIDELINES.md` | Defines principles for reward structures, incentives, reward pacing, and their relationship with gameplay and progression. | Not Specified | `DESIGN_PRINCIPLES.md`, `CORE_LOOP_DESIGN_GUIDELINES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `MECHANIC_DESIGN_GUIDELINES.md`, `PLAYER_EXPERIENCE_GUIDELINES.md`, `PROGRESSION_DESIGN_GUIDELINES.md`, `BALANCING_GUIDELINES.md`, `DIFFICULTY_DESIGN_GUIDELINES.md`, `ECONOMY_DESIGN_GUIDELINES.md`, `NARRATIVE_DESIGN_GUIDELINES.md` |
+| `01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md` | Establishes principles for designing understandable, accessible, and consistent user interfaces and interactions. | Not Specified | `DESIGN_PRINCIPLES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `PLAYER_EXPERIENCE_GUIDELINES.md`, `CORE_LOOP_DESIGN_GUIDELINES.md`, `MECHANIC_DESIGN_GUIDELINES.md`, `PROGRESSION_DESIGN_GUIDELINES.md`, `REWARD_DESIGN_GUIDELINES.md`, `NARRATIVE_DESIGN_GUIDELINES.md` |
 
 ## 6. Technical Standards
 
@@ -127,26 +131,26 @@ Game design guidelines provide reusable principles and methods for designing coh
 
 Technical standards define engineering practices and technical expectations for Godot game projects.
 
-| Document | Description |
-|---|---|
-| `02_technical_standards/ARCHITECTURE_GUIDELINES.md` | Defines architectural principles, feature boundaries, dependencies, modularity, and system organization. |
-| `02_technical_standards/ASSET_PIPELINE.md` | Describes the technical asset import, processing, integration, and optimization pipeline. |
-| `02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md` | Establishes principles for saving, loading, serialization, data integrity, and persistent game data. |
-| `02_technical_standards/ENGINE_STANDARDS.md` | Defines Godot engine usage, project configuration, engine compatibility, and general engine-related practices. |
-| `02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md` | Defines appropriate event-driven communication, signal usage, event ownership, and communication between components. |
-| `02_technical_standards/GDSCRIPT_STANDARDS.md` | Establishes GDScript coding conventions, structure, typing, formatting, and implementation practices. |
-| `02_technical_standards/PERFORMANCE_GUIDELINES.md` | Provides guidelines for profiling, evaluating, and optimizing CPU, GPU, memory, loading, and runtime performance. |
-| `02_technical_standards/RESOURCE_MANAGEMENT.md` | Defines Godot resource ownership, loading, caching, sharing, duplication, and lifecycle management. |
-| `02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md` | Establishes conventions for scene composition, node hierarchy, naming, ownership, and lifecycle management. |
-| `02_technical_standards/TESTING_STRATEGY.md` | Defines testing levels, testing approaches, test organization, automation, and validation practices. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `02_technical_standards/ARCHITECTURE_GUIDELINES.md` | Defines architectural principles, feature boundaries, dependencies, modularity, and system organization. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `DEFINITION_OF_DONE.md`, `GDSCRIPT_STANDARDS.md`, `adr/README.md` |
+| `02_technical_standards/ASSET_PIPELINE.md` | Describes the technical asset import, processing, integration, and optimization pipeline. | Not Specified | `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `adr/README.md` |
+| `02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md` | Establishes principles for saving, loading, serialization, data integrity, and persistent game data. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `adr/README.md` |
+| `02_technical_standards/ENGINE_STANDARDS.md` | Defines Godot engine usage, project configuration, engine compatibility, and general engine-related practices. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `QUALITY_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/README.md` |
+| `02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md` | Defines appropriate event-driven communication, signal usage, event ownership, and communication between components. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `adr/README.md` |
+| `02_technical_standards/GDSCRIPT_STANDARDS.md` | Establishes GDScript coding conventions, structure, typing, formatting, and implementation practices. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/README.md` |
+| `02_technical_standards/PERFORMANCE_GUIDELINES.md` | Provides guidelines for profiling, evaluating, and optimizing CPU, GPU, memory, loading, and runtime performance. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `ASSET_PIPELINE.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `adr/README.md` |
+| `02_technical_standards/RESOURCE_MANAGEMENT.md` | Defines Godot resource ownership, loading, caching, sharing, duplication, and lifecycle management. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `PERFORMANCE_GUIDELINES.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `adr/README.md` |
+| `02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md` | Establishes conventions for scene composition, node hierarchy, naming, ownership, and lifecycle management. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `ARCHITECTURE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `GDSCRIPT_STANDARDS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `ASSET_PIPELINE.md`, `adr/README.md`, `UI_UX_DESIGN_GUIDELINES.md` |
+| `02_technical_standards/TESTING_STRATEGY.md` | Defines testing levels, testing approaches, test organization, automation, and validation practices. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `QUALITY_STANDARDS.md`, `DEFINITION_OF_DONE.md`, `CODE_REVIEW_GUIDELINES.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `EVENT_AND_SIGNAL_GUIDELINES.md` |
 
 ### 6.1 Architecture Decision Records
 
 **Directory:** `docs/02_technical_standards/adr/`
 
-| Document | Description |
-|---|---|
-| `02_technical_standards/adr/README.md` | Defines the Architecture Decision Record process, including when ADRs are required, their structure, lifecycle, and approval responsibilities. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `02_technical_standards/adr/README.md` | Defines the Architecture Decision Record process, including when ADRs are required, their structure, lifecycle, and approval responsibilities. | Not Specified | — |
 
 ## 7. Art and Audio Standards
 
@@ -154,15 +158,15 @@ Technical standards define engineering practices and technical expectations for 
 
 Art and audio standards establish reusable expectations for visual and audio production, integration, and consistency.
 
-| Document | Description |
-|---|---|
-| `03_art_audio_standards/ANIMATION_STANDARDS.md` | Defines animation principles, production expectations, timing, motion, integration, and optimization. |
-| `03_art_audio_standards/ART_ASSET_STANDARDS.md` | Establishes requirements for visual assets, asset quality, naming, organization, reuse, and integration. |
-| `03_art_audio_standards/ART_PIPELINE.md` | Describes the visual art production lifecycle from planning and concept development through review and engine integration. |
-| `03_art_audio_standards/AUDIO_ASSET_STANDARDS.md` | Establishes requirements for audio assets, technical properties, naming, quality, and integration. |
-| `03_art_audio_standards/AUDIO_PIPELINE.md` | Describes the audio production lifecycle from planning and source acquisition through mixing, mastering, and engine integration. |
-| `03_art_audio_standards/UI_UX_STANDARDS.md` | Defines visual and interaction standards for user interfaces and user experience presentation. |
-| `03_art_audio_standards/VISUAL_CONSISTENCY_GUIDELINES.md` | Establishes principles for maintaining visual coherence across characters, environments, objects, interfaces, and other game assets. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `03_art_audio_standards/ANIMATION_STANDARDS.md` | Defines animation principles, production expectations, timing, motion, integration, and optimization. | Not Specified | `DEVELOPMENT_PHILOSOPHY.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `ENGINE_STANDARDS.md`, `ASSET_PIPELINE.md`, `RESOURCE_MANAGEMENT.md`, `GDSCRIPT_STANDARDS.md`, `PERFORMANCE_GUIDELINES.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `MECHANIC_DESIGN_GUIDELINES.md`, `PLAYER_EXPERIENCE_GUIDELINES.md`, `UI_UX_DESIGN_GUIDELINES.md` |
+| `03_art_audio_standards/ART_ASSET_STANDARDS.md` | Establishes requirements for visual assets, asset quality, naming, organization, reuse, and integration. | Not Specified | `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `ASSET_PIPELINE.md`, `PERFORMANCE_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `ANIMATION_STANDARDS.md` |
+| `03_art_audio_standards/ART_PIPELINE.md` | Describes the visual art production lifecycle from planning and concept development through review and engine integration. | Not Specified | `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ASSET_PIPELINE.md`, `PERFORMANCE_GUIDELINES.md`, `ART_ASSET_STANDARDS.md`, `ANIMATION_STANDARDS.md` |
+| `03_art_audio_standards/AUDIO_ASSET_STANDARDS.md` | Establishes requirements for audio assets, technical properties, naming, quality, and integration. | Not Specified | `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `ENGINE_STANDARDS.md`, `PERFORMANCE_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `ART_PIPELINE.md`, `ART_ASSET_STANDARDS.md` |
+| `03_art_audio_standards/AUDIO_PIPELINE.md` | Describes the audio production lifecycle from planning and source acquisition through mixing, mastering, and engine integration. | Not Specified | `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ENGINE_STANDARDS.md`, `PERFORMANCE_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `AUDIO_ASSET_STANDARDS.md`, `ART_PIPELINE.md` |
+| `03_art_audio_standards/UI_UX_STANDARDS.md` | Defines visual and interaction standards for user interfaces and user experience presentation. | Not Specified | `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `QUALITY_STANDARDS.md`, `PLAYER_EXPERIENCE_GUIDELINES.md`, `UI_UX_DESIGN_GUIDELINES.md`, `ARCHITECTURE_GUIDELINES.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `ART_ASSET_STANDARDS.md`, `ART_PIPELINE.md`, `ANIMATION_STANDARDS.md` |
+| `03_art_audio_standards/VISUAL_CONSISTENCY_GUIDELINES.md` | Establishes principles for maintaining visual coherence across characters, environments, objects, interfaces, and other game assets. | Not Specified | `QUALITY_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `PLAYER_EXPERIENCE_GUIDELINES.md`, `UI_UX_DESIGN_GUIDELINES.md`, `ASSET_PIPELINE.md`, `ENGINE_STANDARDS.md`, `ART_ASSET_STANDARDS.md`, `ART_PIPELINE.md`, `ANIMATION_STANDARDS.md`, `UI_UX_STANDARDS.md` |
 
 ## 8. Production Standards
 
@@ -170,16 +174,16 @@ Art and audio standards establish reusable expectations for visual and audio pro
 
 Production standards define how work is planned, organized, tracked, evaluated, and delivered.
 
-| Document | Description |
-|---|---|
-| `04_production_standards/BACKLOG_MANAGEMENT.md` | Defines how work items are created, organized, prioritized, refined, tracked, and maintained. |
-| `04_production_standards/MILESTONE_GUIDELINES.md` | Establishes principles for defining, planning, tracking, reviewing, and completing project milestones. |
-| `04_production_standards/POSTMORTEM_GUIDELINES.md` | Defines how to evaluate completed work, identify lessons, and document actionable improvements. |
-| `04_production_standards/PROJECT_LIFECYCLE.md` | Describes project-specific production stages, objectives, deliverables, and stage transition criteria. |
-| `04_production_standards/RELEASE_PROCESS.md` | Defines the operational process for preparing, validating, approving, publishing, and maintaining releases. |
-| `04_production_standards/RISK_MANAGEMENT.md` | Establishes principles for identifying, evaluating, mitigating, tracking, and escalating project risks. |
-| `04_production_standards/SPRINT_WORKFLOW.md` | Defines the sprint planning, execution, review, and retrospective workflow. |
-| `04_production_standards/VERSIONING_STANDARDS.md` | Establishes version numbering, release identification, compatibility, and version management conventions. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `04_production_standards/BACKLOG_MANAGEMENT.md` | Defines how work items are created, organized, prioritized, refined, tracked, and maintained. | Not Specified | `BRANCHING_STRATEGY.md`, `CODE_REVIEW_GUIDELINES.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `GAME_DEVELOPMENT_LIFECYCLE.md` |
+| `04_production_standards/MILESTONE_GUIDELINES.md` | Establishes principles for defining, planning, tracking, reviewing, and completing project milestones. | Not Specified | `DEFINITION_OF_DONE.md`, `GAME_DEVELOPMENT_LIFECYCLE.md`, `QUALITY_STANDARDS.md`, `BACKLOG_MANAGEMENT.md` |
+| `04_production_standards/POSTMORTEM_GUIDELINES.md` | Defines how to evaluate completed work, identify lessons, and document actionable improvements. | Not Specified | `DEFINITION_OF_DONE.md`, `DEVELOPMENT_PHILOSOPHY.md`, `DOCUMENTATION_STANDARDS.md`, `GAME_DEVELOPMENT_LIFECYCLE.md`, `BACKLOG_MANAGEMENT.md`, `MILESTONE_GUIDELINES.md` |
+| `04_production_standards/PROJECT_LIFECYCLE.md` | Describes project-specific production stages, objectives, deliverables, and stage transition criteria. | Not Specified | `GAME_DEVELOPMENT_LIFECYCLE.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `BACKLOG_MANAGEMENT.md`, `MILESTONE_GUIDELINES.md`, `POSTMORTEM_GUIDELINES.md` |
+| `04_production_standards/RELEASE_PROCESS.md` | Defines the operational process for preparing, validating, approving, publishing, and maintaining releases. | Not Specified | `BRANCHING_STRATEGY.md`, `DEFINITION_OF_DONE.md`, `DOCUMENTATION_STANDARDS.md`, `GAME_DEVELOPMENT_LIFECYCLE.md`, `ENGINE_STANDARDS.md`, `ASSET_PIPELINE.md`, `TESTING_STRATEGY.md`, `PROJECT_LIFECYCLE.md`, `MILESTONE_GUIDELINES.md`, `POSTMORTEM_GUIDELINES.md` |
+| `04_production_standards/RISK_MANAGEMENT.md` | Establishes principles for identifying, evaluating, mitigating, tracking, and escalating project risks. | Not Specified | `DEFINITION_OF_DONE.md`, `DEVELOPMENT_PHILOSOPHY.md`, `GAME_DEVELOPMENT_LIFECYCLE.md`, `ARCHITECTURE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `TESTING_STRATEGY.md`, `BACKLOG_MANAGEMENT.md`, `MILESTONE_GUIDELINES.md`, `PROJECT_LIFECYCLE.md`, `RELEASE_PROCESS.md`, `POSTMORTEM_GUIDELINES.md` |
+| `04_production_standards/SPRINT_WORKFLOW.md` | Defines the sprint planning, execution, review, and retrospective workflow. | Not Specified | `DEFINITION_OF_DONE.md`, `BRANCHING_STRATEGY.md`, `DEVELOPMENT_PHILOSOPHY.md`, `GAME_DEVELOPMENT_LIFECYCLE.md`, `BACKLOG_MANAGEMENT.md`, `MILESTONE_GUIDELINES.md`, `PROJECT_LIFECYCLE.md`, `RISK_MANAGEMENT.md`, `POSTMORTEM_GUIDELINES.md` |
+| `04_production_standards/VERSIONING_STANDARDS.md` | Establishes version numbering, release identification, compatibility, and version management conventions. | Not Specified | `BRANCHING_STRATEGY.md`, `DOCUMENTATION_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `RESOURCE_MANAGEMENT.md`, `PROJECT_LIFECYCLE.md`, `RELEASE_PROCESS.md`, `RISK_MANAGEMENT.md` |
 
 ## 9. QA Standards
 
@@ -187,14 +191,14 @@ Production standards define how work is planned, organized, tracked, evaluated, 
 
 QA standards define quality assurance practices and testing-related processes throughout development.
 
-| Document | Description |
-|---|---|
-| `05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md` | Defines how to write clear, measurable, and verifiable acceptance criteria for project deliverables. |
-| `05_qa_standards/BUG_REPORTING.md` | Establishes the process and required information for reporting, classifying, tracking, and verifying defects. |
-| `05_qa_standards/PLAYTESTING_GUIDELINES.md` | Defines methods for conducting player testing, observing behavior, collecting feedback, and evaluating player experience. |
-| `05_qa_standards/QA_STRATEGY.md` | Establishes the overall quality assurance approach, responsibilities, activities, and quality objectives. |
-| `05_qa_standards/REGRESSION_TESTING.md` | Defines how to select, execute, maintain, and evaluate regression tests after changes. |
-| `05_qa_standards/TEST_CASE_GUIDELINES.md` | Establishes conventions for designing, documenting, organizing, and executing individual test cases. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md` | Defines how to write clear, measurable, and verifiable acceptance criteria for project deliverables. | Not Specified | `DEFINITION_OF_DONE.md`, `QUALITY_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `MECHANIC_DESIGN_GUIDELINES.md`, `BACKLOG_MANAGEMENT.md`, `SPRINT_WORKFLOW.md`, `TESTING_STRATEGY.md` |
+| `05_qa_standards/BUG_REPORTING.md` | Establishes the process and required information for reporting, classifying, tracking, and verifying defects. | Not Specified | `DEFINITION_OF_DONE.md`, `QUALITY_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `TESTING_STRATEGY.md`, `BACKLOG_MANAGEMENT.md`, `RISK_MANAGEMENT.md`, `RELEASE_PROCESS.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md` |
+| `05_qa_standards/PLAYTESTING_GUIDELINES.md` | Defines methods for conducting player testing, observing behavior, collecting feedback, and evaluating player experience. | Not Specified | `DEFINITION_OF_DONE.md`, `QUALITY_STANDARDS.md`, `PLAYER_EXPERIENCE_GUIDELINES.md`, `DIFFICULTY_DESIGN_GUIDELINES.md`, `BALANCING_GUIDELINES.md`, `CORE_LOOP_DESIGN_GUIDELINES.md`, `UI_UX_DESIGN_GUIDELINES.md`, `BACKLOG_MANAGEMENT.md`, `MILESTONE_GUIDELINES.md`, `POSTMORTEM_GUIDELINES.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md`, `BUG_REPORTING.md`, `TESTING_STRATEGY.md` |
+| `05_qa_standards/QA_STRATEGY.md` | Establishes the overall quality assurance approach, responsibilities, activities, and quality objectives. | Not Specified | `DEFINITION_OF_DONE.md`, `QUALITY_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `DEVELOPMENT_PHILOSOPHY.md`, `TESTING_STRATEGY.md`, `BACKLOG_MANAGEMENT.md`, `MILESTONE_GUIDELINES.md`, `PROJECT_LIFECYCLE.md`, `RISK_MANAGEMENT.md`, `RELEASE_PROCESS.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md`, `BUG_REPORTING.md`, `PLAYTESTING_GUIDELINES.md` |
+| `05_qa_standards/REGRESSION_TESTING.md` | Defines how to select, execute, maintain, and evaluate regression tests after changes. | Not Specified | `DEFINITION_OF_DONE.md`, `QUALITY_STANDARDS.md`, `CODE_REVIEW_GUIDELINES.md`, `TESTING_STRATEGY.md`, `RISK_MANAGEMENT.md`, `RELEASE_PROCESS.md`, `QA_STRATEGY.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md`, `BUG_REPORTING.md`, `PLAYTESTING_GUIDELINES.md` |
+| `05_qa_standards/TEST_CASE_GUIDELINES.md` | Establishes conventions for designing, documenting, organizing, and executing individual test cases. | Not Specified | `DEFINITION_OF_DONE.md`, `QUALITY_STANDARDS.md`, `TESTING_STRATEGY.md`, `BACKLOG_MANAGEMENT.md`, `QA_STRATEGY.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md`, `BUG_REPORTING.md`, `PLAYTESTING_GUIDELINES.md`, `REGRESSION_TESTING.md` |
 
 ## 10. Templates
 
@@ -204,28 +208,28 @@ Templates provide reusable document structures that AI agents and developers can
 
 Templates are not project specifications themselves. Their purpose is to guide the creation of project-specific documents.
 
-| Document | Description |
-|---|---|
-| `06_templates/ADR_TEMPLATE.md` | Template for documenting architectural decisions, alternatives, consequences, and approval. |
-| `06_templates/ART_DIRECTION_TEMPLATE.md` | Template for defining a project's visual identity, artistic principles, references, and production constraints. |
-| `06_templates/AUDIO_DIRECTION_TEMPLATE.md` | Template for defining audio identity, music, sound effects, ambience, dialogue, and technical direction. |
-| `06_templates/CHARACTER_TEMPLATE.md` | Template for documenting individual characters, including narrative identity, personality, appearance, behavior, and gameplay role. |
-| `06_templates/CORE_GAME_LOOP_TEMPLATE.md` | Template for documenting the core gameplay loop, its stages, player actions, feedback, and supporting loops. |
-| `06_templates/CORE_PILLARS_TEMPLATE.md` | Template for defining a game's core design pillars, player promises, priorities, and validation criteria. |
-| `06_templates/GAMEPLAY_SYSTEM_TEMPLATE.md` | Template for specifying gameplay systems, their components, rules, interactions, and player-facing behavior. |
-| `06_templates/GAME_DESIGN_DOCUMENT_TEMPLATE.md` | Template for creating a comprehensive game design document covering the major aspects of a game. |
-| `06_templates/GAME_VISION_TEMPLATE.md` | Template for defining a game's identity, vision, audience, intended experience, and creative direction. |
-| `06_templates/LEVEL_DESIGN_TEMPLATE.md` | Template for documenting level objectives, layout, navigation, encounters, pacing, and player experience. |
-| `06_templates/MECHANIC_TEMPLATE.md` | Template for specifying an individual gameplay mechanic, including rules, states, interactions, and consequences. |
-| `06_templates/MILESTONE_TEMPLATE.md` | Template for defining milestone objectives, deliverables, acceptance criteria, dependencies, and completion status. |
-| `06_templates/NARRATIVE_OVERVIEW_TEMPLATE.md` | Template for documenting a game's narrative direction, premise, world, themes, characters, and story structure. |
-| `06_templates/POSTMORTEM_TEMPLATE.md` | Template for documenting completed work, outcomes, lessons learned, and improvement actions. |
-| `06_templates/QUEST_TEMPLATE.md` | Template for documenting quest objectives, stages, characters, choices, outcomes, rewards, and completion conditions. |
-| `06_templates/ROADMAP_TEMPLATE.md` | Template for defining project direction, strategic priorities, milestones, and planned development outcomes. |
-| `06_templates/TECHNICAL_DESIGN_TEMPLATE.md` | Template for documenting technical solutions, architecture, components, dependencies, implementation considerations, and validation. |
-| `06_templates/TECHNICAL_OVERVIEW_TEMPLATE.md` | Template for describing a project's technical foundation, technology choices, architecture, tools, and major technical constraints. |
-| `06_templates/TEST_PLAN_TEMPLATE.md` | Template for planning testing activities, scope, environments, scenarios, resources, execution, and exit criteria. |
-| `06_templates/WORLD_OVERVIEW_TEMPLATE.md` | Template for documenting a game's world, setting, geography, history, cultures, factions, locations, and world rules. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `06_templates/ADR_TEMPLATE.md` | Template for documenting architectural decisions, alternatives, consequences, and approval. | Not Specified | — |
+| `06_templates/ART_DIRECTION_TEMPLATE.md` | Template for defining a project's visual identity, artistic principles, references, and production constraints. | Not Specified | — |
+| `06_templates/AUDIO_DIRECTION_TEMPLATE.md` | Template for defining audio identity, music, sound effects, ambience, dialogue, and technical direction. | Not Specified | — |
+| `06_templates/CHARACTER_TEMPLATE.md` | Template for documenting individual characters, including narrative identity, personality, appearance, behavior, and gameplay role. | Not Specified | — |
+| `06_templates/CORE_GAME_LOOP_TEMPLATE.md` | Template for documenting the core gameplay loop, its stages, player actions, feedback, and supporting loops. | Not Specified | — |
+| `06_templates/CORE_PILLARS_TEMPLATE.md` | Template for defining a game's core design pillars, player promises, priorities, and validation criteria. | Not Specified | — |
+| `06_templates/GAMEPLAY_SYSTEM_TEMPLATE.md` | Template for specifying gameplay systems, their components, rules, interactions, and player-facing behavior. | Not Specified | — |
+| `06_templates/GAME_DESIGN_DOCUMENT_TEMPLATE.md` | Template for creating a comprehensive game design document covering the major aspects of a game. | Not Specified | — |
+| `06_templates/GAME_VISION_TEMPLATE.md` | Template for defining a game's identity, vision, audience, intended experience, and creative direction. | Not Specified | — |
+| `06_templates/LEVEL_DESIGN_TEMPLATE.md` | Template for documenting level objectives, layout, navigation, encounters, pacing, and player experience. | Not Specified | `LEVEL_DESIGN_GUIDELINES.md`, `TESTING_STRATEGY.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md` |
+| `06_templates/MECHANIC_TEMPLATE.md` | Template for specifying an individual gameplay mechanic, including rules, states, interactions, and consequences. | Not Specified | `MECHANIC_DESIGN_GUIDELINES.md`, `BALANCING_GUIDELINES.md`, `PROGRESSION_DESIGN_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `TESTING_STRATEGY.md`, `TEST_CASE_GUIDELINES.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md` |
+| `06_templates/MILESTONE_TEMPLATE.md` | Template for defining milestone objectives, deliverables, acceptance criteria, dependencies, and completion status. | Not Specified | `MILESTONE_GUIDELINES.md`, `BACKLOG_MANAGEMENT.md`, `SPRINT_WORKFLOW.md`, `RISK_MANAGEMENT.md`, `DEFINITION_OF_DONE.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md`, `QA_STRATEGY.md`, `POSTMORTEM_GUIDELINES.md` |
+| `06_templates/NARRATIVE_OVERVIEW_TEMPLATE.md` | Template for documenting a game's narrative direction, premise, world, themes, characters, and story structure. | Not Specified | — |
+| `06_templates/POSTMORTEM_TEMPLATE.md` | Template for documenting completed work, outcomes, lessons learned, and improvement actions. | Not Specified | `POSTMORTEM_GUIDELINES.md`, `MILESTONE_GUIDELINES.md`, `BACKLOG_MANAGEMENT.md`, `SPRINT_WORKFLOW.md`, `RISK_MANAGEMENT.md`, `DEFINITION_OF_DONE.md`, `QA_STRATEGY.md`, `BUG_REPORTING.md` |
+| `06_templates/QUEST_TEMPLATE.md` | Template for documenting quest objectives, stages, characters, choices, outcomes, rewards, and completion conditions. | Not Specified | `NARRATIVE_DESIGN_GUIDELINES.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md` |
+| `06_templates/ROADMAP_TEMPLATE.md` | Template for defining project direction, strategic priorities, milestones, and planned development outcomes. | Not Specified | `PROJECT_LIFECYCLE.md`, `MILESTONE_GUIDELINES.md`, `MILESTONE_TEMPLATE.md`, `BACKLOG_MANAGEMENT.md`, `SPRINT_WORKFLOW.md`, `RISK_MANAGEMENT.md`, `DEFINITION_OF_DONE.md`, `QA_STRATEGY.md`, `POSTMORTEM_GUIDELINES.md` |
+| `06_templates/TECHNICAL_DESIGN_TEMPLATE.md` | Template for documenting technical solutions, architecture, components, dependencies, implementation considerations, and validation. | Not Specified | — |
+| `06_templates/TECHNICAL_OVERVIEW_TEMPLATE.md` | Template for describing a project's technical foundation, technology choices, architecture, tools, and major technical constraints. | Not Specified | `ARCHITECTURE_GUIDELINES.md`, `GDSCRIPT_STANDARDS.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `RESOURCE_MANAGEMENT.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `TESTING_STRATEGY.md`, `adr/README.md` |
+| `06_templates/TEST_PLAN_TEMPLATE.md` | Template for planning testing activities, scope, environments, scenarios, resources, execution, and exit criteria. | Not Specified | `QA_STRATEGY.md`, `TESTING_STRATEGY.md`, `TEST_CASE_GUIDELINES.md`, `BUG_REPORTING.md`, `REGRESSION_TESTING.md`, `ACCEPTANCE_CRITERIA_GUIDELINES.md`, `PLAYTESTING_GUIDELINES.md`, `DEFINITION_OF_DONE.md` |
+| `06_templates/WORLD_OVERVIEW_TEMPLATE.md` | Template for documenting a game's world, setting, geography, history, cultures, factions, locations, and world rules. | Not Specified | `DESIGN_PRINCIPLES.md`, `NARRATIVE_DESIGN_GUIDELINES.md`, `LEVEL_DESIGN_GUIDELINES.md`, `GAMEPLAY_DESIGN_GUIDELINES.md`, `ART_ASSET_STANDARDS.md`, `ART_PIPELINE.md`, `AUDIO_ASSET_STANDARDS.md` |
 
 ## 11. AI Agent Workflows
 
@@ -235,21 +239,21 @@ Agent workflows define repeatable procedures for AI agents performing common gam
 
 These workflows complement the studio standards and templates. They do not replace human approval or authorize agents to make significant decisions independently.
 
-| Document | Description |
-|---|---|
-| `07_agent_workflows/CREATE_CORE_PILLARS.md` | Defines the process for identifying, evaluating, documenting, and proposing a game's core design pillars. |
-| `07_agent_workflows/CREATE_GAME_CONCEPT.md` | Defines the process for developing and documenting a game concept from an initial idea. |
-| `07_agent_workflows/CREATE_GAME_VISION.md` | Defines the process for establishing a game's identity, intended experience, audience, and creative direction. |
-| `07_agent_workflows/CREATE_TECHNICAL_DESIGN.md` | Defines the process for analyzing technical requirements, evaluating solutions, and producing technical design documentation. |
-| `07_agent_workflows/DESIGN_GAMEPLAY_SYSTEM.md` | Defines the process for designing and documenting interconnected gameplay systems. |
-| `07_agent_workflows/DESIGN_GAME_MECHANIC.md` | Defines the process for designing, specifying, and evaluating individual gameplay mechanics. |
-| `07_agent_workflows/FIX_BUG.md` | Defines the process for reproducing, investigating, correcting, and validating software defects. |
-| `07_agent_workflows/GENERATE_TESTS.md` | Defines the process for analyzing requirements and generating appropriate automated or manual test cases. |
-| `07_agent_workflows/IMPLEMENT_FEATURE.md` | Defines the process for analyzing requirements, implementing features, validating changes, and preparing them for review. |
-| `07_agent_workflows/REVIEW_CODE.md` | Defines the process for reviewing code changes for correctness, architecture, maintainability, testing, and quality. |
-| `07_agent_workflows/REVIEW_DESIGN.md` | Defines the process for evaluating game design documents, gameplay systems, mechanics, and player experience. |
-| `07_agent_workflows/UPDATE_DOCUMENTATION.md` | Defines the process for creating, updating, synchronizing, validating, and maintaining project documentation. |
-| `07_agent_workflows/UPDATE_PROJECT_STATUS.md` | Defines the process for evaluating and reporting project progress, milestones, risks, blockers, and upcoming priorities. |
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `07_agent_workflows/CREATE_CORE_PILLARS.md` | Defines the process for identifying, evaluating, documenting, and proposing a game's core design pillars. | Not Specified | — |
+| `07_agent_workflows/CREATE_GAME_CONCEPT.md` | Defines the process for developing and documenting a game concept from an initial idea. | Not Specified | — |
+| `07_agent_workflows/CREATE_GAME_VISION.md` | Defines the process for establishing a game's identity, intended experience, audience, and creative direction. | Not Specified | — |
+| `07_agent_workflows/CREATE_TECHNICAL_DESIGN.md` | Defines the process for analyzing technical requirements, evaluating solutions, and producing technical design documentation. | Not Specified | — |
+| `07_agent_workflows/DESIGN_GAMEPLAY_SYSTEM.md` | Defines the process for designing and documenting interconnected gameplay systems. | Not Specified | — |
+| `07_agent_workflows/DESIGN_GAME_MECHANIC.md` | Defines the process for designing, specifying, and evaluating individual gameplay mechanics. | Not Specified | — |
+| `07_agent_workflows/FIX_BUG.md` | Defines the process for reproducing, investigating, correcting, and validating software defects. | Not Specified | — |
+| `07_agent_workflows/GENERATE_TESTS.md` | Defines the process for analyzing requirements and generating appropriate automated or manual test cases. | Not Specified | — |
+| `07_agent_workflows/IMPLEMENT_FEATURE.md` | Defines the process for analyzing requirements, implementing features, validating changes, and preparing them for review. | Not Specified | — |
+| `07_agent_workflows/REVIEW_CODE.md` | Defines the process for reviewing code changes for correctness, architecture, maintainability, testing, and quality. | Not Specified | — |
+| `07_agent_workflows/REVIEW_DESIGN.md` | Defines the process for evaluating game design documents, gameplay systems, mechanics, and player experience. | Not Specified | — |
+| `07_agent_workflows/UPDATE_DOCUMENTATION.md` | Defines the process for creating, updating, synchronizing, validating, and maintaining project documentation. | Not Specified | — |
+| `07_agent_workflows/UPDATE_PROJECT_STATUS.md` | Defines the process for evaluating and reporting project progress, milestones, risks, blockers, and upcoming priorities. | Not Specified | — |
 
 ## 12. Documentation Responsibilities
 
@@ -353,7 +357,49 @@ The current documentation repository contains the following registered files:
 | AI agent workflows | 13 |
 | **Total** | **89** |
 
-**Inventory status:** Reflects the directory listing provided for this version.
+The governance files registered in section 16 are not counted in the total above, which covers the Markdown documents under `docs/`.
+
+| Location | File count |
+|---|---:|
+| Agent rules (`.cline/rules/`) | 6 |
+| Execution workflows (`.clinerules/workflows/`) | 4 |
+| GitHub configuration (`.github/`) | 5 |
+| Reference collections (`references/`) | 4 |
+| **Total** | **19** |
+
+**Inventory status:** Reflects the actual contents of the repository. Status and dependencies are recorded for each registered file; `Not Specified` means that no status has been established.
+
+**Approval status:** Not specified by this inventory.
+
+**Maintenance:** Update this document whenever the actual documentation repository structure changes.
+
+## 16. Governance Files Outside `docs/`
+
+The following files govern repository behavior, agent behavior, or the documentation process itself. They are registered here so that the inventory covers every file that can contradict or amend the documentation under `docs/`.
+
+Paths in this section are relative to the repository root.
+
+| Document | Description | Status | Dependencies |
+|---|---|---|---|
+| `.cline/rules/architecture-rules.md` | Always-loaded rule defining architectural principles and implementation constraints. | Not Specified | — |
+| `.cline/rules/asset-rules.md` | Always-loaded rule defining how scenes, resources, and assets are handled as files. | Not Specified | `ASSET_PIPELINE.md`, `ART_ASSET_STANDARDS.md`, `ART_PIPELINE.md`, `AUDIO_ASSET_STANDARDS.md`, `AUDIO_PIPELINE.md`, `ANIMATION_STANDARDS.md`, `UI_UX_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `RESOURCE_MANAGEMENT.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `ENGINE_STANDARDS.md` |
+| `.cline/rules/documentation-management.md` | Always-loaded rule defining how AI agents discover, maintain, and verify documentation. | Not Specified | `DOCUMENTATION_STANDARDS.md` |
+| `.cline/rules/gdscript-standards.md` | Always-loaded rule defining how GDScript is written, reviewed, and validated. | Not Specified | `GDSCRIPT_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md`, `CODE_REVIEW_GUIDELINES.md` |
+| `.cline/rules/git-workflow.md` | Always-loaded rule defining mandatory agent Git behavior and repository protections. | Not Specified | `GIT_CONVENTIONS.md`, `BRANCHING_STRATEGY.md` |
+| `.cline/rules/project-context.md` | Always-loaded rule defining repository roots, directory responsibilities, and authority order. | Not Specified | `adr/README.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `DEVELOPMENT_PHILOSOPHY.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md` |
+| `.clinerules/workflows/code-review.md` | Cline execution workflow for reviewing a change. | Not Specified | `REVIEW_CODE.md` |
+| `.clinerules/workflows/create-technical-design.md` | Cline execution workflow for producing a technical design. | Not Specified | `CREATE_TECHNICAL_DESIGN.md`, `adr/README.md` |
+| `.clinerules/workflows/fix-bug.md` | Cline execution workflow for investigating and correcting a defect. | Not Specified | `FIX_BUG.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md`, `DEFINITION_OF_DONE.md` |
+| `.clinerules/workflows/implement-feature.md` | Cline execution workflow for implementing a feature. | Not Specified | `IMPLEMENT_FEATURE.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md` |
+| `.github/ISSUE_TEMPLATE/bug_report.md` | Defect report form aligned with the defect reporting standard. | Not Specified | `BUG_REPORTING.md` |
+| `.github/ISSUE_TEMPLATE/feature_request.md` | Feature request form for proposing new functionality. | Not Specified | — |
+| `.github/PULL_REQUEST_TEMPLATE.md` | Pull request description template aligned with the review and completion standards. | Not Specified | `BRANCHING_STRATEGY.md`, `DEFINITION_OF_DONE.md`, `GIT_CONVENTIONS.md`, `CODE_REVIEW_GUIDELINES.md`, `TESTING_STRATEGY.md` |
+| `.github/workflows/ci.yml` | Continuous integration workflow: project import, script parse check, and automated tests. | Not Specified | `TESTING_STRATEGY.md`, `BRANCHING_STRATEGY.md` |
+| `.github/workflows/validation.yml` | Documentation validation workflow: reference resolution and inventory parity. | Not Specified | `DOCUMENTATION_STANDARDS.md` |
+| `references/architectural/README.md` | Reference collection for architectural material. | Not Specified | — |
+| `references/audio/README.md` | Reference collection for audio material. | Not Specified | — |
+| `references/historical/README.md` | Reference collection for historical material. | Not Specified | — |
+| `references/visual/README.md` | Reference collection for visual material. | Not Specified | — |
 
 **Approval status:** Not specified by this inventory.
 

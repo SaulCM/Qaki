@@ -31,7 +31,7 @@ Do not use this workflow for:
 - Writing bug reports.
 - Implementing unrelated production functionality.
 
-If test execution reveals defects, document the findings and recommend using `fix_bug.md` to investigate and correct them.
+If test execution reveals defects, document the findings and recommend using `FIX_BUG.md` to investigate and correct them.
 
 ## 3. Authoritative References
 
@@ -610,7 +610,7 @@ When a test fails:
 
 Do not modify production code automatically just to make generated tests pass.
 
-If the test exposes a confirmed defect, document it and recommend the `fix_bug.md` workflow.
+If the test exposes a confirmed defect, document it and recommend the `FIX_BUG.md` workflow.
 
 ### 13.3 Existing test suite
 

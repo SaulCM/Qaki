@@ -40,7 +40,7 @@ These standards apply to:
 
 This document focuses on reusable visual and usability standards.
 
-Detailed interface design methods, player experience principles, interaction design processes, and UX evaluation practices are defined in `ui_ux_design_guidelines.md`.
+Detailed interface design methods, player experience principles, interaction design processes, and UX evaluation practices are defined in `UI_UX_DESIGN_GUIDELINES.md`.
 
 Godot-specific scene structure, scripting, layout implementation, input handling, and resource management MUST follow the relevant technical standards.
 
@@ -783,7 +783,7 @@ Projects SHOULD provide appropriate options for reducing nonessential interface 
 
 Avoid unnecessary flashing, rapid movement, or excessive visual effects.
 
-Animation-specific requirements are defined in `animation_standards.md`.
+Animation-specific requirements are defined in `ANIMATION_STANDARDS.md`.
 
 ## 18. Resolution and Display Adaptability
 
@@ -868,7 +868,7 @@ Assets MUST:
 - Respect licensing and attribution requirements.
 - Be technically suitable for the target platform.
 
-Relevant requirements are defined in `art_asset_standards.md` and `art_pipeline.md`.
+Relevant requirements are defined in `ART_ASSET_STANDARDS.md` and `ART_PIPELINE.md`.
 
 ## 21. UI State and Reliability
 
