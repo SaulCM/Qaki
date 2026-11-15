@@ -719,14 +719,14 @@ Exceptions SHOULD:
 
 These guidelines SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/gdscript_standards.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
 - `docs/02_technical_standards/adr/README.md`
 
 Only documents that exist in the repository should be registered as active references in the documentation inventory.

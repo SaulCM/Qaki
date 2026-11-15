@@ -729,15 +729,15 @@ Use the following documents when applicable:
 - Game Vision: `game_project/docs/game_design/game_vision.md`
 - Game Design Document: `game_project/docs/game_design/game_design_document.md`
 - Core Pillars: `game_project/docs/game_design/core_pillars.md`
-- Project Lifecycle: `game_project/docs/production/project_lifecycle.md`
-- Milestone Guidelines: `docs/04_production_standards/milestone_guidelines.md`
-- Milestone Template: `docs/06_templates/milestone_template.md`
-- Backlog Management: `docs/04_production_standards/backlog_management.md`
-- Sprint Workflow: `docs/04_production_standards/sprint_workflow.md`
-- Risk Management: `docs/04_production_standards/risk_management.md`
-- Definition of Done: `docs/00_studio_standards/definition_of_done.md`
-- QA Strategy: `docs/05_qa_standards/qa_strategy.md`
-- Postmortem Guidelines: `docs/04_production_standards/postmortem_guidelines.md`
+- Project Lifecycle: `docs/04_production_standards/PROJECT_LIFECYCLE.md`
+- Milestone Guidelines: `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- Milestone Template: `docs/06_templates/MILESTONE_TEMPLATE.md`
+- Backlog Management: `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- Sprint Workflow: `docs/04_production_standards/SPRINT_WORKFLOW.md`
+- Risk Management: `docs/04_production_standards/RISK_MANAGEMENT.md`
+- Definition of Done: `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- QA Strategy: `docs/05_qa_standards/QA_STRATEGY.md`
+- Postmortem Guidelines: `docs/04_production_standards/POSTMORTEM_GUIDELINES.md`
 
 Only retain references to documents that exist in the applicable repository.
 

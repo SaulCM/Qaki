@@ -928,11 +928,11 @@ Projects SHOULD maintain sufficient QA documentation to support development and 
 
 Recommended project-specific documentation locations include:
 
-- `docs/qa/test_plans/`
-- `docs/qa/test_reports/`
-- `docs/qa/bug_reports/`
-- `docs/qa/playtesting/`
-- `docs/qa/release_validation/`
+- `game_project/docs/qa/test_plans/`
+- `game_project/docs/qa/test_reports/`
+- `game_project/docs/qa/bug_reports/`
+- `game_project/docs/qa/playtesting/`
+- `game_project/docs/qa/release_validation/`
 
 The project SHOULD avoid creating unnecessary documentation when the same information is already maintained reliably in an issue tracker, test management system, or other authoritative location.
 
@@ -1044,19 +1044,19 @@ Use this checklist when establishing or reviewing QA practices for a project.
 
 ## 17. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/milestone_guidelines.md`
-- `docs/04_production_standards/project_lifecycle.md`
-- `docs/04_production_standards/risk_management.md`
-- `docs/04_production_standards/release_process.md`
-- `docs/05_qa_standards/acceptance_criteria_guidelines.md`
-- `docs/05_qa_standards/bug_reporting.md`
-- `docs/05_qa_standards/playtesting_guidelines.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- `docs/04_production_standards/PROJECT_LIFECYCLE.md`
+- `docs/04_production_standards/RISK_MANAGEMENT.md`
+- `docs/04_production_standards/RELEASE_PROCESS.md`
+- `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
+- `docs/05_qa_standards/BUG_REPORTING.md`
+- `docs/05_qa_standards/PLAYTESTING_GUIDELINES.md`
 
 ## 18. Maintenance
 

@@ -343,7 +343,7 @@ This structure is illustrative and SHOULD be adapted to actual gameplay requirem
 
 Node names MUST follow:
 
-`docs/00_studio_standards/naming_conventions.md`
+`docs/00_studio_standards/NAMING_CONVENTIONS.md`
 
 Node names SHOULD:
 
@@ -460,7 +460,7 @@ Developers SHOULD NOT duplicate substantial behavior across multiple scenes when
 
 All attached scripts MUST follow:
 
-`docs/02_technical_standards/gdscript_standards.md`
+`docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
 
 ## 10. Scene Communication
 
@@ -490,7 +490,7 @@ Examples include:
 
 All signal declarations and connections MUST follow:
 
-`docs/02_technical_standards/event_and_signal_guidelines.md`
+`docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
 
 ### 10.4 Parent-Child Communication
 
@@ -744,7 +744,7 @@ Developers SHOULD avoid duplicated state between UI components and gameplay syst
 
 UI design and interaction behavior MUST follow the applicable guidelines in:
 
-`docs/01_game_design_guidelines/ui_ux_design_guidelines.md`
+`docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
 
 ## 16. Scene Performance
 
@@ -782,7 +782,7 @@ Large scenes SHOULD be evaluated for unnecessary dependencies, excessive active 
 
 Performance measurement and optimization MUST follow:
 
-`docs/02_technical_standards/performance_guidelines.md`
+`docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
 
 ## 17. Resource Management
 
@@ -806,7 +806,7 @@ Dynamic loading SHOULD be considered when resource availability can be deferred 
 
 Resource creation, loading, sharing, caching, and cleanup MUST follow:
 
-`docs/02_technical_standards/resource_management.md`
+`docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
 
 ## 18. Testing and Validation
 
@@ -948,21 +948,21 @@ Exceptions SHOULD:
 
 These conventions SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/gdscript_standards.md`
-- `docs/02_technical_standards/event_and_signal_guidelines.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/02_technical_standards/data_persistence_guidelines.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/asset_pipeline.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
 - `docs/02_technical_standards/adr/README.md`
-- `docs/01_game_design_guidelines/ui_ux_design_guidelines.md`
+- `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
 - Applicable documents in `docs/05_qa_standards/`
 
 Only documents that physically exist in the repository SHOULD be registered as active references in the documentation inventory.

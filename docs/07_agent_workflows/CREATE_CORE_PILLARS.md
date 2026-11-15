@@ -31,7 +31,7 @@ This workflow does not authorize agents to independently redefine the game's vis
 | Property | Value |
 |---|---|
 | Output Document | `game_project/docs/game_design/core_pillars.md` |
-| Source Template | `docs/06_templates/core_pillars_template.md` |
+| Source Template | `docs/06_templates/CORE_PILLARS_TEMPLATE.md` |
 | Document Type | Game Design |
 | Primary Owner | Project Owner / Game Director |
 | Approval Authority | Project Owner |
@@ -270,7 +270,7 @@ Do not invent numerical targets or claim that validation has occurred when no ev
 
 ### Step 8: Generate the Core Pillars Document
 
-1. Read `docs/06_templates/core_pillars_template.md`.
+1. Read `docs/06_templates/CORE_PILLARS_TEMPLATE.md`.
 2. Use its structure and required sections.
 3. Populate the template using the evaluated pillar proposals.
 4. Preserve the distinction between confirmed information and proposals.
@@ -440,13 +440,13 @@ After execution, provide a report using the following structure:
 
 ### Studio Documentation
 
-- Core Pillars Template: `docs/06_templates/core_pillars_template.md`
-- Game Design Principles: `docs/01_game_design_guidelines/design_principles.md`
-- Player Experience Guidelines: `docs/01_game_design_guidelines/player_experience_guidelines.md`
-- Core Loop Design Guidelines: `docs/01_game_design_guidelines/core_loop_design_guidelines.md`
-- Gameplay Design Guidelines: `docs/01_game_design_guidelines/gameplay_design_guidelines.md`
-- Documentation Standards: `docs/00_studio_standards/documentation_standards.md`
-- Definition of Done: `docs/00_studio_standards/definition_of_done.md`
+- Core Pillars Template: `docs/06_templates/CORE_PILLARS_TEMPLATE.md`
+- Game Design Principles: `docs/01_game_design_guidelines/DESIGN_PRINCIPLES.md`
+- Player Experience Guidelines: `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
+- Core Loop Design Guidelines: `docs/01_game_design_guidelines/CORE_LOOP_DESIGN_GUIDELINES.md`
+- Gameplay Design Guidelines: `docs/01_game_design_guidelines/GAMEPLAY_DESIGN_GUIDELINES.md`
+- Documentation Standards: `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- Definition of Done: `docs/00_studio_standards/DEFINITION_OF_DONE.md`
 
 ### Project Documentation
 

@@ -800,12 +800,12 @@ AI-generated layouts, maps, and content must be reviewed and validated before im
 - Core Pillars: `[Project-specific path]`
 - Core Game Loop: `[Project-specific path]`
 - Gameplay System Specifications: `[Project-specific path]`
-- Level Design Guidelines: `docs/01_game_design_guidelines/level_design_guidelines.md`
+- Level Design Guidelines: `docs/01_game_design_guidelines/LEVEL_DESIGN_GUIDELINES.md`
 - Art Direction: `[Project-specific path]`
 - Audio Direction: `[Project-specific path]`
 - UI/UX Design: `[Project-specific path]`
-- Testing Strategy: `docs/02_technical_standards/testing_strategy.md`
-- Acceptance Criteria Guidelines: `docs/05_qa_standards/acceptance_criteria_guidelines.md`
+- Testing Strategy: `docs/02_technical_standards/TESTING_STRATEGY.md`
+- Acceptance Criteria Guidelines: `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
 
 ---
 

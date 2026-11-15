@@ -625,7 +625,7 @@ Technical loading, compression, and playback configuration MUST follow the relev
 
 Audio assets MUST follow the project's naming and directory conventions.
 
-The studio-wide naming rules are defined in `docs/00_studio_standards/naming_conventions.md`.
+The studio-wide naming rules are defined in `docs/00_studio_standards/NAMING_CONVENTIONS.md`.
 
 ### 12.1. Naming
 
@@ -965,14 +965,14 @@ Temporary exceptions SHOULD be reviewed before final release.
 
 ## 22. Related Documents
 
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/03_art_audio_standards/art_pipeline.md`
-- `docs/03_art_audio_standards/art_asset_standards.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/03_art_audio_standards/ART_PIPELINE.md`
+- `docs/03_art_audio_standards/ART_ASSET_STANDARDS.md`
 
 ## 23. Maintenance
 

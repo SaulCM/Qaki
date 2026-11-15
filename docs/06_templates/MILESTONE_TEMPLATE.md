@@ -459,14 +459,14 @@ AI-generated progress reports and completion assessments must be reviewed by the
 
 ### 13.3 Related Documents
 
-- Milestone Guidelines: `docs/04_production_standards/milestone_guidelines.md`
-- Backlog Management: `docs/04_production_standards/backlog_management.md`
-- Sprint Workflow: `docs/04_production_standards/sprint_workflow.md`
-- Risk Management: `docs/04_production_standards/risk_management.md`
-- Definition of Done: `docs/00_studio_standards/definition_of_done.md`
-- Acceptance Criteria Guidelines: `docs/05_qa_standards/acceptance_criteria_guidelines.md`
-- QA Strategy: `docs/05_qa_standards/qa_strategy.md`
-- Postmortem Guidelines: `docs/04_production_standards/postmortem_guidelines.md`
+- Milestone Guidelines: `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- Backlog Management: `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- Sprint Workflow: `docs/04_production_standards/SPRINT_WORKFLOW.md`
+- Risk Management: `docs/04_production_standards/RISK_MANAGEMENT.md`
+- Definition of Done: `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- Acceptance Criteria Guidelines: `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
+- QA Strategy: `docs/05_qa_standards/QA_STRATEGY.md`
+- Postmortem Guidelines: `docs/04_production_standards/POSTMORTEM_GUIDELINES.md`
 
 ---
 

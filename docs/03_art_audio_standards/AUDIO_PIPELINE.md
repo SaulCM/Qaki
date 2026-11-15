@@ -1018,15 +1018,15 @@ Significant or lasting exceptions SHOULD be documented and approved by the proje
 
 ## 23. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/03_art_audio_standards/audio_asset_standards.md`
-- `docs/03_art_audio_standards/art_pipeline.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/03_art_audio_standards/AUDIO_ASSET_STANDARDS.md`
+- `docs/03_art_audio_standards/ART_PIPELINE.md`
 
 ## 24. Maintenance
 

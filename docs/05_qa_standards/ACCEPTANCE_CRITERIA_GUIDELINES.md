@@ -750,14 +750,14 @@ Exceptions to these guidelines SHOULD be proportional to the work and documented
 
 ## 16. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/01_game_design_guidelines/gameplay_design_guidelines.md`
-- `docs/01_game_design_guidelines/mechanic_design_guidelines.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/sprint_workflow.md`
-- `docs/05_qa_standards/testing_strategy.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/01_game_design_guidelines/GAMEPLAY_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/MECHANIC_DESIGN_GUIDELINES.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/SPRINT_WORKFLOW.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
 
 ## 17. Maintenance
 

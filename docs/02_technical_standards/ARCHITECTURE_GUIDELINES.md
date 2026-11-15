@@ -711,14 +711,14 @@ An exception MUST NOT silently invalidate an established architectural decision.
 
 These guidelines SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/02_technical_standards/gdscript_standards.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
 - `docs/02_technical_standards/adr/README.md`
 
 Only documents that exist in the repository should be registered as active references in the documentation inventory.

@@ -195,7 +195,9 @@ game_project/
     ├── game_design/
     ├── technical/
     ├── production/
-    └── qa/
+    ├── qa/
+    ├── art/
+    └── audio/
 ```
 
 ### 4.3 Reference Structure Boundaries

@@ -175,14 +175,14 @@ Project-specific requirements must not be placed in shared studio standards unle
 
 - Reusable studio templates are stored in repository-root `docs/06_templates/`.
 - A template is not a project document. Instantiating a template produces a game-specific document under `game_project/docs/`.
-- Templates SHOULD state their recommended destination relative to `game_project/`.
+- Templates SHOULD state their recommended destination using the full repository-relative path (`game_project/docs/...`).
 - Studio agent workflows are stored in repository-root `docs/07_agent_workflows/`.
 - Cline execution workflows are stored in `.clinerules/workflows/`.
 
 ### 3.5 Documentation Path Resolution
 
 - Repository-relative documentation paths resolve from the repository root, for example `docs/06_templates/`.
-- Project-relative documentation paths resolve from the Godot project root (`game_project/`), for example `docs/game_design/` inside the project.
+- Project-relative documentation paths resolve from the Godot project root (`game_project/`); for example, a project-relative game design path resolves to `game_project/docs/game_design/`.
 - Because both roots contain a `docs/` directory, documentation MUST use full repository-relative paths when identifying a document: repository-root `docs/...` for studio documentation and `game_project/docs/...` for game-specific documentation.
 - Relative Markdown links resolve from the directory containing the referencing document.
 - When a path is ambiguous, do not guess. Qualify the path or report the ambiguity.

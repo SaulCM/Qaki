@@ -101,7 +101,7 @@ Developers SHOULD prioritize:
 
 All scripts MUST follow:
 
-`docs/00_studio_standards/naming_conventions.md`
+`docs/00_studio_standards/NAMING_CONVENTIONS.md`
 
 The following conventions apply:
 
@@ -642,7 +642,7 @@ Signals SHOULD be used for event-driven communication when appropriate.
 
 All signal declarations, connections, payloads, and lifecycle behavior MUST follow:
 
-`docs/02_technical_standards/event_and_signal_guidelines.md`
+`docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
 
 ### 9.7 Resources
 
@@ -860,7 +860,7 @@ These categories SHOULD NOT be mixed unnecessarily.
 
 Persistent data and save/load behavior MUST follow:
 
-`docs/02_technical_standards/data_persistence_guidelines.md`
+`docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
 
 ### 12.4 Magic Values
 
@@ -878,7 +878,7 @@ Scripts MUST respect the project's approved architecture and feature boundaries.
 
 The project structure MUST follow:
 
-`docs/00_studio_standards/project_structure_standards.md`
+`docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
 
 ### 13.2 Feature-Oriented Organization
 
@@ -1080,16 +1080,16 @@ Repeated exceptions SHOULD trigger a review of this standard.
 
 These standards SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/event_and_signal_guidelines.md`
-- `docs/02_technical_standards/data_persistence_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
+- `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
 - `docs/02_technical_standards/adr/README.md`
 
 Only documents that physically exist in the repository SHOULD be registered as active references in the documentation inventory.

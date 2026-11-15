@@ -624,17 +624,17 @@ After execution, provide a report using the following structure:
 
 ### Studio Documentation
 
-- Game Development Lifecycle: `docs/00_studio_standards/game_development_lifecycle.md`
-- Development Philosophy: `docs/00_studio_standards/development_philosophy.md`
-- Design Principles: `docs/01_game_design_guidelines/design_principles.md`
-- Player Experience Guidelines: `docs/01_game_design_guidelines/player_experience_guidelines.md`
-- Core Pillars Template: `docs/06_templates/core_pillars_template.md`
-- Game Vision Template: `docs/06_templates/game_vision_template.md`
-- Game Design Document Template: `docs/06_templates/game_design_document_template.md`
+- Game Development Lifecycle: `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
+- Development Philosophy: `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- Design Principles: `docs/01_game_design_guidelines/DESIGN_PRINCIPLES.md`
+- Player Experience Guidelines: `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
+- Core Pillars Template: `docs/06_templates/CORE_PILLARS_TEMPLATE.md`
+- Game Vision Template: `docs/06_templates/GAME_VISION_TEMPLATE.md`
+- Game Design Document Template: `docs/06_templates/GAME_DESIGN_DOCUMENT_TEMPLATE.md`
 
 ### Related Agent Workflows
 
-- Create Core Pillars: `docs/07_agent_workflows/create_core_pillars.md`
+- Create Core Pillars: `docs/07_agent_workflows/CREATE_CORE_PILLARS.md`
 
 Only use references that exist in the applicable repository.
 

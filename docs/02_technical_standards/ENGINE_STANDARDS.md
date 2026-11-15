@@ -873,15 +873,15 @@ Exceptions SHOULD:
 
 These standards SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/data_persistence_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
 - `docs/02_technical_standards/adr/README.md`
 
 Only documents that exist in the repository should be registered as active references in the documentation inventory.

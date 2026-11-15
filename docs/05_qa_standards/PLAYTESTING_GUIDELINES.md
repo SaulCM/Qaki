@@ -899,7 +899,7 @@ Structured playtesting sessions SHOULD produce a record that preserves the objec
 
 Recommended storage location within an individual game repository:
 
-`docs/qa/playtesting/`
+`game_project/docs/qa/playtesting/`
 
 Recommended filename format:
 
@@ -1112,19 +1112,19 @@ Exceptions MUST NOT justify fabricating results, misrepresenting participant fee
 
 ## 19. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/01_game_design_guidelines/player_experience_guidelines.md`
-- `docs/01_game_design_guidelines/difficulty_design_guidelines.md`
-- `docs/01_game_design_guidelines/balancing_guidelines.md`
-- `docs/01_game_design_guidelines/core_loop_design_guidelines.md`
-- `docs/01_game_design_guidelines/ui_ux_design_guidelines.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/milestone_guidelines.md`
-- `docs/04_production_standards/postmortem_guidelines.md`
-- `docs/05_qa_standards/acceptance_criteria_guidelines.md`
-- `docs/05_qa_standards/bug_reporting.md`
-- `docs/02_technical_standards/testing_strategy.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
+- `docs/01_game_design_guidelines/DIFFICULTY_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/BALANCING_GUIDELINES.md`
+- `docs/01_game_design_guidelines/CORE_LOOP_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- `docs/04_production_standards/POSTMORTEM_GUIDELINES.md`
+- `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
+- `docs/05_qa_standards/BUG_REPORTING.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
 
 ## 20. Maintenance
 

@@ -802,14 +802,14 @@ Use applicable documents from the shared studio knowledge base and project repos
 
 **Studio standards:**
 
-- QA Strategy: `docs/05_qa_standards/qa_strategy.md`
-- Testing Strategy: `docs/02_technical_standards/testing_strategy.md`
-- Test Case Guidelines: `docs/05_qa_standards/test_case_guidelines.md`
-- Bug Reporting: `docs/05_qa_standards/bug_reporting.md`
-- Regression Testing: `docs/05_qa_standards/regression_testing.md`
-- Acceptance Criteria Guidelines: `docs/05_qa_standards/acceptance_criteria_guidelines.md`
-- Playtesting Guidelines: `docs/05_qa_standards/playtesting_guidelines.md`
-- Definition of Done: `docs/00_studio_standards/definition_of_done.md`
+- QA Strategy: `docs/05_qa_standards/QA_STRATEGY.md`
+- Testing Strategy: `docs/02_technical_standards/TESTING_STRATEGY.md`
+- Test Case Guidelines: `docs/05_qa_standards/TEST_CASE_GUIDELINES.md`
+- Bug Reporting: `docs/05_qa_standards/BUG_REPORTING.md`
+- Regression Testing: `docs/05_qa_standards/REGRESSION_TESTING.md`
+- Acceptance Criteria Guidelines: `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
+- Playtesting Guidelines: `docs/05_qa_standards/PLAYTESTING_GUIDELINES.md`
+- Definition of Done: `docs/00_studio_standards/DEFINITION_OF_DONE.md`
 
 **Project documents:**
 

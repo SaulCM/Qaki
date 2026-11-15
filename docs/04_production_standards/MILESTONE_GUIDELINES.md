@@ -772,10 +772,10 @@ Significant changes to the milestone management process require project owner ap
 
 ## 19. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/game_development_lifecycle.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/04_production_standards/backlog_management.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
 
 Project-specific milestone plans SHOULD reference relevant:
 

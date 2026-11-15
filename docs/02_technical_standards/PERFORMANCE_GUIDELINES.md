@@ -383,7 +383,7 @@ Developers SHOULD use profiling to identify expensive script operations rather t
 
 Static typing SHOULD be used according to:
 
-`docs/02_technical_standards/gdscript_standards.md`
+`docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
 
 Typing improves code clarity and can help the engine optimize certain operations.
 
@@ -791,7 +791,7 @@ Developers SHOULD consider:
 
 Asset import and optimization MUST follow:
 
-`docs/02_technical_standards/asset_pipeline.md`
+`docs/02_technical_standards/ASSET_PIPELINE.md`
 
 ## 13. UI and Audio Performance
 
@@ -1131,17 +1131,17 @@ Exceptions SHOULD:
 
 These guidelines SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/gdscript_standards.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/event_and_signal_guidelines.md`
-- `docs/02_technical_standards/data_persistence_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
+- `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
 - `docs/02_technical_standards/adr/README.md`
 - Applicable documents in `docs/05_qa_standards/`
 

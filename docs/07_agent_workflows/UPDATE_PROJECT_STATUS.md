@@ -44,14 +44,14 @@ Before updating project status, inspect the relevant studio standards and projec
 
 Relevant references include:
 
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/milestone_guidelines.md`
-- `docs/04_production_standards/project_lifecycle.md`
-- `docs/04_production_standards/risk_management.md`
-- `docs/04_production_standards/sprint_workflow.md`
-- `docs/04_production_standards/versioning_standards.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- `docs/04_production_standards/PROJECT_LIFECYCLE.md`
+- `docs/04_production_standards/RISK_MANAGEMENT.md`
+- `docs/04_production_standards/SPRINT_WORKFLOW.md`
+- `docs/04_production_standards/VERSIONING_STANDARDS.md`
 
 Read only the references relevant to the requested update.
 
@@ -609,7 +609,7 @@ Update only the documents affected by the status changes.
 
 Possible project records include:
 
-- `game_project/docs/production/project_status.md`
+- `game_project/PROJECT_STATUS.md` (the current project status document)
 - `game_project/docs/production/roadmap.md`
 - `game_project/docs/production/backlog.md`
 - `game_project/docs/production/risk_register.md`
@@ -618,6 +618,8 @@ Possible project records include:
 - `game_project/docs/production/releases/`
 
 These are suggested locations. Verify the actual project structure and existing filenames before modifying anything.
+
+Do not create a second project status document while `game_project/PROJECT_STATUS.md` exists.
 
 ### 14.1 Project status document
 

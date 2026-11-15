@@ -265,7 +265,7 @@ It MAY include:
 
 Performance tests SHOULD use representative conditions and repeatable scenarios where practical.
 
-Refer to `docs/02_technical_standards/performance_guidelines.md`.
+Refer to `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`.
 
 ### 5.6 Compatibility Testing
 
@@ -299,7 +299,7 @@ It SHOULD cover:
 - Recovery behavior.
 - Progression consistency.
 
-Refer to `docs/02_technical_standards/data_persistence_guidelines.md`.
+Refer to `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`.
 
 ### 5.8 Security and Reliability Testing
 
@@ -921,18 +921,18 @@ Exceptions SHOULD:
 
 This strategy SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/gdscript_standards.md`
-- `docs/02_technical_standards/scene_and_node_convention.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/02_technical_standards/data_persistence_guidelines.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/event_and_signal_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
 - Applicable documents in `docs/05_qa_standards/`
 
 ## 22. Maintenance

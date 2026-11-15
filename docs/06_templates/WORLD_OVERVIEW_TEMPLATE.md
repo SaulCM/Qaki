@@ -1056,13 +1056,13 @@ Use applicable documents from the shared studio knowledge base and project repos
 
 **Studio guidelines:**
 
-- Design Principles: `docs/01_game_design_guidelines/design_principles.md`
-- Narrative Design Guidelines: `docs/01_game_design_guidelines/narrative_design_guidelines.md`
-- Level Design Guidelines: `docs/01_game_design_guidelines/level_design_guidelines.md`
-- Gameplay Design Guidelines: `docs/01_game_design_guidelines/gameplay_design_guidelines.md`
-- Art Direction Standards: `docs/03_art_audio_standards/art_asset_standards.md`
-- Art Pipeline: `docs/03_art_audio_standards/art_pipeline.md`
-- Audio Asset Standards: `docs/03_art_audio_standards/audio_asset_standards.md`
+- Design Principles: `docs/01_game_design_guidelines/DESIGN_PRINCIPLES.md`
+- Narrative Design Guidelines: `docs/01_game_design_guidelines/NARRATIVE_DESIGN_GUIDELINES.md`
+- Level Design Guidelines: `docs/01_game_design_guidelines/LEVEL_DESIGN_GUIDELINES.md`
+- Gameplay Design Guidelines: `docs/01_game_design_guidelines/GAMEPLAY_DESIGN_GUIDELINES.md`
+- Art Direction Standards: `docs/03_art_audio_standards/ART_ASSET_STANDARDS.md`
+- Art Pipeline: `docs/03_art_audio_standards/ART_PIPELINE.md`
+- Audio Asset Standards: `docs/03_art_audio_standards/AUDIO_ASSET_STANDARDS.md`
 
 **Project documents:**
 

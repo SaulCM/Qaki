@@ -34,7 +34,7 @@ This workflow does not cover detailed gameplay mechanics, complete narrative dev
 | Property | Value |
 |---|---|
 | Output Document | `game_project/docs/game_design/game_vision.md` |
-| Source Template | `docs/06_templates/game_vision_template.md` |
+| Source Template | `docs/06_templates/GAME_VISION_TEMPLATE.md` |
 | Document Type | Game Design |
 | Primary Owner | Project Owner / Game Director |
 | Approval Authority | Project Owner |
@@ -374,7 +374,7 @@ The agent MAY recommend scope adjustments but MUST NOT silently weaken or redefi
 
 ### Step 12: Generate the Game Vision Document
 
-1. Read `docs/06_templates/game_vision_template.md`.
+1. Read `docs/06_templates/GAME_VISION_TEMPLATE.md`.
 2. Follow its structure and required sections.
 3. Populate the template using confirmed project information.
 4. Incorporate approved decisions from supporting documents.
@@ -624,18 +624,18 @@ After execution, provide a report using the following structure:
 
 ### Studio Documentation
 
-- Development Philosophy: `docs/00_studio_standards/development_philosophy.md`
-- Game Development Lifecycle: `docs/00_studio_standards/game_development_lifecycle.md`
-- Design Principles: `docs/01_game_design_guidelines/design_principles.md`
-- Player Experience Guidelines: `docs/01_game_design_guidelines/player_experience_guidelines.md`
-- Core Pillars Template: `docs/06_templates/core_pillars_template.md`
-- Game Vision Template: `docs/06_templates/game_vision_template.md`
-- Game Design Document Template: `docs/06_templates/game_design_document_template.md`
+- Development Philosophy: `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- Game Development Lifecycle: `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
+- Design Principles: `docs/01_game_design_guidelines/DESIGN_PRINCIPLES.md`
+- Player Experience Guidelines: `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
+- Core Pillars Template: `docs/06_templates/CORE_PILLARS_TEMPLATE.md`
+- Game Vision Template: `docs/06_templates/GAME_VISION_TEMPLATE.md`
+- Game Design Document Template: `docs/06_templates/GAME_DESIGN_DOCUMENT_TEMPLATE.md`
 
 ### Related Agent Workflows
 
-- Create Game Concept: `docs/07_agent_workflows/create_game_concept.md`
-- Create Core Pillars: `docs/07_agent_workflows/create_core_pillars.md`
+- Create Game Concept: `docs/07_agent_workflows/CREATE_GAME_CONCEPT.md`
+- Create Core Pillars: `docs/07_agent_workflows/CREATE_CORE_PILLARS.md`
 
 Only use references that exist in the applicable repository.
 

@@ -1005,12 +1005,12 @@ Changes to studio-wide lifecycle standards require project owner approval.
 
 ## 23. Related Documents
 
-- `docs/00_studio_standards/game_development_lifecycle.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/milestone_guidelines.md`
-- `docs/04_production_standards/postmortem_guidelines.md`
+- `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- `docs/04_production_standards/POSTMORTEM_GUIDELINES.md`
 
 ## 24. Maintenance
 

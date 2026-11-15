@@ -41,18 +41,18 @@ Before investigating or modifying the project, inspect the relevant studio stand
 
 Relevant references include:
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/00_studio_standards/branching_strategy.md`
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/gdscript_standards.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/05_qa_standards/bug_reporting.md`
-- `docs/05_qa_standards/regression_testing.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/00_studio_standards/BRANCHING_STRATEGY.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/05_qa_standards/BUG_REPORTING.md`
+- `docs/05_qa_standards/REGRESSION_TESTING.md`
 
 Read only the references relevant to the defect.
 
@@ -401,7 +401,7 @@ Choose appropriate test levels:
 - **End-to-end tests:** Validate important player-facing flows.
 - **Manual tests:** Validate behavior that cannot be adequately automated.
 
-Follow `docs/02_technical_standards/testing_strategy.md` and `docs/05_qa_standards/regression_testing.md`.
+Follow `docs/02_technical_standards/TESTING_STRATEGY.md` and `docs/05_qa_standards/REGRESSION_TESTING.md`.
 
 ### 11.3 Test limitations
 
@@ -556,7 +556,7 @@ Do not close the bug automatically unless the user has authorized that action an
 
 Follow:
 
-`docs/00_studio_standards/branching_strategy.md`
+`docs/00_studio_standards/BRANCHING_STRATEGY.md`
 
 For normal bug fixes:
 
@@ -599,7 +599,7 @@ Potential updates include:
 
 Do not create documentation solely to describe trivial code changes.
 
-Follow `docs/00_studio_standards/documentation_standards.md` and the project's documentation management rules.
+Follow `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md` and the project's documentation management rules.
 
 If the fix changes approved design behavior, obtain the required approval before updating the authoritative specification.
 

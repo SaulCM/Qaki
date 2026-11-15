@@ -17,8 +17,8 @@ The documentation system has three primary sources.
 | Source | Location | Purpose |
 |---|---|---|
 | Studio documentation | `docs/` | Shared standards, guidelines, templates, and workflows |
-| Project documentation | Project-specific documentation directory | Game-specific requirements, specifications, decisions, and records |
-| Agent instructions | `.cline/rules/` and `.cline/workflows/` | Instructions governing agent behavior and execution |
+| Project documentation | `game_project/docs/` | Game-specific requirements, specifications, decisions, and records |
+| Agent instructions | `.cline/rules/` and `.clinerules/workflows/` | Instructions governing agent behavior and execution |
 
 Agents must distinguish these sources and respect their respective authority.
 
@@ -47,6 +47,8 @@ The authoritative documentation standard is:
 
 Project documentation describes the specific game's requirements, design, architecture, implementation, and production status.
 
+In this repository, project documentation is located at `game_project/docs/`.
+
 Agents must inspect the relevant project documentation before modifying existing functionality or making project-specific decisions.
 
 Do not replace approved project-specific requirements with generic studio guidelines.
@@ -55,7 +57,7 @@ Do not replace approved project-specific requirements with generic studio guidel
 
 Agent instructions define how Cline must behave.
 
-Agents must follow applicable instructions in `.cline/rules/` and `.cline/workflows/`.
+Agents must follow applicable instructions in `.cline/rules/` and `.clinerules/workflows/`.
 
 Agent instructions should reference authoritative studio and project documentation rather than independently reproducing its requirements.
 

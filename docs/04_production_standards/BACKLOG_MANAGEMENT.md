@@ -912,11 +912,11 @@ Significant changes to the backlog management process require project owner appr
 
 ## 22. Related Documents
 
-- `docs/00_studio_standards/branching_strategy.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/game_development_lifecycle.md`
+- `docs/00_studio_standards/BRANCHING_STRATEGY.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
 - `docs/04_production_standards/`
 
 Project-specific references SHOULD point to the corresponding game repository documents, including design specifications, technical specifications, sprint plans, milestone plans, and QA records.

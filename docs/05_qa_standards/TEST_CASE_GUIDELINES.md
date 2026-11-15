@@ -684,7 +684,7 @@ Test cases SHOULD be organized by feature, system, or testing objective.
 Recommended project-specific structure:
 
 ```text
-docs/qa/test_cases/
+game_project/docs/qa/test_cases/
 ├── README.md
 ├── gameplay/
 │   ├── movement.md
@@ -905,15 +905,15 @@ Significant deviations from mandatory studio QA practices MUST be reviewed and a
 
 ## 21. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/05_qa_standards/qa_strategy.md`
-- `docs/05_qa_standards/acceptance_criteria_guidelines.md`
-- `docs/05_qa_standards/bug_reporting.md`
-- `docs/05_qa_standards/playtesting_guidelines.md`
-- `docs/05_qa_standards/regression_testing.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/05_qa_standards/QA_STRATEGY.md`
+- `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
+- `docs/05_qa_standards/BUG_REPORTING.md`
+- `docs/05_qa_standards/PLAYTESTING_GUIDELINES.md`
+- `docs/05_qa_standards/REGRESSION_TESTING.md`
 
 ## 22. Maintenance
 

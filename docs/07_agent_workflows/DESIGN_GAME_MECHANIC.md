@@ -35,12 +35,12 @@ Before designing a mechanic, inspect the relevant project documentation and stud
 
 ### Studio references
 
-- `docs/01_game_design_guidelines/mechanic_design_guidelines.md`
-- `docs/01_game_design_guidelines/gameplay_design_guidelines.md`
-- `docs/01_game_design_guidelines/design_principles.md`
-- `docs/01_game_design_guidelines/player_experience_guidelines.md`
-- `docs/01_game_design_guidelines/balancing_guidelines.md`
-- `docs/06_templates/mechanic_template.md`
+- `docs/01_game_design_guidelines/MECHANIC_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/GAMEPLAY_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/DESIGN_PRINCIPLES.md`
+- `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
+- `docs/01_game_design_guidelines/BALANCING_GUIDELINES.md`
+- `docs/06_templates/MECHANIC_TEMPLATE.md`
 
 Read only the references relevant to the proposed mechanic when the full set is unnecessary.
 
@@ -344,7 +344,7 @@ The mechanic specification describes the intended gameplay behavior. It does not
 
 Use:
 
-`docs/06_templates/mechanic_template.md`
+`docs/06_templates/MECHANIC_TEMPLATE.md`
 
 Generate the project-specific document at:
 

@@ -48,22 +48,22 @@ Before reviewing a design, inspect the relevant studio standards and project doc
 
 Use the references applicable to the design under review:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/01_game_design_guidelines/design_principles.md`
-- `docs/01_game_design_guidelines/player_experience_guidelines.md`
-- `docs/01_game_design_guidelines/core_loop_design_guidelines.md`
-- `docs/01_game_design_guidelines/gameplay_design_guidelines.md`
-- `docs/01_game_design_guidelines/mechanic_design_guidelines.md`
-- `docs/01_game_design_guidelines/progression_design_guidelines.md`
-- `docs/01_game_design_guidelines/difficult_design_guidelines.md`
-- `docs/01_game_design_guidelines/balancing_guidelines.md`
-- `docs/01_game_design_guidelines/economy_design_guidelines.md`
-- `docs/01_game_design_guidelines/reward_design_guidelines.md`
-- `docs/01_game_design_guidelines/narrative_design_guidelines.md`
-- `docs/01_game_design_guidelines/level_design_guidelines.md`
-- `docs/01_game_design_guidelines/ui_ux_design_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/01_game_design_guidelines/DESIGN_PRINCIPLES.md`
+- `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
+- `docs/01_game_design_guidelines/CORE_LOOP_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/GAMEPLAY_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/MECHANIC_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/PROGRESSION_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/DIFFICULTY_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/BALANCING_GUIDELINES.md`
+- `docs/01_game_design_guidelines/ECONOMY_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/REWARD_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/NARRATIVE_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/LEVEL_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
 
 Read only the references relevant to the design being reviewed.
 

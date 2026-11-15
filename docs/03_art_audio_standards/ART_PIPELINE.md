@@ -471,7 +471,7 @@ For complex assets, validate the result in the target application or engine.
 
 Technical importing, processing, compression, resource settings, and engine-specific asset handling MUST follow:
 
-`docs/02_technical_standards/asset_pipeline.md`
+`docs/02_technical_standards/ASSET_PIPELINE.md`
 
 This document defines production workflow and does not replace the technical pipeline.
 
@@ -787,14 +787,14 @@ Non-applicable requirements SHOULD be identified rather than treated as failures
 
 ## 20. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/03_art_audio_standards/art_asset_standards.md`
-- `docs/03_art_audio_standards/animation_standards.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/03_art_audio_standards/ART_ASSET_STANDARDS.md`
+- `docs/03_art_audio_standards/ANIMATION_STANDARDS.md`
 
 ## 21. Maintenance
 

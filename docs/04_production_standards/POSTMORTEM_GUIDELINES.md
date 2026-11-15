@@ -664,7 +664,7 @@ Postmortems SHOULD be stored in the corresponding game repository.
 
 A recommended location is:
 
-`docs/production/postmortems/`
+`game_project/docs/production/postmortems/`
 
 Each postmortem SHOULD use a descriptive filename.
 
@@ -887,12 +887,12 @@ Significant changes to the studio postmortem process require project owner appro
 
 ## 19. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/game_development_lifecycle.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/milestone_guidelines.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/MILESTONE_GUIDELINES.md`
 
 Project-specific postmortems SHOULD reference relevant backlog items, milestone plans, sprint records, technical documentation, QA reports, and release records.
 

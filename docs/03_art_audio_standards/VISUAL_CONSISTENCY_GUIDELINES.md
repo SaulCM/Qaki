@@ -663,17 +663,17 @@ Significant or long-term changes SHOULD be documented in the relevant project do
 
 ## 21. Related Documents
 
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/01_game_design_guidelines/player_experience_guidelines.md`
-- `docs/01_game_design_guidelines/ui_ux_design_guidelines.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/03_art_audio_standards/art_asset_standards.md`
-- `docs/03_art_audio_standards/art_pipeline.md`
-- `docs/03_art_audio_standards/animation_standards.md`
-- `docs/03_art_audio_standards/ui_ux_standards.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
+- `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/03_art_audio_standards/ART_ASSET_STANDARDS.md`
+- `docs/03_art_audio_standards/ART_PIPELINE.md`
+- `docs/03_art_audio_standards/ANIMATION_STANDARDS.md`
+- `docs/03_art_audio_standards/UI_UX_STANDARDS.md`
 
 ## 22. Maintenance
 

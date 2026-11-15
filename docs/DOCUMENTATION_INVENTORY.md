@@ -287,7 +287,7 @@ Each game project should maintain its own documentation, including when applicab
 - Release records.
 - Postmortems.
 
-Project-specific documentation should follow the reusable studio standards and use the templates provided in `06_templates/`.
+Project-specific documentation should follow the reusable studio standards and use the templates provided in `docs/06_templates/`. Documents created from those templates belong under `game_project/docs/`.
 
 ## 13. Maintenance Responsibilities
 

@@ -805,7 +805,7 @@ Each significant release SHOULD have a record stored in the project repository.
 
 Recommended location:
 
-`docs/production/releases/`
+`game_project/docs/production/releases/`
 
 A release record MAY include:
 
@@ -943,16 +943,16 @@ Significant exceptions SHOULD be documented with their justification and accepte
 
 ## 22. Related Documents
 
-- `docs/00_studio_standards/branching_strategy.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/game_development_lifecycle.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/04_production_standards/project_lifecycle.md`
-- `docs/04_production_standards/milestone_guidelines.md`
-- `docs/04_production_standards/postmortem_guidelines.md`
+- `docs/00_studio_standards/BRANCHING_STRATEGY.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/04_production_standards/PROJECT_LIFECYCLE.md`
+- `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- `docs/04_production_standards/POSTMORTEM_GUIDELINES.md`
 
 ## 23. Maintenance
 

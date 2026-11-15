@@ -40,25 +40,25 @@ Before implementation, inspect applicable studio standards and project documenta
 
 Relevant references include:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/00_studio_standards/branching_strategy.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/gdscript_standards.md`
-- `docs/02_technical_standards/scene_and_node_convention.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/02_technical_standards/event_and_signal_guidelines.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/04_production_standards/sprint_workflow.md`
-- `docs/05_qa_standards/acceptance_criteria_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/00_studio_standards/BRANCHING_STRATEGY.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/04_production_standards/SPRINT_WORKFLOW.md`
+- `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
 
 Read the standards relevant to the feature rather than loading every document unnecessarily.
 
@@ -174,7 +174,7 @@ Determine:
 
 Follow the feature-oriented structure defined in:
 
-`docs/00_studio_standards/project_structure_standards.md`
+`docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
 
 Do not introduce a new top-level directory based solely on a technical type such as `scripts/`, `scenes/`, or `managers/`.
 
@@ -339,7 +339,7 @@ Before modifying project files:
 
 Follow:
 
-`docs/00_studio_standards/branching_strategy.md`
+`docs/00_studio_standards/BRANCHING_STRATEGY.md`
 
 For normal feature development:
 
@@ -420,7 +420,7 @@ Prioritize correctness, maintainability, and the intended player experience.
 
 Optimize when measurements or known project constraints justify it.
 
-Follow `docs/02_technical_standards/performance_guidelines.md`.
+Follow `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`.
 
 ## 12. Stage 8: Integrate Assets and Resources
 
@@ -441,9 +441,9 @@ Consider:
 
 Follow:
 
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/03_art_audio_standards/art_asset_standards.md`
-- `docs/03_art_audio_standards/audio_asset_standards.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/03_art_audio_standards/ART_ASSET_STANDARDS.md`
+- `docs/03_art_audio_standards/AUDIO_ASSET_STANDARDS.md`
 
 Read only the references relevant to the assets being integrated.
 
@@ -466,9 +466,9 @@ Create tests that validate the feature's expected behavior.
 
 Follow:
 
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/05_qa_standards/test_case_guidelines.md`
-- `docs/07_agent_workflows/generate_tests.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/05_qa_standards/TEST_CASE_GUIDELINES.md`
+- `docs/07_agent_workflows/GENERATE_TESTS.md`
 
 Consider:
 
@@ -591,7 +591,7 @@ Verify that the change set contains no:
 
 Check the implementation against:
 
-`docs/00_studio_standards/definition_of_done.md`
+`docs/00_studio_standards/DEFINITION_OF_DONE.md`
 
 Address identified issues before reporting the feature as ready.
 
@@ -636,7 +636,7 @@ The pull request should include:
 
 Follow:
 
-`docs/00_studio_standards/code_review_guidelines.md`
+`docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
 
 The agent MAY prepare a pull request if the available tools and permissions support it.
 

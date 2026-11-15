@@ -748,7 +748,7 @@ Each sprint SHOULD have a concise record.
 
 Recommended location:
 
-`docs/production/sprints/`
+`game_project/docs/production/sprints/`
 
 Recommended filename:
 
@@ -947,15 +947,15 @@ Significant deviations SHOULD be documented when they affect project planning or
 
 ## 20. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/branching_strategy.md`
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/game_development_lifecycle.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/milestone_guidelines.md`
-- `docs/04_production_standards/project_lifecycle.md`
-- `docs/04_production_standards/risk_management.md`
-- `docs/04_production_standards/postmortem_guidelines.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/BRANCHING_STRATEGY.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- `docs/04_production_standards/PROJECT_LIFECYCLE.md`
+- `docs/04_production_standards/RISK_MANAGEMENT.md`
+- `docs/04_production_standards/POSTMORTEM_GUIDELINES.md`
 
 ## 21. Maintenance
 

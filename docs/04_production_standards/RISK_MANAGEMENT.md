@@ -554,7 +554,7 @@ Each project SHOULD maintain a risk register appropriate to its complexity.
 
 Recommended location:
 
-`docs/production/risk_register.md`
+`game_project/docs/production/risk_register.md`
 
 The project MAY use a project management tool or another structured format when it provides a reliable source of truth.
 
@@ -1066,17 +1066,17 @@ Significant deviations SHOULD be documented and approved by the project owner.
 
 ## 20. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/game_development_lifecycle.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/milestone_guidelines.md`
-- `docs/04_production_standards/project_lifecycle.md`
-- `docs/04_production_standards/release_process.md`
-- `docs/04_production_standards/postmortem_guidelines.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/GAME_DEVELOPMENT_LIFECYCLE.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- `docs/04_production_standards/PROJECT_LIFECYCLE.md`
+- `docs/04_production_standards/RELEASE_PROCESS.md`
+- `docs/04_production_standards/POSTMORTEM_GUIDELINES.md`
 
 ## 21. Maintenance
 

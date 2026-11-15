@@ -752,7 +752,7 @@ Screenshots, recordings, logs, and other large evidence files SHOULD be stored u
 
 Project-specific defect records MAY be stored under:
 
-`docs/qa/bug_reports/`
+`game_project/docs/qa/bug_reports/`
 
 However, individual Markdown reports SHOULD only be used when they provide meaningful value beyond the issue tracker.
 
@@ -844,14 +844,14 @@ Exceptions SHOULD be documented when they materially affect defect tracking, ver
 
 ## 21. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/04_production_standards/backlog_management.md`
-- `docs/04_production_standards/risk_management.md`
-- `docs/04_production_standards/release_process.md`
-- `docs/05_qa_standards/acceptance_criteria_guidelines.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- `docs/04_production_standards/RISK_MANAGEMENT.md`
+- `docs/04_production_standards/RELEASE_PROCESS.md`
+- `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
 
 ## 22. Maintenance
 

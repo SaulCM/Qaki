@@ -41,11 +41,11 @@ Before modifying documentation, inspect the applicable studio standards and proj
 
 Relevant references include:
 
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/quality_standards.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
 
 Read additional standards when they are relevant to the document being updated.
 

@@ -815,14 +815,14 @@ The AI agent may prepare and organize the analysis but cannot independently appr
 
 ### 18.4 Related Documents
 
-- Postmortem Guidelines: `docs/04_production_standards/postmortem_guidelines.md`
-- Milestone Guidelines: `docs/04_production_standards/milestone_guidelines.md`
-- Backlog Management: `docs/04_production_standards/backlog_management.md`
-- Sprint Workflow: `docs/04_production_standards/sprint_workflow.md`
-- Risk Management: `docs/04_production_standards/risk_management.md`
-- Definition of Done: `docs/00_studio_standards/definition_of_done.md`
-- QA Strategy: `docs/05_qa_standards/qa_strategy.md`
-- Bug Reporting: `docs/05_qa_standards/bug_reporting.md`
+- Postmortem Guidelines: `docs/04_production_standards/POSTMORTEM_GUIDELINES.md`
+- Milestone Guidelines: `docs/04_production_standards/MILESTONE_GUIDELINES.md`
+- Backlog Management: `docs/04_production_standards/BACKLOG_MANAGEMENT.md`
+- Sprint Workflow: `docs/04_production_standards/SPRINT_WORKFLOW.md`
+- Risk Management: `docs/04_production_standards/RISK_MANAGEMENT.md`
+- Definition of Done: `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- QA Strategy: `docs/05_qa_standards/QA_STRATEGY.md`
+- Bug Reporting: `docs/05_qa_standards/BUG_REPORTING.md`
 
 ---
 

@@ -865,14 +865,14 @@ Use applicable documents from the shared studio knowledge base and the project r
 
 **Studio standards:**
 
-- Architecture Guidelines: `docs/02_technical_standards/architecture_guidelines.md`
-- GDScript Standards: `docs/02_technical_standards/gdscript_standards.md`
-- Scene and Node Convention: `docs/02_technical_standards/scene_and_node_convention.md`
-- Resource Management: `docs/02_technical_standards/resource_management.md`
-- Event and Signal Guidelines: `docs/02_technical_standards/event_and_signal_guidelines.md`
-- Performance Guidelines: `docs/02_technical_standards/performance_guidelines.md`
-- Data Persistence Guidelines: `docs/02_technical_standards/data_persistence_guidelines.md`
-- Testing Strategy: `docs/02_technical_standards/testing_strategy.md`
+- Architecture Guidelines: `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- GDScript Standards: `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- Scene and Node Convention: `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md`
+- Resource Management: `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- Event and Signal Guidelines: `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
+- Performance Guidelines: `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- Data Persistence Guidelines: `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
+- Testing Strategy: `docs/02_technical_standards/TESTING_STRATEGY.md`
 - ADR Guidelines: `docs/02_technical_standards/adr/README.md`
 
 **Project documents:**

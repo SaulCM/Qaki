@@ -43,7 +43,7 @@ The agent MUST use judgment and avoid creating documentation overhead for trivia
 | Property | Value |
 |---|---|
 | Output Document | `game_project/docs/technical/designs/[system_name]_technical_design.md` |
-| Source Template | `docs/06_templates/technical_design_template.md` |
+| Source Template | `docs/06_templates/TECHNICAL_DESIGN_TEMPLATE.md` |
 | Document Type | Technical Design |
 | Primary Owner | Project Owner / Technical Lead |
 | Approval Authority | Project Owner |
@@ -637,7 +637,7 @@ Not every technical implementation requires an ADR.
 
 ### Step 17: Generate the Technical Design Document
 
-1. Read `docs/06_templates/technical_design_template.md`.
+1. Read `docs/06_templates/TECHNICAL_DESIGN_TEMPLATE.md`.
 2. Follow its structure and required sections.
 3. Populate the template using inspected project information.
 4. Reference the relevant requirements and design specifications.
@@ -897,18 +897,18 @@ After execution, provide a report using the following structure:
 
 ### Studio Documentation
 
-- Architecture Guidelines: `docs/02_technical_standards/architecture_guidelines.md`
-- GDScript Standards: `docs/02_technical_standards/gdscript_standards.md`
-- Engine Standards: `docs/02_technical_standards/engine_standards.md`
-- Scene and Node Convention: `docs/02_technical_standards/scene_and_node_convention.md`
-- Resource Management: `docs/02_technical_standards/resource_management.md`
-- Event and Signal Guidelines: `docs/02_technical_standards/event_and_signal_guidelines.md`
-- Data Persistence Guidelines: `docs/02_technical_standards/data_persistence_guidelines.md`
-- Performance Guidelines: `docs/02_technical_standards/performance_guidelines.md`
-- Testing Strategy: `docs/02_technical_standards/testing_strategy.md`
+- Architecture Guidelines: `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- GDScript Standards: `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- Engine Standards: `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- Scene and Node Convention: `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md`
+- Resource Management: `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- Event and Signal Guidelines: `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
+- Data Persistence Guidelines: `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
+- Performance Guidelines: `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- Testing Strategy: `docs/02_technical_standards/TESTING_STRATEGY.md`
 - ADR Guidelines: `docs/02_technical_standards/adr/README.md`
-- Technical Design Template: `docs/06_templates/technical_design_template.md`
-- ADR Template: `docs/06_templates/adr_template.md`
+- Technical Design Template: `docs/06_templates/TECHNICAL_DESIGN_TEMPLATE.md`
+- ADR Template: `docs/06_templates/ADR_TEMPLATE.md`
 
 ### Project Documentation
 

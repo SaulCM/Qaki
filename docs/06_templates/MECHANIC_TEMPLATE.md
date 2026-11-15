@@ -681,13 +681,13 @@ AI-generated mechanics and proposed changes must be reviewed and validated befor
 - Core Pillars: `[Project-specific path]`
 - Core Game Loop: `[Project-specific path]`
 - Gameplay System Specification: `[Project-specific path]`
-- Mechanic Design Guidelines: `docs/01_game_design_guidelines/mechanic_design_guidelines.md`
-- Balancing Guidelines: `docs/01_game_design_guidelines/balancing_guidelines.md`
-- Progression Design Guidelines: `docs/01_game_design_guidelines/progression_design_guidelines.md`
-- GDScript Standards: `docs/02_technical_standards/gdscript_standards.md`
-- Testing Strategy: `docs/02_technical_standards/testing_strategy.md`
-- Test Case Guidelines: `docs/05_qa_standards/test_case_guidelines.md`
-- Acceptance Criteria Guidelines: `docs/05_qa_standards/acceptance_criteria_guidelines.md`
+- Mechanic Design Guidelines: `docs/01_game_design_guidelines/MECHANIC_DESIGN_GUIDELINES.md`
+- Balancing Guidelines: `docs/01_game_design_guidelines/BALANCING_GUIDELINES.md`
+- Progression Design Guidelines: `docs/01_game_design_guidelines/PROGRESSION_DESIGN_GUIDELINES.md`
+- GDScript Standards: `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- Testing Strategy: `docs/02_technical_standards/TESTING_STRATEGY.md`
+- Test Case Guidelines: `docs/05_qa_standards/TEST_CASE_GUIDELINES.md`
+- Acceptance Criteria Guidelines: `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
 
 ---
 

@@ -762,12 +762,12 @@ Projects SHOULD maintain regression testing records when traceability or repeata
 
 Recommended project-specific location:
 
-`docs/qa/regression/`
+`game_project/docs/qa/regression/`
 
 Suggested structure:
 
 ```text
-docs/qa/regression/
+game_project/docs/qa/regression/
 ├── README.md
 ├── test_suites/
 │   ├── critical_regression_suite.md
@@ -951,16 +951,16 @@ Critical functionality and data integrity SHOULD NOT be excluded without explici
 
 ## 20. Related Documents
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/04_production_standards/risk_management.md`
-- `docs/04_production_standards/release_process.md`
-- `docs/05_qa_standards/qa_strategy.md`
-- `docs/05_qa_standards/acceptance_criteria_guidelines.md`
-- `docs/05_qa_standards/bug_reporting.md`
-- `docs/05_qa_standards/playtesting_guidelines.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/04_production_standards/RISK_MANAGEMENT.md`
+- `docs/04_production_standards/RELEASE_PROCESS.md`
+- `docs/05_qa_standards/QA_STRATEGY.md`
+- `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
+- `docs/05_qa_standards/BUG_REPORTING.md`
+- `docs/05_qa_standards/PLAYTESTING_GUIDELINES.md`
 
 ## 21. Maintenance
 

@@ -28,7 +28,7 @@ These standards cover:
 
 Animation-specific requirements are defined in `animation_standards.md`.
 
-Technical importing, processing, compression, and engine integration are defined in `docs/02_technical_standards/asset_pipeline.md`.
+Technical importing, processing, compression, and engine integration are defined in `docs/02_technical_standards/ASSET_PIPELINE.md`.
 
 ## 3. Art Asset Principles
 
@@ -423,7 +423,7 @@ LOD implementation MUST be justified by visual and performance needs rather than
 
 Art assets MUST follow the project's naming and directory conventions.
 
-The studio-wide naming rules are defined in `docs/00_studio_standards/naming_conventions.md`.
+The studio-wide naming rules are defined in `docs/00_studio_standards/NAMING_CONVENTIONS.md`.
 
 ### 9.1. Naming
 
@@ -653,7 +653,7 @@ Do not optimize assets blindly. Use profiling and project performance targets to
 
 Performance optimization MUST preserve acceptable visual quality and gameplay readability.
 
-Detailed technical optimization requirements are defined in `docs/02_technical_standards/performance_guidelines.md`.
+Detailed technical optimization requirements are defined in `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`.
 
 ## 17. Asset Review and Acceptance
 
@@ -806,13 +806,13 @@ Temporary exceptions SHOULD be reviewed before final release.
 
 ## 23. Related Documents
 
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/03_art_audio_standards/animation_standards.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/03_art_audio_standards/ANIMATION_STANDARDS.md`
 
 ## 24. Maintenance
 

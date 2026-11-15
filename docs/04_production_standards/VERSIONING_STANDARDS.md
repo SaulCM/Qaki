@@ -707,7 +707,7 @@ Each project SHOULD maintain release history and version information.
 Recommended locations include:
 
 - `CHANGELOG.md` at the project root.
-- `docs/production/releases/` for detailed release records.
+- `game_project/docs/production/releases/` for detailed release records.
 - Project configuration for the authoritative game version.
 - Version control tags for source revision identification.
 
@@ -860,15 +860,15 @@ Changes to studio-wide versioning conventions require project owner approval.
 
 ## 18. Related Documents
 
-- `docs/00_studio_standards/branching_strategy.md`
-- `docs/00_studio_standards/documentation_standards.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/02_technical_standards/data_persistence_guidelines.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/04_production_standards/project_lifecycle.md`
-- `docs/04_production_standards/release_process.md`
-- `docs/04_production_standards/risk_management.md`
+- `docs/00_studio_standards/BRANCHING_STRATEGY.md`
+- `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/04_production_standards/PROJECT_LIFECYCLE.md`
+- `docs/04_production_standards/RELEASE_PROCESS.md`
+- `docs/04_production_standards/RISK_MANAGEMENT.md`
 
 ## 19. Maintenance
 

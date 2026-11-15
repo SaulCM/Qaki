@@ -41,15 +41,15 @@ Before generating tests, inspect the relevant studio standards and project docum
 
 Relevant references include:
 
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/00_studio_standards/code_review_guidelines.md`
-- `docs/02_technical_standards/gdscript_standards.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/testing_strategy.md`
-- `docs/05_qa_standards/acceptance_criteria_guidelines.md`
-- `docs/05_qa_standards/test_case_guidelines.md`
-- `docs/05_qa_standards/regression_testing.md`
-- `docs/06_templates/test_plan_template.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/TESTING_STRATEGY.md`
+- `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md`
+- `docs/05_qa_standards/TEST_CASE_GUIDELINES.md`
+- `docs/05_qa_standards/REGRESSION_TESTING.md`
+- `docs/06_templates/TEST_PLAN_TEMPLATE.md`
 
 Read only the references relevant to the testing task.
 
@@ -312,7 +312,7 @@ Examples:
 
 Include tests for previously fixed defects and important existing behavior.
 
-Refer to `docs/05_qa_standards/regression_testing.md`.
+Refer to `docs/05_qa_standards/REGRESSION_TESTING.md`.
 
 ### 9.7 Edge cases
 
@@ -432,7 +432,7 @@ Each meaningful test case should identify:
 - Expected result.
 - Relevant cleanup requirements.
 
-Follow `docs/05_qa_standards/test_case_guidelines.md`.
+Follow `docs/05_qa_standards/TEST_CASE_GUIDELINES.md`.
 
 Do not create separate documentation for every trivial automated test unless the project's QA process requires it.
 

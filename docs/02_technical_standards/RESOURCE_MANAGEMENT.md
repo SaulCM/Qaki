@@ -560,7 +560,7 @@ When generated data must survive application restarts, it MUST use an appropriat
 
 Persistence requirements MUST follow:
 
-`docs/02_technical_standards/data_persistence_guidelines.md`
+`docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
 
 ### 11.5 ResourceSaver
 
@@ -710,7 +710,7 @@ Developers MUST NOT modify generated import artifacts directly.
 
 Asset sourcing, import, processing, optimization, and validation MUST follow:
 
-`docs/02_technical_standards/asset_pipeline.md`
+`docs/02_technical_standards/ASSET_PIPELINE.md`
 
 ## 16. Error Handling and Reliability
 
@@ -884,18 +884,18 @@ Repeated exceptions SHOULD trigger a review of these guidelines.
 
 These guidelines SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/00_studio_standards/definition_of_done.md`
-- `docs/02_technical_standards/architecture_guidelines.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/gdscript_standards.md`
-- `docs/02_technical_standards/data_persistence_guidelines.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/event_and_signal_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/00_studio_standards/DEFINITION_OF_DONE.md`
+- `docs/02_technical_standards/ARCHITECTURE_GUIDELINES.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/DATA_PERSISTENCE_GUIDELINES.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
 - `docs/02_technical_standards/adr/README.md`
 - Applicable documents in `docs/05_qa_standards/`
 

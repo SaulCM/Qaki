@@ -624,7 +624,7 @@ Names SHOULD describe the action or state clearly.
 
 Animation implementation MUST use APIs and capabilities supported by the project's selected Godot version.
 
-Refer to `docs/02_technical_standards/engine_standards.md`.
+Refer to `docs/02_technical_standards/ENGINE_STANDARDS.md`.
 
 ## 11. Animation Organization and Assets
 
@@ -646,7 +646,7 @@ Exported runtime assets SHOULD remain distinguishable from editable source files
 
 Animation files and resources MUST follow:
 
-`docs/00_studio_standards/naming_conventions.md`
+`docs/00_studio_standards/NAMING_CONVENTIONS.md`
 
 Names SHOULD communicate:
 
@@ -671,8 +671,8 @@ Animation assets MUST follow the applicable import and resource management pract
 
 Refer to:
 
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/resource_management.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
 
 ## 12. Looping and Playback
 
@@ -784,7 +784,7 @@ Animation assets SHOULD use appropriate formats, resolutions, compression settin
 
 Performance evaluation MUST follow:
 
-`docs/02_technical_standards/performance_guidelines.md`
+`docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
 
 ## 15. Animation Review and Validation
 
@@ -933,21 +933,21 @@ Exceptions SHOULD:
 
 These standards SHOULD be used alongside:
 
-- `docs/00_studio_standards/development_philosophy.md`
-- `docs/00_studio_standards/naming_conventions.md`
-- `docs/00_studio_standards/project_structure_standards.md`
-- `docs/00_studio_standards/quality_standards.md`
-- `docs/02_technical_standards/engine_standards.md`
-- `docs/02_technical_standards/asset_pipeline.md`
-- `docs/02_technical_standards/resource_management.md`
-- `docs/02_technical_standards/gdscript_standards.md`
-- `docs/02_technical_standards/performance_guidelines.md`
-- `docs/02_technical_standards/scene_and_node_convention.md`
-- `docs/02_technical_standards/event_and_signal_guidelines.md`
-- `docs/01_game_design_guidelines/gameplay_design_guidelines.md`
-- `docs/01_game_design_guidelines/mechanic_design_guidelines.md`
-- `docs/01_game_design_guidelines/player_experience_guidelines.md`
-- `docs/01_game_design_guidelines/ui_ux_design_guidelines.md`
+- `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`
+- `docs/00_studio_standards/NAMING_CONVENTIONS.md`
+- `docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md`
+- `docs/00_studio_standards/QUALITY_STANDARDS.md`
+- `docs/02_technical_standards/ENGINE_STANDARDS.md`
+- `docs/02_technical_standards/ASSET_PIPELINE.md`
+- `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`
+- `docs/02_technical_standards/GDSCRIPT_STANDARDS.md`
+- `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md`
+- `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md`
+- `docs/02_technical_standards/EVENT_AND_SIGNAL_GUIDELINES.md`
+- `docs/01_game_design_guidelines/GAMEPLAY_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/MECHANIC_DESIGN_GUIDELINES.md`
+- `docs/01_game_design_guidelines/PLAYER_EXPERIENCE_GUIDELINES.md`
+- `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`
 - Applicable documents in `docs/05_qa_standards/`
 
 ## 21. Maintenance
