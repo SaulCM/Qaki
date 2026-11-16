@@ -110,37 +110,36 @@ Repository-level content MUST follow this organization.
 
 ```text
 repository-root/
-│
-├── .cline/
-│   └── rules/
-│
-├── .clinerules/
-│   └── workflows/
-│
-├── .github/
-│   ├── workflows/
-│   ├── ISSUE_TEMPLATE/
-│   └── PULL_REQUEST_TEMPLATE.md
-│
-├── docs/                              # Studio documentation only
-│   ├── DOCUMENTATION_INVENTORY.md
-│   ├── 00_studio_standards/
-│   ├── 01_game_design_guidelines/
-│   ├── 02_technical_standards/
-│   ├── 03_art_audio_standards/
-│   ├── 04_production_standards/
-│   ├── 05_qa_standards/
-│   ├── 06_templates/
-│   └── 07_agent_workflows/
-│
-├── references/
-│
-├── game_project/                      # Godot project root
-│
-├── .clineignore
-├── .gitattributes
-├── .gitignore
-└── README.md
+|-- .opencode/
+|   |-- rules/
+|   |-- command/
+|   `-- agent/
+|
+|-- .github/
+|   |-- workflows/
+|   |-- ISSUE_TEMPLATE/
+|   `-- PULL_REQUEST_TEMPLATE.md
+|
+|-- docs/                              # Studio documentation only
+|   |-- DOCUMENTATION_INVENTORY.md
+|   |-- 00_studio_standards/
+|   |-- 01_game_design_guidelines/
+|   |-- 02_technical_standards/
+|   |-- 03_art_audio_standards/
+|   |-- 04_production_standards/
+|   |-- 05_qa_standards/
+|   |-- 06_templates/
+|   `-- 07_agent_workflows/
+|
+|-- references/
+|
+|-- game_project/                      # Godot project root
+|
+|-- AGENTS.md
+|-- opencode.json
+|-- .gitattributes
+|-- .gitignore
+`-- README.md
 ```
 
 The repository root MUST NOT contain `project.godot`.
@@ -391,30 +390,31 @@ Typical contents:
 
 It MUST NOT contain game source code or runtime assets.
 
-### 5.11 `.cline/`
+### 5.11 `.opencode/`
 
-Contains Cline-specific configuration and agent instructions.
+Contains OpenCode-specific configuration and agent instructions.
 
 Typical contents:
 
-- Agent rules.
-- Tool-specific workflow instructions.
-- Project context instructions.
+- `rules/` — always-loaded operating rules.
+- `command/` — thin execution adapters to `docs/07_agent_workflows/`.
+- `agent/` — read-only specialist agents.
 
 Agent instructions SHOULD reference authoritative documentation instead of duplicating studio standards.
 
-### 5.12 `.clinerules/`
+### 5.12 `AGENTS.md` and `opencode.json`
 
-Contains Cline execution workflows in `.clinerules/workflows/`.
+`AGENTS.md` is the repository-level OpenCode instruction and routing document. It binds the authority order, repository map, engineering constraints, workflow ownership, and completion-reporting expectations.
 
-These workflows are execution adapters. Each adapter selects a task type, binds the applicable agent rules, and delegates to the authoritative studio workflow in `docs/07_agent_workflows/`.
+`opencode.json` is the OpenCode V1 configuration. It declares instruction loading, command and agent discovery, and permissions. It MUST NOT contain provider, model, API-key, or endpoint configuration.
 
-The layered architecture, the adapter requirements, and the precedence rule are defined in `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`, Section 3.8.
+The layered architecture, adapter requirements, and precedence rule are defined in `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`, Section 3.8.
 
-Requirements specific to this directory:
+Requirements for OpenCode execution adapters:
 
 - Adapters MUST reference authoritative studio and project documentation instead of duplicating its requirements. They MUST NOT contain studio standards, restate a studio procedure, or define an independent procedure.
-- A new procedure MUST be introduced in `docs/07_agent_workflows/` first. It MUST NOT be introduced in `.clinerules/workflows/`.
+- A new procedure MUST be introduced in `docs/07_agent_workflows/` first. It MUST NOT be introduced in `.opencode/command/`.
+- Read-only specialist agents under `.opencode/agent/` MUST deny file edits.
 
 ### 5.13 `references/`
 
@@ -460,7 +460,7 @@ Runtime game functionality MUST NOT depend on development-only tools unless expl
 | Project-wide technical infrastructure | `game_project/infrastructure/` |
 | Third-party plugins and addons | `game_project/addons/` |
 | Repository-level reference material | `references/` |
-| Cline configuration and execution workflows | `.cline/` and `.clinerules/` |
+| OpenCode configuration and execution workflows | `AGENTS.md`, `opencode.json`, and `.opencode/` |
 | GitHub configuration | `.github/` |
 
 Requirements:
@@ -739,7 +739,7 @@ AI agents MUST NOT:
 - Reorganize the repository solely according to personal preferences.
 - Move files without checking references and dependencies.
 - Delete directories or files without verifying their purpose.
-- Duplicate a workflow procedure across `docs/07_agent_workflows/` and `.clinerules/workflows/`.
+- Duplicate a workflow procedure across `docs/07_agent_workflows/` and `.opencode/command/`.
 
 Significant structural changes MUST be proposed for human approval before implementation.
 

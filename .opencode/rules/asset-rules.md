@@ -1,17 +1,12 @@
-﻿# Asset Rules
-
-> Status: Draft (pending owner review)
-> Last updated: 2026-11-15
+# Asset Rules
 
 ## 1. Purpose
 
-This rule defines how Cline must handle scenes, resources, and assets in the Qaki Godot project.
+This rule defines how OpenCode handles scenes, resources, and assets in the Qaki Godot project. It covers where files belong, how they are named and imported, what may be moved or deleted, how third-party content is treated, and which files must never be committed.
 
-It covers where files belong, how they are named and imported, what may be moved or deleted, how third-party content is treated, and which files must never be committed.
+It does not define the game's art direction, audio direction, or content requirements. Those are project-specific decisions owned by the project owner and recorded under `game_project/docs/`.
 
-It does not define the game's art direction, audio direction, or content requirements. Those are project-specific decisions owned by the human maintainer and recorded under `game_project/docs/`.
-
-## 2. Authoritative Documents
+## 2. Authoritative documents
 
 | Concern | Authoritative document |
 |---|---|
@@ -30,14 +25,14 @@ It does not define the game's art direction, audio direction, or content require
 
 Read the documents relevant to the asset type being changed before modifying assets. Do not create an asset pipeline, directory layout, or naming scheme that contradicts these documents.
 
-## 3. Where Assets Live
+## 3. Where assets live
 
 The Godot project root is `game_project/`. `res://` resolves there. The repository root is not a Godot project and never holds game assets.
 
-Verified state of `game_project/` when this rule was last updated:
+Current state of `game_project/`:
 
 - `game_project/project.godot` — Godot project configuration.
-- `game_project/icon.svg` and `game_project/icon.svg.import` — project icon plus its tracked import metadata.
+- `game_project/icon.svg` and `game_project/icon.svg.import` — project icon plus tracked import metadata.
 - `game_project/PROJECT_STATUS.md` — project status.
 - `game_project/addons/godot_mcp/` — editor plugin.
 
@@ -54,7 +49,7 @@ Placement rules:
 
 ## 4. Naming
 
-Follow `docs/00_studio_standards/NAMING_CONVENTIONS.md`, plus the asset-specific rules in `docs/03_art_audio_standards/ART_ASSET_STANDARDS.md` (section 9) and `docs/03_art_audio_standards/AUDIO_ASSET_STANDARDS.md` (section 12).
+Follow `docs/00_studio_standards/NAMING_CONVENTIONS.md`, plus the asset-specific rules in `docs/03_art_audio_standards/ART_ASSET_STANDARDS.md` section 9 and `docs/03_art_audio_standards/AUDIO_ASSET_STANDARDS.md` section 12.
 
 - Use lowercase `snake_case` filenames with descriptive, purpose-based names: `iron_sword.png`, `forest_tree_oak.glb`, `sword_swing_01.wav`, `combat_theme_loop.ogg`.
 - No spaces, uppercase letters, or special characters in filenames.
@@ -63,7 +58,7 @@ Follow `docs/00_studio_standards/NAMING_CONVENTIONS.md`, plus the asset-specific
 - Keep internal identifiers separate from player-facing display names.
 - Do not rename existing asset files unless the task requires it. Renaming breaks resource references; update every reference, validate the result, and request approval when the asset is shared or established.
 
-## 5. Godot Formats and Import Settings
+## 5. Godot formats and import settings
 
 - Use formats the configured Godot version imports natively for the intended asset type. Confirm the format is supported before adding it.
 - Import settings live next to each asset in its `*.import` file (for example `game_project/icon.svg.import`). These files are part of the project and are version controlled.
@@ -72,7 +67,7 @@ Follow `docs/00_studio_standards/NAMING_CONVENTIONS.md`, plus the asset-specific
 - Do not change project-wide import defaults, rendering settings, or texture defaults as a side effect of adding an asset. Request approval.
 - Keep configuration data in resources rather than hardcoding values in scripts, following `docs/02_technical_standards/RESOURCE_MANAGEMENT.md`.
 
-## 6. Source Files, Generated Files, and Version Control
+## 6. Source files, generated files, and version control
 
 - Keep editable source files distinct from exported or imported assets. Do not treat an export as the authoritative source when an editable original exists (`docs/02_technical_standards/ASSET_PIPELINE.md`, section 3.1).
 - Never commit Godot's generated cache. `.gitignore` excludes `.godot/`, `.import/`, `/export/`, `/builds/`, and `/export_presets.cfg`.
@@ -82,14 +77,14 @@ Follow `docs/00_studio_standards/NAMING_CONVENTIONS.md`, plus the asset-specific
 - Do not add Git LFS or any large-file handling mechanism without owner approval.
 - Review asset diffs for accidental size explosions, stray duplicates, and missing dependencies before a change is committed.
 
-## 7. Reuse and Duplication
+## 7. Reuse and duplication
 
 - Search for an existing asset with the same purpose before adding a new one.
 - Reuse an asset when it genuinely serves the purpose. Do not duplicate an asset into another feature to avoid a dependency decision.
 - Variants are appropriate for gameplay roles, states, factions, biome or location differences, and visual progression; they must share a recognizable foundation.
 - Avoid near-duplicate assets, and avoid unnecessary proliferation of copies of the same source.
 
-## 8. Moving, Replacing, and Deleting Assets
+## 8. Moving, replacing, and deleting assets
 
 Before moving, replacing, or deleting an asset:
 
@@ -108,7 +103,7 @@ Rules:
 - Do not delete an asset merely because it is unused by the current task; it may be loaded dynamically or referenced by configuration.
 - Do not move assets between features to "tidy up" unrelated to the task.
 
-## 9. Third-Party and AI-Generated Assets
+## 9. Third-party and AI-generated assets
 
 - Before integrating any external asset — image, model, font, audio, shader, plugin, or other resource — verify its source, license, permitted usage, attribution requirements, redistribution and modification restrictions, and technical compatibility.
 - Never integrate an asset whose usage rights are unclear or incompatible with the project's intended distribution.
@@ -118,14 +113,14 @@ Rules:
 - Do not add third-party plugins, fonts, audio, or other external resources without owner approval, and never modify files inside `game_project/addons/`.
 - Do not mark an asset as approved, final, or compliant with art direction. Those are human decisions.
 
-## 10. Validation After Asset Changes
+## 10. Validation after asset changes
 
 - Import the project in the Godot editor, or run the relevant scene, so the importer processes the new or changed files.
 - Confirm that references resolve and that no missing-resource or import errors are reported.
 - Confirm that affected scenes still open and behave as before unless the change was intended to alter them.
 - Report what was actually validated and what was not. Do not claim an asset was visually or audibly reviewed when it was not inspected in context.
 
-## 11. Request Owner Approval Before
+## 11. Request owner approval before
 
 - Deleting, replacing, or overwriting any existing asset.
 - Renaming or moving assets that other scenes, resources, or features reference.
@@ -135,9 +130,9 @@ Rules:
 - Modifying `.gitignore`, `.gitattributes`, or export configuration.
 - Introducing a new asset category, directory convention, or pipeline step.
 
-## 12. Prohibited Actions
+## 12. Prohibited actions
 
-Cline must not:
+The agent must not:
 
 - Delete, replace, or overwrite assets without authorization.
 - Commit `.godot/` cache content, import artifacts, builds, or export presets.
@@ -149,10 +144,10 @@ Cline must not:
 - Add external assets without checking licensing and obtaining required approval.
 - Claim that an asset was validated, imported, or reviewed when it was not.
 
-## 13. Related Workspace Rules
+## 13. Related rules
 
-- `.cline/rules/project-context.md` — repository roots, `game_project/` boundaries, directory responsibilities.
-- `.cline/rules/gdscript-standards.md` — loading and referencing assets from scripts, notably `load()` validation.
-- `.cline/rules/architecture-rules.md` — scene composition, resource ownership, and dependency rules.
-- `.cline/rules/git-workflow.md` — commit and staging safety for binary and generated files.
-- `.cline/rules/documentation-management.md` — documentation duties when asset conventions or project-specific asset records change.
+- `.opencode/rules/project-context.md` — repository roots, `game_project/` boundaries, directory responsibilities.
+- `.opencode/rules/gdscript-standards.md` — loading and referencing assets from scripts, notably `load()` validation.
+- `.opencode/rules/architecture-rules.md` — scene composition, resource ownership, and dependency rules.
+- `.opencode/rules/git-workflow.md` — commit and staging safety for binary and generated files.
+- `.opencode/rules/documentation-management.md` — documentation duties when asset conventions or project-specific asset records change.

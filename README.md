@@ -10,8 +10,11 @@ This repository has two roots: the studio documentation that governs how the gam
 |---|---|
 | `docs/` | Reusable studio documentation: standards, guidelines, technical standards, art and audio standards, production and QA standards, templates, and agent workflows. |
 | `game_project/` | The Godot project. `game_project/project.godot` is the single Godot project definition; `res://` resolves here. |
-| `.cline/rules/` | Always-loaded agent rules. |
-| `.clinerules/workflows/` | Thin execution adapters that delegate to the authoritative studio workflows in `docs/07_agent_workflows/`. |
+| `AGENTS.md` | Repository-level OpenCode instructions and task routing. |
+| `opencode.json` | OpenCode V1 configuration: instruction loading, command and agent discovery, and permissions. |
+| `.opencode/rules/` | Always-loaded OpenCode operating rules. |
+| `.opencode/command/` | Thin execution adapters that delegate to the authoritative studio workflows in `docs/07_agent_workflows/`. |
+| `.opencode/agent/` | Read-only specialist agents for review, verification, and documentation audit. |
 | `.github/` | CI workflows, issue templates, and the pull request template. |
 | `references/` | Repository-level reference material. |
 
@@ -21,7 +24,8 @@ This repository has two roots: the studio documentation that governs how the gam
 - **Current project status** → `game_project/PROJECT_STATUS.md`.
 - **Studio-wide rules** → `docs/00_studio_standards/`.
 - **Technical standards** → `docs/02_technical_standards/`.
-- **AI-assisted procedures** → `docs/07_agent_workflows/` and `.clinerules/workflows/`.
+- **OpenCode instructions** → `AGENTS.md` and `.opencode/rules/`.
+- **AI-assisted procedures** → `docs/07_agent_workflows/` and `.opencode/command/`.
 - **Documentation inventory** → `docs/DOCUMENTATION_INVENTORY.md`.
 
 ## Documentation Map
@@ -41,7 +45,8 @@ This repository has two roots: the studio documentation that governs how the gam
 ## Current State
 
 - Development phase: pre-production (`game_project/PROJECT_STATUS.md`).
-- Engine: Godot 4.7 feature level, Forward Plus rendering, Jolt Physics.
+- Agent configuration: OpenCode only (`AGENTS.md`, `opencode.json`, and `.opencode/`).
+- Engine: Godot 4.7 feature level; verified executable and CI toolchain use Godot 4.7.2. Forward Plus rendering; Jolt Physics.
 - No game scripts, scenes, or resources exist outside `game_project/addons/` yet.
 - `game_project/docs/` has not been created yet; project-specific documentation will be added there as decisions are approved.
 
@@ -50,7 +55,7 @@ This repository has two roots: the studio documentation that governs how the gam
 - `main` and `develop` are protected. Do not commit directly to either.
 - Use an approved branch prefix: `feature/`, `fix/`, `refactor/`, `test/`, `docs/`, or `chore/`.
 - Game requirements and design decisions are supplied and approved by the project owner. Agents record them and do not invent them.
-- Documentation changes are checked by `.github/workflows/validation.yml`.
+- `.github/workflows/validation.yml` is configured to check documentation references and inventory parity, but it has not yet been executed. Do not claim a validation check passed until it has actually run.
 
 ## Scope of This File
 

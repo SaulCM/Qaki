@@ -2,90 +2,62 @@
 
 ## 1. Purpose
 
-This rule defines how AI agents must discover, read, create, modify, organize, maintain, and verify documentation across studio and game projects.
+This rule defines how OpenCode discovers, reads, creates, modifies, organizes, maintains, and verifies documentation across the studio and game project.
 
-The studio documentation located in `docs/` is the authoritative shared knowledge base for reusable standards, guidelines, templates, and agent workflows.
+The studio documentation in `docs/` is the authoritative shared knowledge base for reusable standards, guidelines, templates, and agent workflows. The documentation inventory is the registry of existing documentation; it is not a roadmap or a list of planned documents.
 
-Agents must use this documentation when performing tasks that depend on its requirements.
-
-The documentation inventory is the registry of existing documentation. It is not a roadmap or a list of planned documents.
-
-## 2. Documentation Sources
-
-The documentation system has three primary sources.
+## 2. Documentation sources
 
 | Source | Location | Purpose |
 |---|---|---|
 | Studio documentation | `docs/` | Shared standards, guidelines, templates, and workflows |
 | Project documentation | `game_project/docs/` | Game-specific requirements, specifications, decisions, and records |
-| Agent instructions | `.cline/rules/` and `.clinerules/workflows/` | Instructions governing agent behavior and execution |
+| Agent instructions | `AGENTS.md`, `opencode.json`, `.opencode/rules/`, `.opencode/command/`, `.opencode/agent/` | OpenCode behavior, workflow adapters, and read-only specialist agents |
 
 Agents must distinguish these sources and respect their respective authority.
 
-### 2.1 Studio Documentation
+### 2.1 Studio documentation
 
-The studio documentation contains:
+- `docs/00_studio_standards/` — mandatory studio-wide practices and conventions.
+- `docs/01_game_design_guidelines/` — reusable game design principles and methods.
+- `docs/02_technical_standards/` — engineering and technology standards.
+- `docs/03_art_audio_standards/` — art and audio conventions.
+- `docs/04_production_standards/` — planning and production processes.
+- `docs/05_qa_standards/` — testing and quality assurance practices.
+- `docs/06_templates/` — reusable documentation templates.
+- `docs/07_agent_workflows/` — authoritative procedures for AI-assisted development.
 
-- `00_studio_standards/` — Mandatory studio-wide practices and conventions.
-- `01_game_design_guidelines/` — Reusable game design principles and methods.
-- `02_technical_standards/` — Engineering and technology standards.
-- `03_art_audio_standards/` — Art and audio conventions.
-- `04_production_standards/` — Planning and production processes.
-- `05_qa_standards/` — Testing and quality assurance practices.
-- `06_templates/` — Reusable documentation templates.
-- `07_agent_workflows/` — Documented procedures for AI-assisted development.
+The authoritative inventory is `docs/DOCUMENTATION_INVENTORY.md`. The authoritative documentation standard is `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`.
 
-The authoritative inventory is:
+### 2.2 Project documentation
 
-`docs/DOCUMENTATION_INVENTORY.md`
+Project documentation describes the specific game's requirements, design, architecture, implementation, and production status. In this repository it belongs under `game_project/docs/`.
 
-The authoritative documentation standard is:
+Inspect relevant project documentation before modifying existing functionality or making project-specific decisions. Do not replace approved project-specific requirements with generic studio guidelines.
 
-`docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
+### 2.3 Agent instructions
 
-### 2.2 Project Documentation
+OpenCode agent instructions define how the agent must behave. `AGENTS.md` routes tasks; `.opencode/rules/` contains operating rules; `.opencode/command/` contains thin adapters; `.opencode/agent/` contains read-only specialist agents.
 
-Project documentation describes the specific game's requirements, design, architecture, implementation, and production status.
+Agent instructions must reference authoritative studio and project documentation rather than reproducing their requirements.
 
-In this repository, project documentation is located at `game_project/docs/`.
+## 3. Documentation discovery and loading
 
-Agents must inspect the relevant project documentation before modifying existing functionality or making project-specific decisions.
-
-Do not replace approved project-specific requirements with generic studio guidelines.
-
-### 2.3 Agent Instructions
-
-Agent instructions define how Cline must behave.
-
-Agents must follow applicable instructions in `.cline/rules/` and `.clinerules/workflows/`.
-
-Agent instructions should reference authoritative studio and project documentation rather than independently reproducing its requirements.
-
-## 3. Documentation Discovery and Loading
-
-Agents must discover and read relevant documentation before performing tasks that depend on studio or project documentation.
-
-### 3.1 Initial Discovery
-
-Before starting a documentation-related task or substantial game development task, agents must:
+Before a documentation-related task or substantial game-development task:
 
 1. Identify the repository and project being worked on.
 2. Inspect the relevant repository structure.
-3. Locate and read `docs/DOCUMENTATION_INVENTORY.md`, when available.
+3. Read `docs/DOCUMENTATION_INVENTORY.md`.
 4. Identify documentation relevant to the assigned task.
 5. Read the applicable mandatory studio standards.
 6. Read relevant guidelines, technical standards, and QA standards.
-7. Read the applicable agent workflow when one exists.
+7. Read the applicable `docs/07_agent_workflows/` procedure.
 8. Read relevant project-specific documentation.
-9. Inspect the existing implementation when the task involves modifying project functionality.
+9. Inspect the existing implementation when modifying project functionality.
 
-Do not assume that documentation has been loaded automatically into the conversation.
+Do not assume documentation has been loaded automatically. Explicitly inspect the actual files before relying on their requirements.
 
-Explicitly inspect the actual files before relying on their requirements.
-
-### 3.2 Task-Specific Documentation Selection
-
-Select documentation according to the task.
+### 3.1 Task-specific selection
 
 | Documentation type | When to consult |
 |---|---|
@@ -99,13 +71,9 @@ Select documentation according to the task.
 | Agent workflows | When executing a task covered by an existing workflow |
 | Project documentation | When the task affects or depends on project-specific requirements, decisions, or existing systems |
 
-Agents MUST read applicable mandatory standards.
+Read applicable mandatory standards. Avoid loading unrelated documents that do not contribute to the task. Do not interpret this policy as requiring all studio documentation to be read for every task.
 
-Agents SHOULD avoid loading unrelated documents that do not contribute to the task.
-
-Agents MUST NOT interpret this policy as requiring all studio documentation to be read for every task.
-
-### 3.3 Workflow Discovery
+### 3.2 Workflow discovery
 
 When an assigned task matches an existing documented workflow:
 
@@ -116,15 +84,11 @@ When an assigned task matches an existing documented workflow:
 5. Follow the workflow in the specified order.
 6. Obtain human approval whenever required.
 
-Do not assume that reading a workflow means it has been executed.
+Do not assume that reading a workflow means it has been executed. Do not skip workflow requirements without a justified reason. If no applicable workflow exists, follow the relevant studio standards and established project procedures.
 
-Do not skip workflow requirements without a justified reason.
+### 3.3 Reference resolution
 
-If no applicable workflow exists, follow the relevant studio standards and established project procedures.
-
-### 3.4 Reference Resolution
-
-When a document references another document, agents must:
+When a document references another document:
 
 - Follow the reference when its contents are relevant to the task.
 - Prefer descriptive Markdown links with valid relative paths.
@@ -134,25 +98,11 @@ When a document references another document, agents must:
 - Verify that referenced documents physically exist before relying on them.
 - Follow relevant references recursively when additional authoritative context is necessary.
 
-Agents must not silently substitute a similarly named document when a reference is broken or ambiguous.
+Do not silently substitute a similarly named document when a reference is broken or ambiguous. If a referenced document cannot be located, verify the path against the repository, check the inventory, identify whether it was renamed or moved, report the unresolved reference, and request clarification if the missing information affects the task.
 
-If a referenced document cannot be located:
+### 3.4 Documentation authority
 
-1. Verify the path against the actual repository structure.
-2. Check the documentation inventory when available.
-3. Identify whether the document was renamed, moved, or deprecated.
-4. Report the unresolved reference.
-5. Request clarification if the missing information affects the task.
-
-Do not invent missing documents or assume their contents.
-
-### 3.5 Documentation Authority
-
-Agents must follow the authority and conflict-resolution principles defined in:
-
-`docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
-
-Agents must:
+Follow `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md` for authority and conflict resolution.
 
 - Distinguish mandatory standards from recommendations.
 - Distinguish approved documentation from drafts and proposals.
@@ -161,21 +111,19 @@ Agents must:
 - Identify contradictions rather than silently resolving significant conflicts.
 - Request clarification when conflicting requirements cannot be resolved confidently.
 
-## 4. Documentation Inventory Management
+## 4. Documentation inventory management
 
-Whenever creating, modifying, renaming, moving, deprecating, or deleting documentation, follow the documentation standards defined in:
+Whenever creating, modifying, renaming, moving, deprecating, or deleting documentation, follow `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`.
 
-`docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`
-
-### 4.1 Documentation Management Rules
+### 4.1 Inventory rules
 
 1. Read `docs/DOCUMENTATION_INVENTORY.md` before making documentation changes.
 2. Inspect the actual documentation directory structure before creating, moving, or renaming documents.
 3. Update the inventory whenever a document is created, renamed, moved, deprecated, or deleted.
 4. Register only documents that physically exist in the repository.
 5. Use exact repository-relative paths and filenames.
-6. Assign the correct document category and current document status.
-7. Keep document descriptions concise and accurate.
+6. Assign the correct document category and current status.
+7. Keep descriptions concise and accurate.
 8. Include related documents only when a meaningful relationship exists.
 9. Never change a document's status to `Approved` without explicit project owner approval.
 10. Never remove an inventory entry merely because a document is incomplete.
@@ -185,7 +133,9 @@ Whenever creating, modifying, renaming, moving, deprecating, or deleting documen
 14. When deleting a document, remove its inventory entry and verify that no active documents depend on it.
 15. Verify that every inventory entry resolves to an existing file before completing the task.
 
-### 4.2 Documentation Inventory Audits
+The inventory also registers repository governance files, including `AGENTS.md`, `opencode.json`, `.opencode/`, `.github/`, and `references/`, because those files govern repository behavior. Keep those registrations consistent with the actual repository.
+
+### 4.2 Inventory audits
 
 When auditing documentation:
 
@@ -199,22 +149,18 @@ When auditing documentation:
 
 Do not silently remove or rewrite questionable entries to make an audit appear successful.
 
-### 4.3 Completion Requirements
+### 4.3 Completion requirements
 
 After documentation changes:
 
 - Ensure the inventory reflects the actual repository state.
 - Verify all affected paths and references.
-- Report inventory changes in the task completion summary.
-- Explicitly report unresolved inconsistencies rather than silently assuming they are correct.
+- Report inventory changes in the completion summary.
+- Explicitly report unresolved inconsistencies rather than assuming they are correct.
 
-The documentation inventory must always reflect the actual repository state. It is a record of existing documentation, not a documentation roadmap or a list of planned work.
+## 5. Documentation creation and modification
 
-## 5. Documentation Creation and Modification
-
-### 5.1 Before Creating a Document
-
-Before creating a new document:
+### 5.1 Before creating a document
 
 1. Inspect the documentation inventory.
 2. Inspect the relevant directory.
@@ -224,13 +170,9 @@ Before creating a new document:
 6. Identify relevant authoritative references.
 7. Confirm that the proposed document provides meaningful value and does not duplicate existing content.
 
-Do not create a new document when an existing document can be appropriately extended.
+Do not create a new document when an existing document can be appropriately extended. Do not create placeholder documents unless explicitly requested.
 
-Do not create placeholder documents unless explicitly requested.
-
-### 5.2 When Modifying a Document
-
-Before modifying an existing document:
+### 5.2 When modifying a document
 
 1. Read the complete document when practical.
 2. Identify its purpose, scope, and authority.
@@ -242,21 +184,18 @@ Before modifying an existing document:
 
 Do not silently remove approved requirements or change their meaning.
 
-### 5.3 When Renaming or Moving Documents
-
-When renaming or moving a document:
+### 5.3 When renaming or moving documents
 
 - Verify the intended destination.
-- Preserve the document's content unless changes are explicitly required.
+- Preserve content unless changes are explicitly required.
 - Update incoming Markdown links.
 - Update agent instructions and workflow references.
 - Update the documentation inventory.
-- Verify all affected paths.
-- Check for broken references.
+- Verify all affected paths and check for broken references.
 
 Do not leave references pointing to the old location.
 
-### 5.4 When Deprecating or Deleting Documents
+### 5.4 When deprecating or deleting documents
 
 Before deprecating or deleting a document:
 
@@ -269,11 +208,11 @@ Before deprecating or deleting a document:
 
 Do not delete documentation merely because it is outdated or incomplete.
 
-## 6. Documentation Quality and Consistency
+## 6. Documentation quality and consistency
 
-When creating or modifying documentation, agents must:
+When creating or modifying documentation:
 
-- Follow `DOCUMENTATION_STANDARDS.md`.
+- Follow `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`.
 - Use established terminology and naming conventions.
 - Use exact paths and filenames.
 - Prefer relative Markdown links within the repository.
@@ -285,18 +224,18 @@ When creating or modifying documentation, agents must:
 
 Do not invent project decisions, technical requirements, or approvals.
 
-## 7. Documentation Verification
+## 7. Documentation verification
 
-Before completing documentation work, agents must verify:
+Before completing documentation work, verify:
 
-### 7.1 File Verification
+### 7.1 File verification
 
 - [ ] All modified files exist in their intended locations.
 - [ ] Filenames follow repository conventions.
 - [ ] No unintended duplicate documents were created.
 - [ ] No unintended files were removed or renamed.
 
-### 7.2 Reference Verification
+### 7.2 Reference verification
 
 - [ ] Internal Markdown links resolve correctly.
 - [ ] Referenced documents exist.
@@ -305,7 +244,7 @@ Before completing documentation work, agents must verify:
 - [ ] Incoming references were updated after moves or renames.
 - [ ] No unintended broken references remain.
 
-### 7.3 Inventory Verification
+### 7.3 Inventory verification
 
 - [ ] Every new document is registered.
 - [ ] Renamed or moved documents have updated paths.
@@ -314,7 +253,7 @@ Before completing documentation work, agents must verify:
 - [ ] Existing incomplete documents remain registered.
 - [ ] Every inventory entry resolves to an existing file.
 
-### 7.4 Content Verification
+### 7.4 Content verification
 
 - [ ] No approved requirements were silently removed.
 - [ ] No contradictory instructions were introduced.
@@ -322,59 +261,43 @@ Before completing documentation work, agents must verify:
 - [ ] Assumptions and unresolved questions are identified.
 - [ ] Approval status has not been changed without authorization.
 
-## 8. Reporting Requirements
+## 8. Reporting requirements
 
 When completing a task involving documentation, provide a concise summary containing:
 
-### Documents Consulted
+### Documents consulted
 
-List the important standards, guidelines, templates, workflows, and project-specific documents actually inspected.
+List the important standards, guidelines, templates, workflows, and project-specific documents actually inspected. Do not claim to have consulted documents that were not read.
 
-Do not claim to have consulted documents that were not read.
-
-### Documents Changed
+### Documents changed
 
 List documents created, modified, renamed, moved, deprecated, or deleted.
 
-### Inventory Changes
+### Inventory changes
 
-Explain how the documentation inventory was updated, or state that no inventory changes were necessary.
+Explain how the inventory was updated, or state that no inventory changes were necessary.
 
-### Verification Results
+### Verification results
 
-Report:
+Report reference verification, inventory verification, broken or missing references, unresolved inconsistencies, and outstanding approval requirements. Do not claim successful verification when it was not performed.
 
-- Reference verification results.
-- Inventory verification results.
-- Any broken or missing references.
-- Any unresolved inconsistencies.
-- Any assumptions or outstanding approval requirements.
+## 9. Human approval and agent restrictions
 
-Do not claim successful verification when it was not performed.
+The agent may inspect, create, modify, organize, and audit documentation within its authorized permissions. However, the agent MUST NOT:
 
-## 9. Human Approval and Agent Restrictions
-
-AI agents may inspect, create, modify, organize, and audit documentation within their authorized permissions.
-
-However, agents MUST NOT:
-
-- Approve their own documentation changes.
+- Approve its own documentation changes.
 - Change document statuses to `Approved` without project owner approval.
 - Invent missing requirements or decisions.
 - Silently resolve significant documentation conflicts.
-- Delete or deprecate approved documentation without appropriate authorization.
+- Delete or deprecate approved documentation without authorization.
 - Claim that documentation was inspected when it was not.
 - Claim that a task complies with standards that were not consulted.
 - Modify unrelated documentation without justification.
 
-When an action requires human approval, stop before performing that action and request approval.
+When an action requires human approval, stop before performing it and request approval.
 
-## 10. Core Principle
+## 10. Core principle
 
-Documentation is an active part of the development process, not an optional reference.
-
-Agents must discover, inspect, understand, and follow applicable documentation before performing work that depends on it.
-
-Agents must also maintain documentation and its inventory whenever their actions change the repository.
+Documentation is an active part of the development process, not an optional reference. Agents must discover, inspect, understand, and follow applicable documentation before performing work that depends on it. Agents must also maintain documentation and its inventory whenever their actions change the repository.
 
 The inventory must represent the actual repository state, references must resolve to real files, and all completion claims must be supported by work that was actually performed.

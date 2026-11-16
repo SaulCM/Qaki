@@ -4,7 +4,7 @@
 
 This document is the central inventory of documentation maintained in the studio's shared documentation repository.
 
-It also registers the repository's agent instructions (`.cline/rules/` and `.clinerules/workflows/`) and repository governance files (`.github/` and `references/`), because those files govern repository behavior and the documentation must remain consistent with them. Registered governance files are listed in section 16 and are not counted among the Markdown documents under `docs/`.
+It also registers the repository's OpenCode instructions (`AGENTS.md`, `opencode.json`, and `.opencode/`) and repository governance files (`.github/` and `references/`), because those files govern repository behavior and the documentation must remain consistent with them. Registered governance files are listed in section 16 and are not counted among the Markdown documents under `docs/`.
 
 It provides a structured overview of available documentation, including studio standards, game design guidelines, technical standards, art and audio standards, production standards, QA standards, templates, and AI agent workflows.
 
@@ -371,11 +371,13 @@ The governance files registered in section 16 are not counted in the total above
 
 | Location | File count |
 |---|---:|
-| Agent rules (`.cline/rules/`) | 6 |
-| Execution workflows (`.clinerules/workflows/`) | 5 |
+| OpenCode repository configuration (`AGENTS.md`, `opencode.json`) | 2 |
+| OpenCode rules (`.opencode/rules/`) | 6 |
+| OpenCode commands (`.opencode/command/`) | 8 |
+| OpenCode agents (`.opencode/agent/`) | 3 |
 | GitHub configuration (`.github/`) | 5 |
-| Reference collections (`references/`) | 4 |
-| **Total** | **20** |
+| Reference material (`references/`) | 6 |
+| **Total** | **30** |
 
 **Inventory status:** Reflects the actual contents of the repository. Status and dependencies are recorded for each registered file; `Not Specified` means that no status has been established.
 
@@ -391,26 +393,36 @@ Paths in this section are relative to the repository root.
 
 | Document | Description | Status | Dependencies |
 |---|---|---|---|
-| `.cline/rules/architecture-rules.md` | Always-loaded rule defining architectural principles and implementation constraints. | Not Specified | — |
-| `.cline/rules/asset-rules.md` | Always-loaded rule defining how scenes, resources, and assets are handled as files. | Not Specified | `ASSET_PIPELINE.md`, `ART_ASSET_STANDARDS.md`, `ART_PIPELINE.md`, `AUDIO_ASSET_STANDARDS.md`, `AUDIO_PIPELINE.md`, `ANIMATION_STANDARDS.md`, `UI_UX_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `RESOURCE_MANAGEMENT.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `ENGINE_STANDARDS.md` |
-| `.cline/rules/documentation-management.md` | Always-loaded rule defining how AI agents discover, maintain, and verify documentation. | Not Specified | `DOCUMENTATION_STANDARDS.md` |
-| `.cline/rules/gdscript-standards.md` | Always-loaded rule defining how GDScript is written, reviewed, and validated. | Not Specified | `GDSCRIPT_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md`, `CODE_REVIEW_GUIDELINES.md` |
-| `.cline/rules/git-workflow.md` | Always-loaded rule defining mandatory agent Git behavior and repository protections. | Not Specified | `GIT_CONVENTIONS.md`, `BRANCHING_STRATEGY.md` |
-| `.cline/rules/project-context.md` | Always-loaded rule defining repository roots, directory responsibilities, and authority order. | Not Specified | `adr/ADR_PROCESS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `DEVELOPMENT_PHILOSOPHY.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md` |
-| `.clinerules/workflows/code-review.md` | Cline execution workflow for reviewing a change. | Not Specified | `REVIEW_CODE.md` |
-| `.clinerules/workflows/create-technical-design.md` | Cline execution workflow for producing a technical design. | Not Specified | `CREATE_TECHNICAL_DESIGN.md`, `adr/ADR_PROCESS.md` |
-| `.clinerules/workflows/fix-bug.md` | Cline execution workflow for investigating and correcting a defect. | Not Specified | `FIX_BUG.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md`, `DEFINITION_OF_DONE.md` |
-| `.clinerules/workflows/implement-feature.md` | Cline execution workflow for implementing a feature. | Not Specified | `IMPLEMENT_FEATURE.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md` |
-| `.clinerules/workflows/refactor-code.md` | Cline execution workflow for behavior-preserving refactoring. | Not Specified | `REFACTOR_CODE.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md` |
+| `AGENTS.md` | Repository-level OpenCode instruction and routing document. | Not Specified | `DOCUMENTATION_STANDARDS.md`, `.opencode/rules/project-context.md` |
+| `opencode.json` | OpenCode V1 configuration: instruction loading, command and agent discovery, and permissions. | Not Specified | `AGENTS.md`, `.opencode/rules/project-context.md` |
+| `.opencode/rules/architecture-rules.md` | Always-loaded rule defining architectural principles and implementation constraints. | Not Specified | `ARCHITECTURE_GUIDELINES.md`, `PROJECT_STRUCTURE_STANDARDS.md` |
+| `.opencode/rules/asset-rules.md` | Always-loaded rule defining how scenes, resources, and assets are handled as files. | Not Specified | `ASSET_PIPELINE.md`, `ART_ASSET_STANDARDS.md`, `ART_PIPELINE.md`, `AUDIO_ASSET_STANDARDS.md`, `AUDIO_PIPELINE.md`, `ANIMATION_STANDARDS.md`, `UI_UX_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `RESOURCE_MANAGEMENT.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `ENGINE_STANDARDS.md` |
+| `.opencode/rules/documentation-management.md` | Always-loaded rule defining how agents discover, maintain, and verify documentation. | Not Specified | `DOCUMENTATION_STANDARDS.md`, `DOCUMENTATION_INVENTORY.md` |
+| `.opencode/rules/gdscript-standards.md` | Always-loaded rule defining how GDScript is written, reviewed, and validated. | Not Specified | `GDSCRIPT_STANDARDS.md`, `NAMING_CONVENTIONS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, `SCENE_AND_NODE_CONVENTIONS.md`, `EVENT_AND_SIGNAL_GUIDELINES.md`, `RESOURCE_MANAGEMENT.md`, `DATA_PERSISTENCE_GUIDELINES.md`, `PERFORMANCE_GUIDELINES.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md`, `CODE_REVIEW_GUIDELINES.md` |
+| `.opencode/rules/git-workflow.md` | Always-loaded rule defining mandatory agent Git behavior and repository protections. | Not Specified | `GIT_CONVENTIONS.md`, `BRANCHING_STRATEGY.md` |
+| `.opencode/rules/project-context.md` | Always-loaded rule defining repository roots, directory responsibilities, authority order, and verification limits. | Not Specified | `adr/ADR_PROCESS.md`, `PROJECT_STRUCTURE_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`, `DEVELOPMENT_PHILOSOPHY.md`, `ENGINE_STANDARDS.md`, `TESTING_STRATEGY.md` |
+| `.opencode/command/implement-feature.md` | OpenCode adapter for the authoritative feature implementation workflow. | Not Specified | `IMPLEMENT_FEATURE.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md` |
+| `.opencode/command/fix-bug.md` | OpenCode adapter for the authoritative bug-fix workflow, including GitHub Issues tracking. | Not Specified | `FIX_BUG.md`, `BUG_REPORTING.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md` |
+| `.opencode/command/refactor-code.md` | OpenCode adapter for the authoritative behavior-preserving refactor workflow. | Not Specified | `REFACTOR_CODE.md`, `BRANCHING_STRATEGY.md`, `GIT_CONVENTIONS.md` |
+| `.opencode/command/review-code.md` | OpenCode adapter for the authoritative read-only code review workflow. | Not Specified | `REVIEW_CODE.md`, `CODE_REVIEW_GUIDELINES.md` |
+| `.opencode/command/create-technical-design.md` | OpenCode adapter for the authoritative technical design workflow. | Not Specified | `CREATE_TECHNICAL_DESIGN.md`, `adr/ADR_PROCESS.md` |
+| `.opencode/command/generate-tests.md` | OpenCode adapter for the authoritative test-generation workflow. | Not Specified | `GENERATE_TESTS.md`, `TESTING_STRATEGY.md` |
+| `.opencode/command/update-documentation.md` | OpenCode adapter for the authoritative documentation-update workflow. | Not Specified | `UPDATE_DOCUMENTATION.md`, `DOCUMENTATION_STANDARDS.md` |
+| `.opencode/command/update-project-status.md` | OpenCode adapter for the authoritative project-status update workflow. | Not Specified | `UPDATE_PROJECT_STATUS.md`, `DEFINITION_OF_DONE.md` |
+| `.opencode/agent/code-reviewer.md` | Read-only specialist agent for severity-classified code review. | Not Specified | `REVIEW_CODE.md`, `CODE_REVIEW_GUIDELINES.md` |
+| `.opencode/agent/verifier.md` | Read-only specialist agent for documented verification commands and evidence reporting. | Not Specified | `TESTING_STRATEGY.md`, `.opencode/rules/project-context.md` |
+| `.opencode/agent/docs-auditor.md` | Read-only specialist agent for documentation inventory and reference auditing. | Not Specified | `DOCUMENTATION_STANDARDS.md`, `DOCUMENTATION_INVENTORY.md` |
 | `.github/ISSUE_TEMPLATE/bug_report.md` | Defect report form aligned with the defect reporting standard. | Not Specified | `BUG_REPORTING.md` |
-| `.github/ISSUE_TEMPLATE/feature_request.md` | Feature request form for proposing new functionality. | Not Specified | — |
+| `.github/ISSUE_TEMPLATE/feature_request.md` | Feature request form for proposing new functionality. | Not Specified | - |
 | `.github/PULL_REQUEST_TEMPLATE.md` | Pull request description template aligned with the review and completion standards. | Not Specified | `BRANCHING_STRATEGY.md`, `DEFINITION_OF_DONE.md`, `GIT_CONVENTIONS.md`, `CODE_REVIEW_GUIDELINES.md`, `TESTING_STRATEGY.md` |
 | `.github/workflows/ci.yml` | Continuous integration workflow: project import, script parse check, and automated tests. | Not Specified | `TESTING_STRATEGY.md`, `BRANCHING_STRATEGY.md` |
-| `.github/workflows/validation.yml` | Documentation validation workflow: reference resolution and inventory parity. | Not Specified | `DOCUMENTATION_STANDARDS.md` |
-| `references/architectural/README.md` | Reference collection for architectural material. | Not Specified | — |
-| `references/audio/README.md` | Reference collection for audio material. | Not Specified | — |
-| `references/historical/README.md` | Reference collection for historical material. | Not Specified | — |
-| `references/visual/README.md` | Reference collection for visual material. | Not Specified | — |
+| `.github/workflows/validation.yml` | Documentation validation workflow: reference resolution, inventory parity, and OpenCode governance registration. | Not Specified | `DOCUMENTATION_STANDARDS.md`, `DOCUMENTATION_INVENTORY.md` |
+| `references/architectural/README.md` | Reference collection for architectural material. | Not Specified | - |
+| `references/audio/README.md` | Reference collection for audio material. | Not Specified | - |
+| `references/historical/README.md` | Reference collection for historical material. | Not Specified | - |
+| `references/visual/README.md` | Reference collection for visual material. | Not Specified | - |
+| `references/opencode-configuration-assessment.md` | Read-only assessment and migration recommendations for OpenCode configuration. | Not Specified | `AGENTS.md`, `opencode.json`, `DOCUMENTATION_STANDARDS.md` |
+| `references/opencode-migration-report.md` | Migration record for the Cline-to-OpenCode transition, including validation evidence and unresolved owner actions. | Not Specified | `AGENTS.md`, `opencode.json`, `opencode-configuration-assessment.md` |
 
 **Approval status:** Not specified by this inventory.
 

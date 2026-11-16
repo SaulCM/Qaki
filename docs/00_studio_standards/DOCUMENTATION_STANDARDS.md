@@ -45,7 +45,7 @@ Every important piece of information must have an identifiable authoritative loc
 - Update the authoritative source when a decision changes.
 - Identify derived documents and keep them consistent with their sources.
 
-For example, Git conventions belong in `GIT_CONVENTIONS.md`. Agent-specific Git behavior belongs in `.cline/rules/git-workflow.md`, which should reference the studio standard rather than reproduce it.
+For example, Git conventions belong in `GIT_CONVENTIONS.md`. Agent-specific Git behavior belongs in `.opencode/rules/git-workflow.md`, which should reference the studio standard rather than reproduce it.
 
 ### 2.3 Accuracy and Consistency
 
@@ -177,7 +177,7 @@ Project-specific requirements must not be placed in shared studio standards unle
 - A template is not a project document. Instantiating a template produces a game-specific document under `game_project/docs/`.
 - Templates SHOULD state their recommended destination using the full repository-relative path (`game_project/docs/...`).
 - Studio agent workflows are stored in repository-root `docs/07_agent_workflows/`.
-- Cline execution workflows are stored in `.clinerules/workflows/` and act as execution adapters to the authoritative studio workflows (Section 3.8).
+- OpenCode execution adapters are stored in `.opencode/command/` and act as execution adapters to the authoritative studio workflows (Section 3.8).
 
 ### 3.5 Documentation Path Resolution
 
@@ -200,8 +200,10 @@ Project-specific requirements must not be placed in shared studio standards unle
 
 Agent-specific instructions belong in the appropriate agent configuration directories, such as:
 
-- `.cline/rules/`
-- `.clinerules/workflows/`
+- `AGENTS.md` and `opencode.json` at the repository root
+- `.opencode/rules/`
+- `.opencode/command/`
+- `.opencode/agent/`
 - `.github/`
 
 These files govern agent behavior and repository-specific automation.
@@ -217,7 +219,7 @@ Workflow knowledge is divided between two layers with different responsibilities
 | Layer | Location | Responsibility |
 |---|---|---|
 | Studio workflow layer | `docs/07_agent_workflows/` | Authoritative procedures. Defines how a task is performed. |
-| Execution workflow layer | `.clinerules/workflows/` | Thin adapters. Select a task type, bind agent rules, and delegate to the authoritative studio workflow. |
+| Execution workflow layer | `.opencode/command/` | Thin adapters. Select a task type, bind agent rules, and delegate to the authoritative studio workflow. |
 
 Requirements:
 
@@ -301,7 +303,7 @@ When documentation conflicts, use the following authority principles:
 
 The authority order must be interpreted according to the scope of each document. A project-specific gameplay specification, for example, governs that game's approved gameplay behavior, while studio-wide Git standards govern repository practices.
 
-A Cline execution workflow in `.clinerules/workflows/` is never an independent authority. When it and its authoritative studio workflow in `docs/07_agent_workflows/` conflict, the studio workflow governs (Section 3.8).
+An OpenCode execution adapter in `.opencode/command/` is never an independent authority. When it and its authoritative studio workflow in `docs/07_agent_workflows/` conflict, the studio workflow governs (Section 3.8).
 
 When a conflict cannot be resolved confidently, identify it and request clarification rather than silently choosing an interpretation.
 
@@ -325,7 +327,7 @@ DEVELOPMENT_PHILOSOPHY.md
 GIT_CONVENTIONS.md
 GAME_VISION.md
 TECHNICAL_DESIGN.md
-.cline/rules/git-workflow.md
+.opencode/rules/git-workflow.md
 ```
 
 Do not use filenames such as:
@@ -754,7 +756,7 @@ This document should be used together with:
 - `CODE_REVIEW_GUIDELINES.md` — Review and approval practices.
 - `DEFINITION_OF_DONE.md` — Completion and acceptance criteria.
 - `docs/06_templates/` — Reusable documentation templates.
-- `docs/07_agent_workflows/` — Authoritative AI-assisted development procedures; `.clinerules/workflows/` holds their execution adapters (Section 3.8).
+- `docs/07_agent_workflows/` — Authoritative AI-assisted development procedures; `.opencode/command/` holds their execution adapters (Section 3.8).
 
 ## 14. Maintenance
 

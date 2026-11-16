@@ -91,14 +91,14 @@ The following requirements apply to every work item, regardless of category.
 - The requirement or task statement MUST be identified before implementation starts.
 - Applicable acceptance criteria MUST be identified, or their absence reported.
 - Ambiguous or contradictory requirements MUST be raised before decisions that materially affect the outcome.
-- Unapproved design decisions MUST NOT be introduced to fill a requirement gap (`.cline/rules/project-context.md`; `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`).
+- Unapproved design decisions MUST NOT be introduced to fill a requirement gap (`.opencode/rules/project-context.md`; `docs/00_studio_standards/DEVELOPMENT_PHILOSOPHY.md`).
 
 ### 5.2 Scope Discipline
 
 - Only files required by the task MUST be modified.
 - Unrelated refactoring, reformatting, renaming, and cleanup MUST NOT be included.
 - Pre-existing issues found outside the task scope MUST be reported, not fixed.
-- Unrelated or user-owned working-tree changes MUST be preserved (`.cline/rules/git-workflow.md`, section 6).
+- Unrelated or user-owned working-tree changes MUST be preserved (`.opencode/rules/git-workflow.md`, section 6).
 
 ### 5.3 Standards Compliance
 
@@ -315,7 +315,7 @@ When a work item changes code, the following apply:
 This section must be read against the actual state of the repository:
 
 - The Godot project does not currently contain a `tests/` directory or any test suite, and GdUnit4 is not installed in `game_project/addons/`. The adopted framework, runner, and pinned version are recorded in `TESTING_STRATEGY.md` (section 11.5).
-- `.github/workflows/ci.yml` is configured and runs project import validation, a GDScript parse check, and GdUnit4 test execution only when a test suite exists (`TESTING_STRATEGY.md`, section 11.6). `.github/workflows/validation.yml` remains an unconfigured placeholder. The workflow has not yet been executed, so no automated check has yet produced a result.
+- `.github/workflows/ci.yml` is configured and runs project import validation, a GDScript parse check, and GdUnit4 test execution only when a test suite exists (`TESTING_STRATEGY.md`, section 11.6). `.github/workflows/validation.yml` is configured to validate documentation references and inventory parity. Neither workflow has been executed, so no automated check has yet produced a result.
 
 Therefore a work item MUST NOT be reported as automatically tested, or as passing continuous integration, unless such a test or check was actually executed and its result observed.
 
@@ -558,7 +558,7 @@ A work item MUST NOT be moved to Done in a backlog or tracking system until its 
 - `docs/05_qa_standards/ACCEPTANCE_CRITERIA_GUIDELINES.md` — Acceptance criteria definition.
 - `docs/05_qa_standards/REGRESSION_TESTING.md` — Regression testing expectations.
 - `docs/07_agent_workflows/` — Agent execution procedures that reference this definition.
-- `.cline/rules/gdscript-standards.md`, `.cline/rules/asset-rules.md`, `.cline/rules/git-workflow.md` — Mandatory agent behavior.
+- `.opencode/rules/gdscript-standards.md`, `.opencode/rules/asset-rules.md`, `.opencode/rules/git-workflow.md` — Mandatory agent behavior.
 
 ## 19. Maintenance
 

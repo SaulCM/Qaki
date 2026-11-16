@@ -7,19 +7,21 @@
 #   1. Every file registered in the documentation inventory exists with exactly
 #      the registered capitalization, and nothing is registered twice.
 #   2. Every Markdown document under `docs/` is registered in the inventory, and
-#      every governance file in `.cline/`, `.clinerules/`, `.github/` and
-#      `references/` is registered as well.
+#      every governance file in `AGENTS.md`, `opencode.json`, `.opencode/`,
+#      `.github/` and `references/` is registered as well.
 #   3. Every relative Markdown link resolves to an existing file.
 #   4. Every backticked `*.md` reference matches the capitalization of the file
 #      it names. Placeholders and planned project paths are ignored because no
 #      file matches them case-insensitively.
 #   5. The total in the inventory summary table matches the number of documents
 #      that exist under `docs/`.
+#   6. Obsolete Cline configuration is absent.
+#   7. `opencode.json` is valid JSON with the required V1 keys.
 #
 # Paths in the inventory are resolved as follows. A registered path that starts
-# with `docs/` or with `.cline/`, `.clinerules/`, `.github/` or `references/` is
-# treated as repository-relative; every other registered path is relative to
-# `docs/`.
+# with `docs/`, `.opencode/`, `.github/` or `references/` is treated as
+# repository-relative, as are the root files `AGENTS.md` and `opencode.json`;
+# every other registered path is relative to `docs/`.
 #
 # This workflow has not been executed yet. Its first run is the project's own
 # evidence that the validation described above passes on the repository state.
@@ -63,6 +65,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 - <<'PY'
+          import json
           import os
           import re
           import sys
@@ -71,8 +74,10 @@ jobs:
           ROOT = Path(".").resolve()
           DOCS = ROOT / "docs"
           INVENTORY = DOCS / "DOCUMENTATION_INVENTORY.md"
-          GOV_DIRS = (".cline/rules", ".clinerules/workflows", ".github", "references")
-          REPO_PREFIXES = ("docs/", ".cline/", ".clinerules/", ".github/", "references/")
+          GOV_DIRS = (".opencode/rules", ".opencode/agent", ".opencode/command", ".github", "references")
+          REPO_PREFIXES = ("docs/", ".opencode/", ".github/", "references/")
+          ROOT_GOV_FILES = ("AGENTS.md", "opencode.json")
+          OBSOLETE_CLINE_PATHS = (".cline", ".clinerules", ".clineignore")
 
           errors = []
 
@@ -94,6 +99,10 @@ jobs:
                   base = ROOT / directory
                   if base.is_dir():
                       files += sorted(base.rglob("*.md"))
+              for name in ROOT_GOV_FILES:
+                  path = ROOT / name
+                  if path.suffix == ".md" and path.is_file():
+                      files.append(path)
               return files
 
 
@@ -112,11 +121,13 @@ jobs:
               token = match.group(1).strip()
               # Directory rows in the structure table are not file registrations,
               # and neither are prose labels such as the status vocabulary.
-              if token.endswith("/"):
+              if token in ROOT_GOV_FILES:
+                  target = ROOT / token
+              elif token.endswith("/"):
                   continue
-              if "/" not in token and not token.endswith((".md", ".yml", ".yaml")):
+              elif "/" not in token and not token.endswith((".md", ".yml", ".yaml")):
                   continue
-              if token.startswith("docs/"):
+              elif token.startswith("docs/"):
                   target = DOCS / token[len("docs/"):]
               elif token.startswith(REPO_PREFIXES):
                   target = ROOT / token
@@ -154,6 +165,25 @@ jobs:
                   rel = path.relative_to(ROOT).as_posix()
                   if path.is_file() and rel not in known:
                       fail(f"governance file not registered in the inventory: {rel}")
+          for name in ROOT_GOV_FILES:
+              if not exact_exists(ROOT / name):
+                  fail(f"required governance file is missing: {name}")
+              elif name not in known:
+                  fail(f"governance file not registered in the inventory: {name}")
+          for legacy in OBSOLETE_CLINE_PATHS:
+              if (ROOT / legacy).exists():
+                  fail(f"obsolete Cline configuration is still present: {legacy}")
+
+          opencode_config = ROOT / "opencode.json"
+          if opencode_config.is_file():
+              try:
+                  config = json.loads(opencode_config.read_text(encoding="utf-8"))
+              except json.JSONDecodeError as error:
+                  fail(f"opencode.json is not valid JSON: {error}")
+              else:
+                  for key in ("$schema", "instructions", "permission"):
+                      if key not in config:
+                          fail(f"opencode.json is missing required key: {key}")
 
           files = markdown_files()
           names_by_lower = {}

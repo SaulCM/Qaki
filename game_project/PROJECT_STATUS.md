@@ -1,6 +1,6 @@
 ﻿# Project Status
 
-> Last updated: 2026-11-12
+> Last updated: 2026-11-16
 > Project owner: Saul
 > Development phase: Pre-production
 > Project status: Active
@@ -23,6 +23,7 @@ technical architecture, and production standards.
 - [x] Develop branch established
 - [x] AI development Windows account configured
 - [x] Documentation directory structure created
+- [x] Configure OpenCode project rules
 - [ ] Game vision approved
 - [ ] Core gameplay pillars approved
 - [ ] Technical architecture approved
@@ -30,7 +31,6 @@ technical architecture, and production standards.
 ## 4. In Progress
 
 - [ ] Populate pre-production documentation
-- [ ] Configure Cline project rules
 - [ ] Configure GitHub Actions
 - [ ] Establish Godot project structure
 
@@ -62,6 +62,9 @@ technical architecture, and production standards.
 - Update this document when milestone status changes.
 
 ## 9. Recent Changes
+
+### 2026-11-16
+- Migrated agent configuration from Cline to OpenCode.
 
 ### 2026-11-12
 - Created initial documentation structure.

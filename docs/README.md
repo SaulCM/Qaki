@@ -36,7 +36,7 @@ Templates are structures, not requirements. Workflows are procedures, not standa
 | Produce a technical design | `docs/07_agent_workflows/CREATE_TECHNICAL_DESIGN.md` | `docs/06_templates/TECHNICAL_DESIGN_TEMPLATE.md`, `docs/02_technical_standards/adr/ADR_PROCESS.md` |
 | Review a change | `docs/07_agent_workflows/REVIEW_CODE.md` | `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md`, `docs/00_studio_standards/DEFINITION_OF_DONE.md` |
 | Update documentation | `docs/07_agent_workflows/UPDATE_DOCUMENTATION.md` | `docs/00_studio_standards/DOCUMENTATION_STANDARDS.md`, `docs/DOCUMENTATION_INVENTORY.md` |
-| Add or change an asset | `docs/03_art_audio_standards/` | `docs/02_technical_standards/ASSET_PIPELINE.md`, `.cline/rules/asset-rules.md` |
+| Add or change an asset | `docs/03_art_audio_standards/` | `docs/02_technical_standards/ASSET_PIPELINE.md`, `.opencode/rules/asset-rules.md` |
 | Build or change UI | `docs/03_art_audio_standards/UI_UX_STANDARDS.md` | `docs/01_game_design_guidelines/UI_UX_DESIGN_GUIDELINES.md`, `docs/02_technical_standards/SCENE_AND_NODE_CONVENTIONS.md` |
 | Test something | `docs/02_technical_standards/TESTING_STRATEGY.md` | `docs/05_qa_standards/` |
 | Investigate performance | `docs/02_technical_standards/PERFORMANCE_GUIDELINES.md` | `docs/02_technical_standards/ENGINE_STANDARDS.md` |
@@ -61,7 +61,7 @@ Create a subdirectory only when an actual document requires it. Do not add game-
 
 ## Finding and Registering Documents
 
-`docs/DOCUMENTATION_INVENTORY.md` registers every document under `docs/` and every governance file in `.cline/`, `.clinerules/`, `.github/`, and `references/`.
+`docs/DOCUMENTATION_INVENTORY.md` registers every document under `docs/` and every governance file in `AGENTS.md`, `opencode.json`, `.opencode/`, `.github/`, and `references/`.
 
 When a document is created, renamed, moved, or deleted, update the inventory in the same change. The inventory records only files that exist.
 
@@ -73,7 +73,7 @@ Approval is a project owner decision. A document's presence, age, or apparent co
 
 ## Agent Configuration
 
-Agent rules live in `.cline/rules/`. Execution adapters live in `.clinerules/workflows/` and delegate to the authoritative workflows in `docs/07_agent_workflows/`; they do not define independent procedures.
+OpenCode is the sole supported agent configuration. `AGENTS.md` routes tasks, `.opencode/rules/` contains operating rules, and `.opencode/agent/` contains read-only specialist agents. Execution adapters live in `.opencode/command/` and delegate to the authoritative workflows in `docs/07_agent_workflows/`; they do not define independent procedures. `opencode.json` declares instruction loading, command and agent discovery, and permissions, and must not contain provider or credential configuration.
 
 ## Related Documents
 

@@ -45,7 +45,7 @@ It covers branch-level behavior only. The following subjects remain with their a
 | Sprint-level integration expectations | `docs/04_production_standards/SPRINT_WORKFLOW.md` |
 | Release preparation, release types, hotfix release process | `docs/04_production_standards/RELEASE_PROCESS.md` |
 | Version numbers and release tags | `docs/04_production_standards/VERSIONING_STANDARDS.md` |
-| Mandatory agent Git behavior | `.cline/rules/git-workflow.md` |
+| Mandatory agent Git behavior | `.opencode/rules/git-workflow.md` |
 
 ## 3. Authority and Relationship with Git Conventions
 
@@ -59,7 +59,7 @@ When this document and `GIT_CONVENTIONS.md` disagree:
 2. The contradiction must be reported rather than silently resolved in practice.
 3. One of the two documents must be corrected through owner-approved documentation work.
 
-`.cline/rules/git-workflow.md` defines mandatory AI agent behavior and contains protections that this document does not weaken. Nothing in this document authorizes an action that the workspace rules prohibit.
+`.opencode/rules/git-workflow.md` defines mandatory AI agent behavior and contains protections that this document does not weaken. Nothing in this document authorizes an action that the workspace rules prohibit.
 
 ### 3.2 Requirement Keywords
 
@@ -73,7 +73,7 @@ When this document and `GIT_CONVENTIONS.md` disagree:
 This document was previously an empty placeholder. Every mandatory statement below is derived from an existing source:
 
 - `docs/00_studio_standards/GIT_CONVENTIONS.md` (approved), sections 1, 5, and 6.
-- `.cline/rules/git-workflow.md` (branch protection, destructive-command limits, reporting duties).
+- `.opencode/rules/git-workflow.md` (branch protection, destructive-command limits, reporting duties).
 - `docs/07_agent_workflows/IMPLEMENT_FEATURE.md` (section 10) and `docs/07_agent_workflows/FIX_BUG.md` (section 15).
 - `docs/00_studio_standards/CODE_REVIEW_GUIDELINES.md` (section 8).
 - `docs/04_production_standards/RELEASE_PROCESS.md` (sections 7 and 16).
@@ -113,7 +113,7 @@ The following are mandatory:
 - No merge into a protected branch without explicit project owner authorization.
 - No attempt to bypass branch protection, required reviews, or required status checks.
 
-These protections are defined in `GIT_CONVENTIONS.md` (section 5) and `.cline/rules/git-workflow.md` (sections 3 and 9). They apply equally to human contributors and AI agents.
+These protections are defined in `GIT_CONVENTIONS.md` (section 5) and `.opencode/rules/git-workflow.md` (sections 3 and 9). They apply equally to human contributors and AI agents.
 
 Branch protection is enforced by the hosting platform. The configured protection rules are not currently documented in this repository; see recommendation R-5 in section 19.
 
@@ -180,7 +180,7 @@ Resolution for this strategy:
 ## 9. Bug-Fix Branches
 
 - Bug-fix work uses the `fix/` prefix and starts from an up-to-date `develop`.
-- The correction follows the fix-bug workflow (`.clinerules/workflows/fix-bug.md`, `docs/07_agent_workflows/FIX_BUG.md`).
+- The correction follows the fix-bug workflow (`.opencode/command/fix-bug.md`, `docs/07_agent_workflows/FIX_BUG.md`).
 - A bug-fix branch MUST contain the correction, the relevant regression validation, and any required test or documentation update.
 - A bug-fix branch MUST NOT include unrelated changes or speculative refactoring.
 - If the defect affects an already published release, the correction is handled as an urgent fix under `RELEASE_PROCESS.md` (section 16). The branch convention for that case is not yet established; see section 10.
@@ -227,7 +227,7 @@ A name that does not match this pattern does not comply with the approved prefix
 
 ### 12.1 Authorization
 
-- Creating, switching, renaming, or deleting a branch requires authorization for the current task (`.cline/rules/git-workflow.md`, section 4).
+- Creating, switching, renaming, or deleting a branch requires authorization for the current task (`.opencode/rules/git-workflow.md`, section 4).
 - An AI agent MUST NOT create a branch as preparation for work that was not requested.
 - An AI agent MUST NOT create, rename, or move a branch that already exists.
 
@@ -252,7 +252,7 @@ Uncommitted or untracked changes are treated as user-owned work. They MUST NOT b
 A method for keeping a task branch current with `develop` is not yet established by an approved standard. Until the owner decides (recommendation R-4 in section 19):
 
 - The task branch MAY be brought up to date by merging `develop` into it.
-- Rebasing, force-pushing, and history rewriting remain prohibited on shared branches and require explicit owner authorization elsewhere (`.cline/rules/git-workflow.md`, sections 8 and 9).
+- Rebasing, force-pushing, and history rewriting remain prohibited on shared branches and require explicit owner authorization elsewhere (`.opencode/rules/git-workflow.md`, sections 8 and 9).
 - Long-lived divergence SHOULD be avoided; a branch that can no longer be integrated cleanly SHOULD be reported to the owner instead of being forced into a mergeable state.
 
 ## 13. Pull Request Requirements
@@ -280,9 +280,9 @@ These expectations follow `CODE_REVIEW_GUIDELINES.md` (section 4.1) and the repo
 
 `.github/workflows/ci.yml` is configured. It runs project import validation, a GDScript parse check, and GdUnit4 test execution when a test suite exists (`docs/02_technical_standards/TESTING_STRATEGY.md`, sections 11.6 and 13).
 
-`.github/workflows/validation.yml` remains an unconfigured placeholder.
+`.github/workflows/validation.yml` is configured to validate documentation references and inventory parity, but it has never been executed.
 
-The workflow has never been executed, and no required status checks are recorded in this repository. Until both are true:
+Neither workflow has produced a result, and no required status checks are recorded in this repository. Until both are true:
 
 - A pull request MUST NOT claim automated validation that did not run.
 - Required status checks cannot be relied on as a quality gate.
@@ -312,18 +312,18 @@ The template carries `Status: Draft` and has not been approved by the project ow
 The project owner is the only approval authority.
 
 - An author MUST NOT present their own inspection of the change as approval.
-- An AI agent MUST NOT approve, or represent its assessment as approval, for any pull request (`.clinerules/workflows/code-review.md`; `CODE_REVIEW_GUIDELINES.md`, sections 3.6 and 11).
+- An AI agent MUST NOT approve, or represent its assessment as approval, for any pull request (`.opencode/command/review-code.md`; `CODE_REVIEW_GUIDELINES.md`, sections 3.6 and 11).
 - Where the project owner is also the author, the owner still records the review decision; AI review output remains advisory support, not approval.
 - Disclosing a review limitation is required; silence is not evidence of review.
 
 ## 15. Merge Policy
 
-- No branch may be merged without explicit project owner authorization (`GIT_CONVENTIONS.md`, section 5; `.cline/rules/git-workflow.md`, section 8).
+- No branch may be merged without explicit project owner authorization (`GIT_CONVENTIONS.md`, section 5; `.opencode/rules/git-workflow.md`, section 8).
 - The project owner performs the merge, or explicitly authorizes a specific merge by a specific actor.
 - AI agents MUST NOT merge, including merging their own work into `develop`.
 - Merges into protected branches MUST occur through a reviewed pull request.
 - A merge MUST NOT bypass required reviews, protection rules, or available checks.
-- Conflicts MUST be resolved by understanding both sides. Resolving a conflict by discarding one side, or by changing behavior the owner did not request, is prohibited (`.cline/rules/git-workflow.md`, section 11).
+- Conflicts MUST be resolved by understanding both sides. Resolving a conflict by discarding one side, or by changing behavior the owner did not request, is prohibited (`.opencode/rules/git-workflow.md`, section 11).
 - The merge strategy (merge commit, squash, or rebase) is not yet established. See recommendation R-7 in section 19.
 - After integration, the source branch is handled according to section 16.
 
@@ -331,7 +331,7 @@ The project owner is the only approval authority.
 
 - Merged task branches SHOULD be deleted so that the branch list reflects active work only.
 - Deletion is performed by the project owner, or by an actor who has explicit authorization for that specific branch.
-- AI agents MUST NOT delete local or remote branches (`.cline/rules/git-workflow.md`, sections 4 and 9).
+- AI agents MUST NOT delete local or remote branches (`.opencode/rules/git-workflow.md`, sections 4 and 9).
 - A branch containing unmerged work MUST NOT be deleted (`docs/07_agent_workflows/FIX_BUG.md`, section 15).
 - Protected branches MUST NOT be deleted under any circumstance.
 - Abandoned or superseded branches require an owner decision; they are reported, not removed.
@@ -343,7 +343,7 @@ The project owner is the only approval authority.
 
 An AI agent working in the repository MUST:
 
-- Read this document and `.cline/rules/git-workflow.md` before performing Git operations.
+- Read this document and `.opencode/rules/git-workflow.md` before performing Git operations.
 - Inspect `git status` and the current branch before starting a task.
 - Perform work only on the branch authorized for the task.
 - Keep branch content limited to the task scope.
@@ -416,8 +416,8 @@ The following policies are not established by an existing approved standard. The
 | R-6 | Pull request template | `.github/PULL_REQUEST_TEMPLATE.md` is implemented and covers scope, completion state, validation evidence, known limitations, and the pull request target required by section 13.2. Its content still carries `Status: Draft`, and owner review and approval of that content are outstanding | Review the implemented template and approve or amend it. The item stays open until the project owner approves the template: implementing the file does not approve it, and section 13.2 remains authoritative until this item is closed |
 | R-7 | Merge strategy | Not specified | Squash-merge task branches into `develop` for a linear history, keeping the pull request as the traceable record |
 | R-8 | `bugfix/` examples | `NAMING_CONVENTIONS.md` (section 12.1) and `FIX_BUG.md` (section 15) use a prefix that is not approved | Update those examples to `fix/` so every document lists the same approved prefixes |
-| R-9 | Continuous integration | `.github/workflows/ci.yml` is configured and documented (section 13.3; `TESTING_STRATEGY.md`, sections 11.5 and 11.6) but has never been executed, and no required status checks are recorded in this repository. `.github/workflows/validation.yml` remains an unconfigured placeholder | Still open and requiring owner action: run and validate the workflow, decide whether `validation.yml` is needed, and configure the required status checks. Configuring the workflow file does not approve it, and this item stays open until the project owner confirms the checks |
-| R-10 | Workspace rule references | Corrected: `.cline/rules/git-workflow.md` no longer describes this document as containing only placeholders. It names this document as the branching authority, instructs agents to follow it, records its `Draft (pending owner review)` status, and asks for direction only when a task depends on one of these open decisions | No further rule change is required until the owner approves this document. On approval, update the rule's status reference so it cites an approved standard rather than a draft, and close this item then |
+| R-9 | Continuous integration | `.github/workflows/ci.yml` is configured and documented (section 13.3; `TESTING_STRATEGY.md`, sections 11.5 and 11.6) but has never been executed, and no required status checks are recorded in this repository. `.github/workflows/validation.yml` is configured but has never been executed | Still open and requiring owner action: run and validate both workflows, configure the required status checks, and confirm the validation scope. Configuring a workflow file does not approve it, and this item stays open until the project owner confirms the checks |
+| R-10 | Workspace rule references | Corrected: `.opencode/rules/git-workflow.md` no longer describes this document as containing only placeholders. It names this document as the branching authority, instructs agents to follow it, records its `Draft (pending owner review)` status, and asks for direction only when a task depends on one of these open decisions | No further rule change is required until the owner approves this document. On approval, update the rule's status reference so it cites an approved standard rather than a draft, and close this item then |
 
 Approving a recommendation requires a documentation change and, where relevant, a configuration change. It must not be treated as approved merely because it appears here.
 
@@ -455,9 +455,9 @@ Not every item applies to every task. A non-applicable item is identified rather
 - `docs/07_agent_workflows/IMPLEMENT_FEATURE.md` — Feature implementation workflow (branch preparation).
 - `docs/07_agent_workflows/FIX_BUG.md` — Bug-fix workflow (Git and branching requirements).
 - `docs/07_agent_workflows/REVIEW_CODE.md` — Review workflow.
-- `.cline/rules/git-workflow.md` — Mandatory agent Git behavior.
-- `.clinerules/workflows/implement-feature.md`, `.clinerules/workflows/fix-bug.md`, `.clinerules/workflows/code-review.md` — Agent execution workflows.
-- `.github/PULL_REQUEST_TEMPLATE.md` — Pull request description template (currently a placeholder).
+- `.opencode/rules/git-workflow.md` — Mandatory agent Git behavior.
+- `.opencode/command/implement-feature.md`, `.opencode/command/fix-bug.md`, `.opencode/command/review-code.md` — Agent execution workflows.
+- `.github/PULL_REQUEST_TEMPLATE.md` — Pull request description template (`Status: Draft`, implemented and awaiting owner approval).
 
 ## 22. Maintenance
 

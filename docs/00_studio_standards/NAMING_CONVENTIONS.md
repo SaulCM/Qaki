@@ -135,7 +135,7 @@ DEVELOPMENT_PHILOSOPHY.md
 NAMING_CONVENTIONS.md
 CODE_REVIEW_GUIDELINES.md
 DEFINITION_OF_DONE.md
-.cline/rules/git-workflow.md
+.opencode/rules/git-workflow.md
 ```
 
 Filenames are case-sensitive. Reference a document using the exact capitalization of its file name.
