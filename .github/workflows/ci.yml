@@ -1,0 +1,197 @@
+﻿# Continuous integration for the Qaki repository.
+#
+# The adopted toolchain, the pinned versions, and the evidence behind them are
+# recorded in `docs/02_technical_standards/TESTING_STRATEGY.md` (sections 11.5
+# and 11.6). Required-check expectations are described in the same section and
+# in `docs/00_studio_standards/BRANCHING_STRATEGY.md` (section 13).
+#
+# This workflow has not been executed yet. Its first run is the project's own
+# evidence that the pinned toolchain works; see TESTING_STRATEGY.md, section 11.5.
+
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+# Validation is read-only. The workflow never writes to the repository.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.2'
+  GODOT_RELEASE_TAG: '4.7.2-stable'
+  GODOT_LINUX_ARCHIVE: 'Godot_v4.7.2-stable_linux.x86_64.zip'
+  GODOT_LINUX_SHA256: 'cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4'
+  GDUNIT4_VERSION: 'v6.2.3'
+  GDUNIT4_REPOSITORY: 'https://github.com/godot-gdunit-labs/gdUnit4.git'
+  PROJECT_DIR: 'game_project'
+
+jobs:
+  project-validation:
+    name: Project validation
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Godot 4.7.2 and verify its checksum
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/godot.zip"
+          curl --fail --silent --show-error --location \
+            --output "$archive" \
+            "https://github.com/godotengine/godot-builds/releases/download/${GODOT_RELEASE_TAG}/${GODOT_LINUX_ARCHIVE}"
+          echo "${GODOT_LINUX_SHA256}  ${archive}" | sha256sum --check --strict
+          mkdir --parents "$RUNNER_TEMP/godot"
+          unzip -q "$archive" -d "$RUNNER_TEMP/godot"
+          godot_bin="$(find "$RUNNER_TEMP/godot" -maxdepth 1 -type f -name 'Godot_v*' | head -n 1)"
+          if [ -z "$godot_bin" ]; then
+            echo "::error::The Godot executable was not found in the extracted archive."
+            exit 1
+          fi
+          chmod +x "$godot_bin"
+          echo "GODOT_BIN=$godot_bin" >> "$GITHUB_ENV"
+          "$godot_bin" --version
+
+      - name: Validate project import
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Opens the project headlessly and imports its resources. The command
+          # form is the portable form defined in TESTING_STRATEGY.md, section 13.6.
+          "$GODOT_BIN" --headless --path "$PROJECT_DIR" --import
+
+      - name: Parse check project GDScript
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Game scripts only. Files under game_project/addons/ belong to
+          # third-party plugins and are not owned by this repository.
+          mapfile -t scripts < <(git ls-files "$PROJECT_DIR" \
+            | grep --extended-regexp '\.gd$' \
+            | grep --invert-match --extended-regexp "^${PROJECT_DIR}/addons/" || true)
+          if [ "${#scripts[@]}" -eq 0 ]; then
+            echo "No project GDScript files exist yet; the parse check is not applicable." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          failed=0
+          for script in "${scripts[@]}"; do
+            echo "Checking ${script}"
+            if ! "$GODOT_BIN" --headless --path "$PROJECT_DIR" --check-only --script "res://${script#"$PROJECT_DIR"/}"; then
+              echo "::error file=${script}::Godot reported a parse error in ${script}"
+              failed=1
+            fi
+          done
+          exit "$failed"
+
+  gdscript-tests:
+    name: GdUnit4 tests (GDScript)
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Godot 4.7.2 and verify its checksum
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/godot.zip"
+          curl --fail --silent --show-error --location \
+            --output "$archive" \
+            "https://github.com/godotengine/godot-builds/releases/download/${GODOT_RELEASE_TAG}/${GODOT_LINUX_ARCHIVE}"
+          echo "${GODOT_LINUX_SHA256}  ${archive}" | sha256sum --check --strict
+          mkdir --parents "$RUNNER_TEMP/godot"
+          unzip -q "$archive" -d "$RUNNER_TEMP/godot"
+          godot_bin="$(find "$RUNNER_TEMP/godot" -maxdepth 1 -type f -name 'Godot_v*' | head -n 1)"
+          if [ -z "$godot_bin" ]; then
+            echo "::error::The Godot executable was not found in the extracted archive."
+            exit 1
+          fi
+          chmod +x "$godot_bin"
+          echo "GODOT_BIN=$godot_bin" >> "$GITHUB_ENV"
+          "$godot_bin" --version
+
+      - name: Detect GdUnit4 test suites
+        id: detect
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t suites < <(git ls-files "$PROJECT_DIR" \
+            | grep --extended-regexp '(^|/)test_[^/]*\.gd$' \
+            | grep --invert-match --extended-regexp "^${PROJECT_DIR}/addons/" || true)
+          if [ "${#suites[@]}" -eq 0 ]; then
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "### No GdUnit4 suite was executed"
+              echo
+              echo "No \`test_*.gd\` suite exists in this repository, so no automated test ran."
+              echo "This job does not claim automated test coverage."
+              echo
+              echo "Test locations are defined in \`docs/00_studio_standards/PROJECT_STRUCTURE_STANDARDS.md\` (section 8): \`tests/\`, \`shared/tests/\`, \`features/<feature>/tests/\`."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          echo "present=true" >> "$GITHUB_OUTPUT"
+          {
+            echo "### GdUnit4 suites detected"
+            echo
+            printf '%s\n' "${suites[@]}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Install GdUnit4 v6.2.3 into the checkout (CI only)
+        if: steps.detect.outputs.present == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Installed into the CI workspace only. The addon is not committed to
+          # the repository; see TESTING_STRATEGY.md, section 11.5.
+          git clone --quiet --depth 1 --branch "$GDUNIT4_VERSION" "$GDUNIT4_REPOSITORY" "$RUNNER_TEMP/gdunit4"
+          if [ ! -d "$RUNNER_TEMP/gdunit4/addons/gdUnit4" ]; then
+            echo "::error::GdUnit4 $GDUNIT4_VERSION does not contain addons/gdUnit4."
+            exit 1
+          fi
+          cp --recursive "$RUNNER_TEMP/gdunit4/addons/gdUnit4" "$PROJECT_DIR/addons/gdUnit4"
+          echo "Installed GdUnit4 $GDUNIT4_VERSION into $PROJECT_DIR/addons/gdUnit4" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Run GdUnit4 tests
+        if: steps.detect.outputs.present == 'true'
+        shell: bash
+        working-directory: game_project
+        run: |
+          set -euo pipefail
+          # The runner passes `--path .` to the engine, so it must run from the
+          # Godot project root. Return codes: 0 success, 100 failures or errors,
+          # 101 orphan nodes, 103 headless refusal, 104 unsupported engine.
+          chmod +x addons/gdUnit4/runtest.sh
+          paths=()
+          for dir in tests shared/tests features/*/tests; do
+            if [ -d "$dir" ]; then
+              paths+=(--add "res://${dir}")
+            fi
+          done
+          if [ "${#paths[@]}" -eq 0 ]; then
+            echo "::error::Test suites were detected, but none of the configured test directories exists."
+            exit 1
+          fi
+          addons/gdUnit4/runtest.sh \
+            --headless \
+            --audio-driver Dummy \
+            --continue \
+            --ignoreHeadlessMode \
+            "${paths[@]}"
